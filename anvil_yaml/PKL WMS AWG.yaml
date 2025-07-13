@@ -1,0 +1,1478 @@
+allow_embedding: false
+config:
+  client: {}
+  server: {}
+correct_dependency_ids: {}
+db_schema:
+  app_settings:
+    client: full
+    columns:
+    - admin_ui: {order: 0, width: 200}
+      name: Setting_Name
+      type: string
+    - admin_ui: {order: 1, width: 200}
+      name: Setting_Value
+      type: bool
+    server: full
+    title: App_Settings
+  data_barang:
+    client: full
+    columns:
+    - admin_ui: {order: 0, width: 200}
+      name: 'No'
+      type: number
+    - admin_ui: {order: 1, width: 200}
+      name: ID
+      type: string
+    - admin_ui: {order: 2, width: 200}
+      name: Nama_Barang
+      type: string
+    - admin_ui: {order: 4, width: 200}
+      name: Lokasi
+      target: lokasi_inbound
+      type: link_single
+    - admin_ui: {order: 5, width: 200}
+      name: Qty_in
+      type: number
+    - admin_ui: {order: 2.125, width: 200}
+      name: Tanggal_Masuk
+      type: date
+    - admin_ui: {order: 6, width: 200}
+      name: Qty_out
+      type: number
+    - admin_ui: {order: 7, width: 200}
+      name: Qty
+      type: number
+    - admin_ui: {order: 2.25, width: 200}
+      name: Tanggal_Keluar
+      type: date
+    - admin_ui: {order: 8, width: 200}
+      name: Creator
+      target: users
+      type: link_single
+    server: full
+    title: data_barang
+  data_ddsm115:
+    client: full
+    columns:
+    - admin_ui: {order: 1, width: 200}
+      name: Set_RPM_Motor
+      type: number
+    - admin_ui: {order: 3, width: 200}
+      name: Feedback_RPM_Motor
+      type: number
+    - admin_ui: {order: 4, width: 200}
+      name: Feedback_Arus_Motor
+      type: number
+    - admin_ui: {order: 0, width: 200}
+      name: Waktu
+      type: datetime
+    - admin_ui: {order: 5, width: 200}
+      name: Motor_ID
+      type: number
+    server: full
+    title: data_ddsm115
+  kondisi_agv:
+    client: full
+    columns:
+    - admin_ui: {order: 0, width: 200}
+      name: Mode
+      type: string
+    - admin_ui: {order: 1, width: 200}
+      name: Keadaan
+      type: string
+    - admin_ui: {order: -1, width: 200}
+      name: Waktu
+      type: datetime
+    - admin_ui: {order: 2, width: 200}
+      name: Rpmki
+      type: number
+    - admin_ui: {order: 3, width: 200}
+      name: Rpmka
+      type: number
+    server: full
+    title: kondisi_agv
+  lokasi_inbound:
+    client: search
+    columns:
+    - admin_ui: {order: 0, width: 200}
+      name: location
+      type: string
+    server: full
+    title: lokasi_inbound
+  motor_status:
+    client: full
+    columns:
+    - admin_ui: {order: 0, width: 200}
+      name: power
+      type: bool
+    - admin_ui: {order: -1, width: 200}
+      name: name
+      type: string
+    server: full
+    title: motor_status
+  users:
+    client: search
+    columns:
+    - admin_ui: {order: 0, width: 200}
+      name: email
+      type: string
+    - admin_ui: {order: 1, width: 200}
+      name: enabled
+      type: bool
+    - admin_ui: {order: 2, width: 200}
+      name: last_login
+      type: datetime
+    - admin_ui: {order: 3, width: 200}
+      name: password_hash
+      type: string
+    - admin_ui: {order: 4, width: 200}
+      name: n_password_failures
+      type: number
+    - admin_ui: {order: 5, width: 200}
+      name: confirmed_email
+      type: bool
+    - admin_ui: {order: 6, width: 200}
+      name: remembered_logins
+      type: simpleObject
+    - admin_ui: {order: 7, width: 200}
+      name: signed_up
+      type: datetime
+    server: full
+    title: Users
+dependencies: []
+dependency_code: {}
+dependency_ids: {}
+dependency_order: []
+exported_table_schema:
+- client: full
+  columns:
+    1V0XAXJovUY=:
+      admin_ui: {order: 8, width: 200}
+      backend: anvil.tables.Row
+      name: Creator
+      table_id: 942040
+      type: liveObject
+    7hVx5d6ELN4=:
+      admin_ui: {order: 2.25, width: 200}
+      name: Tanggal_Keluar
+      type: date
+    Az3oEuVWcIA=:
+      admin_ui: {order: 2, width: 200}
+      name: Nama_Barang
+      type: string
+    OyBbwD1q0RU=:
+      admin_ui: {order: 2.125, width: 200}
+      name: Tanggal_Masuk
+      type: date
+    hOQxC6hGEQM=:
+      admin_ui: {order: 1, width: 200}
+      name: ID
+      type: string
+    jjSEgx6jS5w=:
+      admin_ui: {order: 0, width: 200}
+      name: 'No'
+      type: number
+    k_zmR13K0G8=:
+      admin_ui: {order: 6, width: 200}
+      name: Qty_out
+      type: number
+    lYLtC5tcSj8=:
+      admin_ui: {order: 7, width: 200}
+      name: Qty
+      type: number
+    v8od8Dj19h0=:
+      admin_ui: {order: 5, width: 200}
+      name: Qty_in
+      type: number
+    wTf98yQok7E=:
+      admin_ui: {order: 4, width: 200}
+      backend: anvil.tables.Row
+      name: Lokasi
+      table_id: 931355
+      type: liveObject
+  id: 931354
+  name: data_barang
+  python_name: data_barang
+  server: full
+- client: search
+  columns:
+    qHIo_ez0kYk=:
+      admin_ui: {order: 0, width: 200}
+      name: location
+      type: string
+  id: 931355
+  name: lokasi_inbound
+  python_name: lokasi_inbound
+  server: full
+- client: search
+  columns:
+    3yeKXyFOypY=:
+      admin_ui: {order: 3, width: 200}
+      name: password_hash
+      type: string
+    5d3cQROXk_c=:
+      admin_ui: {order: 4, width: 200}
+      name: n_password_failures
+      type: number
+    DBI7ExBmeb0=:
+      admin_ui: {order: 5, width: 200}
+      name: confirmed_email
+      type: bool
+    EMd6TErwMq4=:
+      admin_ui: {order: 0, width: 200}
+      name: email
+      type: string
+    SiQG1glBpEE=:
+      admin_ui: {order: 7, width: 200}
+      name: signed_up
+      type: datetime
+    _M0Lo9PSYv0=:
+      admin_ui: {order: 1, width: 200}
+      name: enabled
+      type: bool
+    b4LN63R3+KI=:
+      admin_ui: {order: 6, width: 200}
+      name: remembered_logins
+      type: simpleObject
+    gNFUx+vFy8I=:
+      admin_ui: {order: 2, width: 200}
+      name: last_login
+      type: datetime
+  id: 942040
+  name: Users
+  python_name: users
+  server: full
+- client: full
+  columns:
+    +_jrAkvf2WY=:
+      admin_ui: {order: 4, width: 200}
+      name: Feedback_Arus_Motor
+      type: number
+    0mqPTeHYpfo=:
+      admin_ui: {order: 0, width: 200}
+      name: Waktu
+      type: datetime
+    DPA+KIpFQzU=:
+      admin_ui: {order: 3, width: 200}
+      name: Feedback_RPM_Motor
+      type: number
+    aJVQHx8e7nA=:
+      admin_ui: {order: 5, width: 200}
+      name: Motor_ID
+      type: number
+    xQPelVSZxpo=:
+      admin_ui: {order: 1, width: 200}
+      name: Set_RPM_Motor
+      type: number
+  id: 960426
+  name: data_ddsm115
+  python_name: data_ddsm115
+  server: full
+- client: full
+  columns:
+    Da8LcqCl934=:
+      admin_ui: {order: -1, width: 200}
+      name: name
+      type: string
+    mXk4O7w+3Og=:
+      admin_ui: {order: 0, width: 200}
+      name: power
+      type: bool
+  id: 971729
+  name: motor_status
+  python_name: motor_status
+  server: full
+- client: full
+  columns:
+    DSTt8SsKBEU=:
+      admin_ui: {order: 0, width: 200}
+      name: Setting_Name
+      type: string
+    JcOmM_nN+HI=:
+      admin_ui: {order: 1, width: 200}
+      name: Setting_Value
+      type: bool
+  id: 974520
+  name: App_Settings
+  python_name: app_settings
+  server: full
+- client: full
+  columns:
+    41l9+nV6QZ0=:
+      admin_ui: {order: -1, width: 200}
+      name: Waktu
+      type: datetime
+    RMU11H2FkSE=:
+      admin_ui: {order: 3, width: 200}
+      name: Rpmka
+      type: number
+    bHbbCLsMcvw=:
+      admin_ui: {order: 0, width: 200}
+      name: Mode
+      type: string
+    mHYwY1uzmwk=:
+      admin_ui: {order: 1, width: 200}
+      name: Keadaan
+      type: string
+    zcZH1MjdZ1M=:
+      admin_ui: {order: 2, width: 200}
+      name: Rpmki
+      type: number
+  id: 983481
+  name: kondisi_agv
+  python_name: kondisi_agv
+  server: full
+extra_files: {README.md: IyBBYm91dCBUaGlzIFtBbnZpbF0oaHR0cHM6Ly9hbnZpbC53b3Jrcy8/dXRtX3NvdXJjZT1naXRodWI6YXBwX1JFQURNRSkgQXBwCgojIyMgQnVpbGQgd2ViIGFwcHMgd2l0aCBub3RoaW5nIGJ1dCBQeXRob24uCgpUaGUgYXBwIGluIHRoaXMgcmVwb3NpdG9yeSBpcyBidWlsdCB3aXRoIFtBbnZpbF0oaHR0cHM6Ly9hbnZpbC53b3Jrcz91dG1fc291cmNlPWdpdGh1YjphcHBfUkVBRE1FKSwgdGhlIGZyYW1ld29yayBmb3IgYnVpbGRpbmcgd2ViIGFwcHMgd2l0aCBub3RoaW5nIGJ1dCBQeXRob24uIFlvdSBjYW4gY2xvbmUgdGhpcyBhcHAgaW50byB5b3VyIG93biBBbnZpbCBhY2NvdW50IHRvIHVzZSBhbmQgbW9kaWZ5LgoKQmVsb3csIHlvdSB3aWxsIGZpbmQ6Ci0gW0hvdyB0byBvcGVuIHRoaXMgYXBwXSgjb3BlbmluZy10aGlzLWFwcC1pbi1hbnZpbC1hbmQtZ2V0dGluZy1pdC1vbmxpbmUpIGluIEFudmlsIGFuZCBkZXBsb3kgaXQgb25saW5lCi0gSW5mb3JtYXRpb24gW2Fib3V0IEFudmlsXSgjYWJvdXQtYW52aWwpCi0gQW5kIGxpbmtzIHRvIHNvbWUgaGFuZHkgW2RvY3VtZW50YXRpb24gYW5kIHR1dG9yaWFsc10oI3R1dG9yaWFscy1hbmQtZG9jdW1lbnRhdGlvbikKCiMjIE9wZW5pbmcgdGhpcyBhcHAgaW4gQW52aWwgYW5kIGdldHRpbmcgaXQgb25saW5lCgojIyMgQ2xvbmluZyB0aGUgYXBwCgpHbyB0byB0aGUgW0FudmlsIEVkaXRvcl0oaHR0cHM6Ly9hbnZpbC53b3Jrcy9idWlsZD91dG1fc291cmNlPWdpdGh1YjphcHBfUkVBRE1FKSAoeW91IG1pZ2h0IG5lZWQgdG8gc2lnbiB1cCBmb3IgYSBmcmVlIGFjY291bnQpIGFuZCBjbGljayBvbiDigJxDbG9uZSBmcm9tIEdpdEh1YuKAnSAodW5kZXJuZWF0aCB0aGUg4oCcQmxhbmsgQXBw4oCdIG9wdGlvbik6Cgo8aW1nIHNyYz0iaHR0cHM6Ly9hbnZpbC53b3Jrcy9kb2NzL3ZlcnNpb24tY29udHJvbC1uZXctaWRlL2ltZy9naXQvY2xvbmUtZnJvbS1naXRodWIucG5nIiBhbHQ9IkNsb25lIGZyb20gR2l0SHViIi8+CgpFbnRlciB0aGUgVVJMIG9mIHRoaXMgR2l0SHViIHJlcG9zaXRvcnkuIElmIHlvdSdyZSBub3QgeWV0IGxvZ2dlZCBpbiwgY2hvb3NlICJHaXRIdWIgY3JlZGVudGlhbHMiIGFzIHRoZSBhdXRoZW50aWNhdGlvbiBtZXRob2QgYW5kIGNsaWNrICJDb25uZWN0IHRvIEdpdEh1YiIuCgo8aW1nIHNyYz0iaHR0cHM6Ly9hbnZpbC53b3Jrcy9kb2NzL3ZlcnNpb24tY29udHJvbC1uZXctaWRlL2ltZy9naXQvY2xvbmUtYXBwLWZyb20tZ2l0LnBuZyIgYWx0PSJDbG9uZSBBcHAgZnJvbSBHaXQgbW9kYWwiLz4KCkZpbmFsbHksIGNsaWNrICJDbG9uZSBBcHAiLgoKVGhpcyBhcHAgd2lsbCB0aGVuIGJlIGluIHlvdXIgQW52aWwgYWNjb3VudCwgcmVhZHkgZm9yIHlvdSB0byBydW4gaXQgb3Igc3RhcnQgZWRpdGluZyBpdCEgKipBbnkgY2hhbmdlcyB5b3UgbWFrZSB3aWxsIGJlIGF1dG9tYXRpY2FsbHkgcHVzaGVkIGJhY2sgdG8gdGhpcyByZXBvc2l0b3J5LCBpZiB5b3UgaGF2ZSBwZXJtaXNzaW9uISoqIFlvdSBtaWdodCB3YW50IHRvIFttYWtlIGEgbmV3IGJyYW5jaF0oaHR0cHM6Ly9hbnZpbC53b3Jrcy9kb2NzL3ZlcnNpb24tY29udHJvbC1uZXctaWRlP3V0bV9zb3VyY2U9Z2l0aHViOmFwcF9SRUFETUUpLgoKIyMjIFJ1bm5pbmcgdGhlIGFwcCB5b3Vyc2VsZjoKCkZpbmQgdGhlICoqUnVuKiogYnV0dG9uIGF0IHRoZSB0b3AtcmlnaHQgb2YgdGhlIEFudmlsIGVkaXRvcjoKCjxpbWcgc3JjPSJodHRwczovL2FudmlsLndvcmtzL2RvY3MvaW1nL3J1bi1idXR0b24tbmV3LWlkZS5wbmciLz4KCgojIyMgUHVibGlzaGluZyB0aGUgYXBwIG9uIHlvdXIgb3duIFVSTAoKTm93IHlvdSd2ZSBjbG9uZWQgdGhlIGFwcCwgeW91IGNhbiBbZGVwbG95IGl0IG9uIHRoZSBpbnRlcm5ldCB3aXRoIHR3byBjbGlja3NdKGh0dHBzOi8vYW52aWwud29ya3MvZG9jcy9kZXBsb3ltZW50L3F1aWNrc3RhcnQ/dXRtX3NvdXJjZT1naXRodWI6YXBwX1JFQURNRSkhIEZpbmQgdGhlICoqUHVibGlzaCoqIGJ1dHRvbiBhdCB0aGUgdG9wLXJpZ2h0IG9mIHRoZSBlZGl0b3I6Cgo8aW1nIHNyYz0iaHR0cHM6Ly9hbnZpbC53b3Jrcy9kb2NzL2RlcGxveW1lbnQtbmV3LWlkZS9pbWcvZW52aXJvbm1lbnRzL3B1Ymxpc2gtYnV0dG9uLnBuZyIvPgoKV2hlbiB5b3UgY2xpY2sgaXQsIHlvdSB3aWxsIHNlZSB0aGUgUHVibGlzaCBkaWFsb2c6Cgo8aW1nIHNyYz0iaHR0cHM6Ly9hbnZpbC53b3Jrcy9kb2NzL2RlcGxveW1lbnQtbmV3LWlkZS9pbWcvcXVpY2tzdGFydC9lbXB0eS1lbnZpcm9ubWVudHMtZGlhbG9nLnBuZyIvPgoKQ2xpY2sgKipQdWJsaXNoIFRoaXMgQXBwKiosIGFuZCB5b3Ugd2lsbCBzZWUgdGhhdCB5b3VyIGFwcCBoYXMgYmVlbiBkZXBsb3llZCBhdCBhIG5ldywgcHVibGljIFVSTDoKCjxpbWcgc3JjPSJodHRwczovL2FudmlsLndvcmtzL2RvY3MvZGVwbG95bWVudC1uZXctaWRlL2ltZy9xdWlja3N0YXJ0L2RlZmF1bHQtcHVibGljLWVudmlyb25tZW50LnBuZyIvPgoKVGhhdCdzIGl0IC0gKip5b3VyIGFwcCBpcyBub3cgb25saW5lKiouIENsaWNrIHRoZSBsaW5rIGFuZCB0cnkgaXQhCgojIyBBYm91dCBBbnZpbAoKSWYgeW914oCZcmUgbmV3IHRvIEFudmlsLCB3ZWxjb21lISBBbnZpbCBpcyBhIHBsYXRmb3JtIGZvciBidWlsZGluZyBmdWxsLXN0YWNrIHdlYiBhcHBzIHdpdGggbm90aGluZyBidXQgUHl0aG9uLiBObyBuZWVkIHRvIHdyZXN0bGUgd2l0aCBKUywgSFRNTCwgQ1NTLCBQeXRob24sIFNRTCBhbmQgYWxsIHRoZWlyIGZyYW1ld29ya3Mg4oCTIGp1c3QgYnVpbGQgaXQgYWxsIGluIFB5dGhvbi4KCjxmaWd1cmU+CjxmaWdjYXB0aW9uPjxoMz5MZWFybiBBYm91dCBBbnZpbCBJbiA4MCBTZWNvbmRz8J+RhzwvaDM+PC9maWdjYXB0aW9uPgo8YSBocmVmPSJodHRwczovL3d3dy55b3V0dWJlLmNvbS93YXRjaD92PTNWLTNnMW1RNUdZIiB0YXJnZXQ9Il9ibGFuayI+CjxpbWcKICBzcmM9Imh0dHBzOi8vYW52aWwtd2Vic2l0ZS1zdGF0aWMuczMuZXUtd2VzdC0yLmFtYXpvbmF3cy5jb20vYW52aWwtaW4tODAtc2Vjb25kcy1Zb3VUdWJlLnBuZyIKICBhbHQ9IkFudmlsIEluIDgwIFNlY29uZHMiCi8+CjwvYT4KPC9maWd1cmU+Cjxicj48YnI+CgpbIVtUcnkgQW52aWwgRnJlZV0oaHR0cHM6Ly9hbnZpbC13ZWJzaXRlLXN0YXRpYy5zMy5ldS13ZXN0LTIuYW1hem9uYXdzLmNvbS9tYXJrLWNvbXBsZXRlLnBuZyldKGh0dHBzOi8vYW52aWwud29ya3M/dXRtX3NvdXJjZT1naXRodWI6YXBwX1JFQURNRSkKClRvIGxlYXJuIG1vcmUgYWJvdXQgQW52aWwsIHZpc2l0IFtodHRwczovL2FudmlsLndvcmtzXShodHRwczovL2FudmlsLndvcmtzP3V0bV9zb3VyY2U9Z2l0aHViOmFwcF9SRUFETUUpLgoKIyMgVHV0b3JpYWxzIGFuZCBkb2N1bWVudGF0aW9uCgojIyMgVHV0b3JpYWxzCgpJZiB5b3UgYXJlIGp1c3Qgc3RhcnRpbmcgb3V0IHdpdGggQW52aWwsIHdoeSBub3QgKipbdHJ5IHRoZSAxMC1taW51dGUgRmVlZGJhY2sgRm9ybSB0dXRvcmlhbF0oaHR0cHM6Ly9hbnZpbC53b3Jrcy9sZWFybi90dXRvcmlhbHMvZmVlZGJhY2stZm9ybT91dG1fc291cmNlPWdpdGh1YjphcHBfUkVBRE1FKSoqPyBJdCBmZWF0dXJlcyBzdGVwLWJ5LXN0ZXAgdHV0b3JpYWxzIHRoYXQgd2lsbCBpbnRyb2R1Y2UgeW91IHRvIHRoZSBtb3N0IGltcG9ydGFudCBwYXJ0cyBvZiBBbnZpbC4KCkFudmlsIGhhcyB0dXRvcmlhbHMgb246Ci0gW0J1aWxkaW5nIERhc2hib2FyZHNdKGh0dHBzOi8vYW52aWwud29ya3MvbGVhcm4vdHV0b3JpYWxzL2RhdGEtc2NpZW5jZSNkYXNoYm9hcmRpbmc/dXRtX3NvdXJjZT1naXRodWI6YXBwX1JFQURNRSkKLSBbTXVsdGktVXNlciBBcHBsaWNhdGlvbnNdKGh0dHBzOi8vYW52aWwud29ya3MvbGVhcm4vdHV0b3JpYWxzL211bHRpLXVzZXItYXBwcz91dG1fc291cmNlPWdpdGh1YjphcHBfUkVBRE1FKQotIFtCdWlsZGluZyBXZWIgQXBwcyB3aXRoIGFuIEV4dGVybmFsIERhdGFiYXNlXShodHRwczovL2FudmlsLndvcmtzL2xlYXJuL3R1dG9yaWFscy9leHRlcm5hbC1kYXRhYmFzZT91dG1fc291cmNlPWdpdGh1YjphcHBfUkVBRE1FKQotIFtEZXBsb3lpbmcgTWFjaGluZSBMZWFybmluZyBNb2RlbHNdKGh0dHBzOi8vYW52aWwud29ya3MvbGVhcm4vdHV0b3JpYWxzL2RlcGxveS1tYWNoaW5lLWxlYXJuaW5nLW1vZGVsP3V0bV9zb3VyY2U9Z2l0aHViOmFwcF9SRUFETUUpCi0gW1Rha2luZyBQYXltZW50cyB3aXRoIFN0cmlwZV0oaHR0cHM6Ly9hbnZpbC53b3Jrcy9sZWFybi90dXRvcmlhbHMvc3RyaXBlP3V0bV9zb3VyY2U9Z2l0aHViOmFwcF9SRUFETUUpCi0gQW5kIFttdWNoIG1vcmUuLi4uXShodHRwczovL2FudmlsLndvcmtzL2xlYXJuL3R1dG9yaWFscz91dG1fc291cmNlPWdpdGh1YjphcHBfUkVBRE1FKQoKIyMjIFJlZmVyZW5jZSBEb2N1bWVudGF0aW9uCgpUaGUgQW52aWwgcmVmZXJlbmNlIGRvY3VtZW50YXRpb24gcHJvdmlkZXMgY29tcHJlaGVuc2l2ZSBpbmZvcm1hdGlvbiBvbiBob3cgdG8gdXNlIEFudmlsIHRvIGJ1aWxkIHdlYiBhcHBsaWNhdGlvbnMuIFlvdSBjYW4gZmluZCB0aGUgZG9jdW1lbnRhdGlvbiBbaGVyZV0oaHR0cHM6Ly9hbnZpbC53b3Jrcy9kb2NzL292ZXJ2aWV3P3V0bV9zb3VyY2U9Z2l0aHViOmFwcF9SRUFETUUpLgoKSWYgeW91IHdhbnQgdG8gZ2V0IHRvIHRoZSBiYXNpY3MgYXMgcXVpY2tseSBhcyBwb3NzaWJsZSwgZWFjaCBzZWN0aW9uIG9mIHRoaXMgZG9jdW1lbnRhdGlvbiBmZWF0dXJlcyBhIFtRdWljay1TdGFydCBHdWlkZV0oaHR0cHM6Ly9hbnZpbC53b3Jrcy9kb2NzL292ZXJ2aWV3L3F1aWNrc3RhcnRzP3V0bV9zb3VyY2U9Z2l0aHViOmFwcF9SRUFETUUpLgo=, __init__.py: IwojIFRoaXMgcmVwb3NpdG9yeSBpcyBhbiBBbnZpbCBhcHAuIExlYXJuIG1vcmUgYXQgaHR0cHM6Ly9hbnZpbC53b3Jrcy8KIyBUbyBydW4gdGhlIHNlcnZlci1zaWRlIGNvZGUgb24geW91ciBvd24gbWFjaGluZSwgcnVuOgojIHBpcCBpbnN0YWxsIGFudmlsLXVwbGluawojIHB5dGhvbiAtbSBhbnZpbC5ydW5fYXBwX3ZpYV91cGxpbmsgWW91ckFwcFBhY2thZ2VOYW1lCgpfX3BhdGhfXyA9IFtfX3BhdGhfX1swXSArICIvc2VydmVyX2NvZGUiLCBfX3BhdGhfX1swXSArICIvY2xpZW50X2NvZGUiXQo=}
+forms:
+- class_name: agv_posisi
+  code: |-
+    from ._anvil_designer import agv_posisiTemplate
+    from anvil import *
+    import anvil.server
+    import anvil.users
+    import anvil.tables as tables
+    import anvil.tables.query as q
+    from anvil.tables import app_tables
+
+    class agv_posisi(agv_posisiTemplate):
+      def __init__(self, **properties):
+        # Set Form properties and Data Bindings.
+        self.init_components(**properties)
+
+        # Any code you write here will run before the form opens.
+        self.load_agv_conditions()
+
+      # --- FUNGSI BARU UNTUK MEMUAT DATA ---
+      def load_agv_conditions(self):
+        """Memanggil server untuk mendapatkan data kondisi AGV dan menampilkannya di grid."""
+        self.pos_tabel.items = anvil.server.call('get_kondisi_agv')
+
+      # --- EVENT HANDLER UNTUK TIMER ---
+      def timer_1_tick(self, **event_args):
+        """This method is called every 5 seconds (sesuai interval timer)."""
+        self.load_agv_conditions()
+  components:
+  - components:
+    - components:
+      - data_bindings: []
+        name: pos_tabel
+        properties: {item_template: agv_posisi.RowTemplate4}
+        type: RepeatingPanel
+      - event_bindings: {tick: timer_1_tick}
+        layout_properties: {}
+        name: timer_1
+        properties: {interval: 5}
+        type: Timer
+      layout_properties: {grid_position: 'VJZMQI,MAQWWV'}
+      name: data_grid_1
+      properties:
+        columns:
+        - {data_key: Waktu, id: ZTIZUP, title: Waktu}
+        - {data_key: Mode, id: PMAMEE, title: Mode}
+        - {data_key: Keadaan, id: HAHNWA, title: Keadaan}
+      type: DataGrid
+    layout_properties: {slot: default}
+    name: pos_panel
+    properties: {}
+    type: ColumnPanel
+  - layout_properties: {slot: nav-right}
+    name: navbar_links
+    properties: {}
+    type: FlowPanel
+  - layout_properties: {slot: title}
+    name: label_1
+    properties: {background: '', bold: true, foreground: 'theme:On Primary Container', italic: true, role: headline, text: AWG Inventory}
+    type: Label
+  - components:
+    - layout_properties: {grid_position: 'WFYETP,ERQJHC'}
+      name: button_1
+      properties: {bold: true, foreground: 'theme:Primary', icon: 'fa:inbox', text: Inbound}
+      type: Button
+    - layout_properties: {grid_position: 'TLTCMG,CZPXQD'}
+      name: button_2
+      properties: {bold: true, icon: 'fa:truck', text: Outbound}
+      type: Button
+    - layout_properties: {grid_position: 'IXOBCN,ABHKNH'}
+      name: button_3
+      properties: {bold: true, icon: 'fa:car', text: DDSM115}
+      type: Button
+    - layout_properties: {grid_position: 'QFPBQJ,OFBKZZ'}
+      name: button_4
+      properties: {bold: true, icon: 'fa:location-arrow', text: Posisi}
+      type: Button
+    - layout_properties: {grid_position: 'AOBFIQ,OFSFOO'}
+      name: button_5
+      properties: {bold: true, icon: 'fa:gamepad', role: elevated-button, text: Remote}
+      type: Button
+    - layout_properties: {grid_position: 'JNLCYV,YBJJKV'}
+      name: button_6
+      properties: {bold: true, foreground: 'theme:Primary', icon: 'fa:sign-out', role: tonal-button, text: Keluar}
+      type: Button
+    layout_properties: {slot: left-nav}
+    name: column_panel_1
+    properties: {}
+    type: ColumnPanel
+  container:
+    properties: {background: 'theme:Tertiary Container', foreground: '', html: '@theme:standard-page.html'}
+    type: HtmlTemplate
+  id: '1751523154201609916045246.3743'
+  is_package: true
+- class_name: agv_posisi.RowTemplate4
+  code: |
+    from ._anvil_designer import RowTemplate4Template
+    from anvil import *
+    import anvil.server
+    import anvil.users
+    import anvil.tables as tables
+    import anvil.tables.query as q
+    from anvil.tables import app_tables
+
+    class RowTemplate4(RowTemplate4Template):
+      def __init__(self, **properties):
+        # Set Form properties and Data Bindings.
+        self.init_components(**properties)
+
+        # Any code you write here will run before the form opens.
+  components: []
+  container: {type: DataRowPanel}
+  id: '1751523965449298227015874.58246'
+  is_package: true
+- class_name: ddsm115_edit
+  code: "from ._anvil_designer import ddsm115_editTemplate\nfrom anvil import *\nimport anvil.users\nimport anvil.server\nimport anvil.tables as tables\nimport anvil.tables.query as q\nimport datetime\nfrom anvil.tables import app_tables\n\n\nclass ddsm115_edit(ddsm115_editTemplate):\n  def __init__(self, **properties):\n    self.init_components(**properties)\n    self.refresh_ddsm115_tabel()\n\n  def refresh_ddsm115_tabel(self):\n    data = anvil.server.call('get_ddsm115_data')\n  \n    # Buat salinan dictionary baru untuk setiap row\n    formatted_data = []\n    for row in data:\n      new_row = dict(row)  # salin isi row\n      if isinstance(new_row['Waktu'], datetime.datetime):\n        new_row['Waktu'] = new_row['Waktu'].strftime(\"%H:%M:%S\")\n      formatted_data.append(new_row)\n  \n    self.ddsm_tabel.items = formatted_data\n\n\n "
+  components:
+  - components:
+    - components:
+      - name: ddsm_tabel
+        properties: {item_template: ddsm115_edit.RowTemplate5}
+        type: RepeatingPanel
+      layout_properties: {grid_position: 'HQZXQC,CAHDQV'}
+      name: data_grid_1
+      properties:
+        columns:
+        - {data_key: Waktu, expand: false, id: DKBTSL, title: Waktu, width: 174.39996337890625}
+        - {data_key: Set_RPM_Motor, expand: false, id: QYNFRA, title: SRPM_Motor, width: 146.20001220703125}
+        - {data_key: Feedback_RPM_Motor, expand: false, id: JMXJUC, title: FRPM_Motor, width: 198.4000244140625}
+        - {data_key: Feedback_Arus_Motor, id: BFGKHX, title: FArus_Motor}
+      type: DataGrid
+    layout_properties: {slot: default}
+    name: content_panel
+    properties: {col_widths: '{}'}
+    type: ColumnPanel
+  - layout_properties: {slot: nav-right}
+    name: navbar_links
+    properties: {}
+    type: FlowPanel
+  - layout_properties: {slot: title}
+    name: label_1
+    properties: {bold: true, foreground: 'theme:On Primary Container', italic: true, role: headline, text: AWG Inventory}
+    type: Label
+  - components:
+    - layout_properties: {grid_position: 'NXBRHI,XMCNHA'}
+      name: but_in
+      properties: {bold: true, icon: 'fa:inbox', role: null, text: Inbound}
+      type: Button
+    - layout_properties: {grid_position: 'WNKQWR,DIFDTM'}
+      name: but_out
+      properties: {bold: true, icon: 'fa:truck', text: Outbound}
+      type: Button
+    - layout_properties: {grid_position: 'PTUYGK,PMZBFI'}
+      name: button_1
+      properties: {bold: true, icon: 'fa:car', text: DDSM115}
+      type: Button
+    - layout_properties: {grid_position: 'JQAMBM,GSGAGU'}
+      name: but_klr
+      properties: {bold: true, foreground: 'theme:Primary', icon: 'fa:sign-out', role: tonal-button, text: Keluar}
+      type: Button
+    layout_properties: {slot: left-nav}
+    name: column_panel_1
+    properties: {}
+    type: ColumnPanel
+  container:
+    properties: {background: 'theme:Tertiary Container', html: '@theme:standard-page.html'}
+    type: HtmlTemplate
+  custom_component: false
+  id: '1747206760299668979453305.8733'
+  is_package: true
+- class_name: ddsm115_edit.RowTemplate5
+  code: |
+    from ._anvil_designer import RowTemplate5Template
+    from anvil import *
+    import anvil.server
+    import anvil.users
+    import anvil.tables as tables
+    import anvil.tables.query as q
+    from anvil.tables import app_tables
+
+    class RowTemplate5(RowTemplate5Template):
+      def __init__(self, **properties):
+        # Set Form properties and Data Bindings.
+        self.init_components(**properties)
+
+        # Any code you write here will run before the form opens.
+  components: []
+  container: {type: DataRowPanel}
+  id: '1747796368252294904848741.2154'
+  is_package: true
+- class_name: ddsm115_kontrol
+  code: "from ._anvil_designer import ddsm115_kontrolTemplate\nfrom anvil import *\nimport anvil.tables as tables\nimport anvil.tables.query as q\nfrom anvil.tables import app_tables\nimport anvil.users\nimport anvil.server\n\nclass ddsm115_kontrol(ddsm115_kontrolTemplate):\n  def __init__(self, **properties):\n    self.init_components(**properties)\n    self.status_label = self.motor_status\n\n    self.on_auto.enabled = False\n    self.off_auto.enabled = False\n\n    self.update_rpm_display()\n    self.update_status_label(\"Motor OFF (Siap Dihidupkan)\")\n\n  def update_rpm_display(self):\n    try:\n      # Menghilangkan icon loading saat refresh\n      latest_status = anvil.server.call_s('get_agvrpm_status') \n      if latest_status:\n        self.label_rpm_kanan.text = f\"{latest_status['Rpmka']} RPM\"\n        self.label_rpm_kiri.text = f\"{latest_status['Rpmki']} RPM\"\n      else:\n        self.label_rpm_kanan.text = \"0 RPM\"\n        self.label_rpm_kiri.text = \"0 RPM\"\n    except Exception as e:\n      print(f\"Gagal mengambil data RPM: {e}\")\n      self.label_rpm_kanan.text = \"Error\"\n      self.label_rpm_kiri.text = \"Error\"\n\n  def timer_1_tick(self, **event_args):\n    self.update_rpm_display()\n\n  def update_status_label(self, message):\n    if hasattr(self, 'status_label') and self.status_label:\n      self.status_label.text = str(message)\n    print(message)\n\n  def mati_click(self, **event_args):\n    try:\n      response = anvil.server.call_s(\"kontrol_motor_on_off\", \"off\")\n      self.update_status_label(response)\n      if \"Status: OFF\" in response:\n        self.on_auto.enabled = False\n        self.off_auto.enabled = False\n    except Exception as e:\n      alert(f\"Gagal Mematikan Motor: {e}\")\n      self.update_status_label(f\"Error OFF: {e}\")\n\n  def nyala_click(self, **event_args):\n    try:\n      response = anvil.server.call_s(\"kontrol_motor_on_off\", \"on\")\n      self.update_status_label(response)\n      if \"Status: ON\" in response:\n        self.on_auto.enabled = True\n        self.off_auto.enabled = False\n    except Exception as e:\n      alert(f\"Gagal Menghidupkan Motor: {e}\")\n      self.update_status_label(f\"Error ON: {e}\")\n\n  def t_maju_click(self, **event_args):\n    try:\n      response = anvil.server.call_s(\"kontrol_motor_arah\", \"maju\")\n      self.update_status_label(response)\n    except Exception as e:\n      alert(f\"Gagal Menggerakkan MAJU: {e}\")\n      self.update_status_label(f\"Error MAJU: {e}\")\n\n  def t_mundur_click(self, **event_args):\n    try:\n      response = anvil.server.call_s(\"kontrol_motor_arah\", \"mundur\")\n      self.update_status_label(response)\n    except Exception as e:\n      alert(f\"Gagal Menggerakkan MUNDUR: {e}\")\n      self.update_status_label(f\"Error MUNDUR: {e}\")\n\n  def t_kiri_click(self, **event_args):\n    try:\n      response = anvil.server.call_s(\"kontrol_motor_arah\", \"kiri\")\n      self.update_status_label(response)\n    except Exception as e:\n      alert(f\"Gagal Menggerakkan KIRI: {e}\")\n      self.update_status_label(f\"Error KIRI: {e}\")\n\n  def t_kanan_click(self, **event_args):\n    try:\n      response = anvil.server.call_s(\"kontrol_motor_arah\", \"kanan\")\n      self.update_status_label(response)\n    except Exception as e:\n      alert(f\"Gagal Menggerakkan KANAN: {e}\")\n      self.update_status_label(f\"Error KANAN: {e}\")\n\n  def t_stop_click(self, **event_args):\n    try:\n      response = anvil.server.call_s(\"kontrol_motor_arah\", \"stop\")\n      self.update_status_label(response)\n    except Exception as e:\n      alert(f\"Gagal Menghentikan Motor: {e}\")\n      self.update_status_label(f\"Error STOP: {e}\")\n\n  def on_auto_click(self, **event_args):\n    try:\n      response = anvil.server.call_s(\"set_agv_mode\", \"autonomous\")\n      self.update_status_label(response)\n      self.on_auto.enabled = False\n      self.off_auto.enabled = True\n    except Exception as e:\n      alert(f\"Gagal masuk mode Autonomos: {e}\")\n      self.update_status_label(f\"Error Auto ON: {e}\")\n\n  def off_auto_click(self, **event_args):\n    try:\n      response = anvil.server.call_s(\"set_agv_mode\", \"manual\")\n      self.update_status_label(response)\n      self.on_auto.enabled = True\n      self.off_auto.enabled = False\n    except Exception as e:\n      alert(f\"Gagal keluar dari mode Autonomos: {e}\")\n      self.update_status_label(f\"Error Auto OFF: {e}\")"
+  components:
+  - components:
+    - components: []
+      layout_properties: {grid_position: 'SGKWNC,ZYSWHT'}
+      name: motor_status
+      properties: {}
+      type: ColumnPanel
+    - event_bindings: {click: t_maju_click}
+      layout_properties: {grid_position: 'SGKWNC,PCBDUS'}
+      name: t_maju
+      properties: {icon: 'fa:arrow-up', role: elevated-button, text: ''}
+      type: Button
+    - layout_properties: {grid_position: 'SGKWNC,JMFAJX'}
+      name: column_panel_3
+      properties: {}
+      type: ColumnPanel
+    - components:
+      - event_bindings: {click: t_kiri_click}
+        layout_properties: {grid_position: 'IQJDGX,BGGOTX'}
+        name: t_kiri
+        properties: {icon: 'fa:arrow-left', role: elevated-button, text: ''}
+        type: Button
+      layout_properties: {grid_position: 'JKRHWG,AYSOXA'}
+      name: column_panel_5
+      properties: {}
+      type: ColumnPanel
+    - components:
+      - event_bindings: {click: t_kanan_click}
+        layout_properties: {grid_position: 'LVLYSZ,RAQTXW'}
+        name: t_kanan
+        properties: {icon: 'fa:arrow-right', role: elevated-button, text: ''}
+        type: Button
+      layout_properties: {grid_position: 'JKRHWG,BELFWP'}
+      name: column_panel_4
+      properties: {}
+      type: ColumnPanel
+    - components:
+      - event_bindings: {click: t_mundur_click}
+        layout_properties: {grid_position: 'AMMRPA,KJCRIH'}
+        name: t_mundur
+        properties: {icon: 'fa:arrow-down', role: elevated-button, text: ''}
+        type: Button
+      layout_properties: {grid_position: 'SFLNRT,PFWHFI'}
+      name: column_panel_6
+      properties: {}
+      type: ColumnPanel
+    - components:
+      - layout_properties: {grid_position: 'JFLFIK,BBCIHC'}
+        name: label_rpm_kiri
+        properties: {align: center}
+        type: Label
+      - event_bindings: {tick: timer_1_tick}
+        layout_properties: {grid_position: 'SCITJU,JNQNHX'}
+        name: timer_1
+        properties: {interval: 1}
+        type: Timer
+      layout_properties: {grid_position: 'AEVLAB,VATRKA'}
+      name: colomnrpmkiri
+      properties: {}
+      type: ColumnPanel
+    - components:
+      - layout_properties: {grid_position: 'VESFFO,EDSSGI'}
+        name: label_rpm_kanan
+        properties: {align: center}
+        type: Label
+      layout_properties: {grid_position: 'AEVLAB,DXQJQK'}
+      name: colomnrpmkanan
+      properties: {}
+      type: ColumnPanel
+    - event_bindings: {click: nyala_click}
+      layout_properties: {grid_position: 'SIYSYF,LVNPRK'}
+      name: nyala
+      properties: {background: '#6aeb00', foreground: 'theme:On Primary', icon: '', role: elevated-button, text: 'On'}
+      type: Button
+    - event_bindings: {click: mati_click}
+      layout_properties: {grid_position: 'SIYSYF,PESYZZ'}
+      name: mati
+      properties: {background: '#ff0000', foreground: 'theme:On Primary', role: elevated-button, text: 'Off'}
+      type: Button
+    - components:
+      - event_bindings: {click: on_auto_click}
+        layout_properties: {grid_position: 'YLGJDF,DHOEBX'}
+        name: on_auto
+        properties: {background: 'theme:Primary', bold: true, foreground: 'theme:On Primary', role: elevated-button, text: Auto On}
+        type: Button
+      - event_bindings: {click: off_auto_click}
+        layout_properties: {grid_position: 'YLGJDF,ODMIBL'}
+        name: off_auto
+        properties: {bold: true, role: elevated-button, text: Auto Off}
+        type: Button
+      layout_properties: {grid_position: 'WRFQTC,GVCHKF'}
+      name: column_panel_2
+      properties: {}
+      type: ColumnPanel
+    layout_properties: {slot: default}
+    name: content_panel
+    properties: {col_widths: '{}'}
+    type: ColumnPanel
+  - layout_properties: {slot: nav-right}
+    name: navbar_links
+    properties: {}
+    type: FlowPanel
+  - layout_properties: {slot: title}
+    name: label_1
+    properties: {bold: true, foreground: 'theme:On Primary Container', italic: true, role: headline, text: AWG Inventory}
+    type: Label
+  - components:
+    - layout_properties: {grid_position: 'NXBRHI,XMCNHA'}
+      name: but_in
+      properties: {bold: true, icon: 'fa:inbox', role: null, text: Inbound}
+      type: Button
+    - layout_properties: {grid_position: 'WNKQWR,DIFDTM'}
+      name: but_out
+      properties: {bold: true, icon: 'fa:truck', text: Outbound}
+      type: Button
+    - layout_properties: {grid_position: 'PTUYGK,PMZBFI'}
+      name: button_1
+      properties: {bold: true, icon: 'fa:car', text: DDSM115}
+      type: Button
+    - event_bindings: {click: but_remot_click}
+      layout_properties: {grid_position: 'UKIJAL,UFEMHN'}
+      name: but_remot
+      properties: {bold: true, icon: 'fa:gamepad', role: elevated-button, text: Remote}
+      type: Button
+    - layout_properties: {grid_position: 'JQAMBM,GSGAGU'}
+      name: but_klr
+      properties: {bold: true, foreground: 'theme:Primary', icon: 'fa:sign-out', role: tonal-button, text: Keluar}
+      type: Button
+    layout_properties: {slot: left-nav}
+    name: column_panel_1
+    properties: {}
+    type: ColumnPanel
+  container:
+    properties: {background: 'theme:Tertiary Container', html: '@theme:standard-page.html'}
+    type: HtmlTemplate
+  custom_component: false
+  id: '1748414450830313698589696.4322'
+  is_package: true
+- class_name: homepage
+  code: "from ._anvil_designer import homepageTemplate\nfrom anvil import *\nimport anvil.users\nimport anvil.server\nimport anvil.tables as tables\nimport anvil.tables.query as q\nfrom anvil.tables import app_tables\nfrom ..inbound_edit import inbound_edit\nfrom ..outbound_edit import outbound_edit\nfrom ..ddsm115_edit import ddsm115_edit\nfrom ..ddsm115_kontrol import ddsm115_kontrol\nfrom ..agv_posisi import agv_posisi\n\nclass homepage(homepageTemplate):\n  def __init__(self, **properties):\n    # Inisialisasi komponen halaman\n    self.init_components(**properties)\n\n    # Mengisi tabel utama dengan data dari tabel `data_barang`, diurutkan berdasarkan ID\n    self.homtabel.items = app_tables.data_barang.search(tables.order_by('ID'))\n\n    # Panggil fungsi refresh untuk menampilkan data terbaru dari server\n    self.refresh_hometabel()\n\n    # Ambil semua data lokasi dari tabel `lokasi_inbound`, lalu format sebagai (nama_lokasi, row)\n    self.categories = [(cat['location'], cat) for cat in app_tables.lokasi_inbound.search()]\n    \n    # Tampilkan data lokasi ke dropdown lokasi\n    self.pilloc.items = self.categories \n\n    # Tampilkan form login pengguna\n    anvil.users.login_with_form()\n    \n\n  def but_in_click(self, **event_args):\n    # Buat dictionary kosong untuk data inbound baru\n    new_inbound = {}\n\n    # Tampilkan alert modal dengan form `inbound_edit`\n    save_inclicked = alert(\n      content = inbound_edit(item = new_inbound),\n      title=\"Menu Inbound\",\n      large=True,\n      buttons=[(\"Tambahkan\",True),(\"Kembali\",False)]\n    )\n\n    if save_inclicked:\n        # Jika field Lokasi masih berupa string, ubah menjadi row dari tabel lokasi_inbound\n        if isinstance(new_inbound.get(\"Lokasi\"), str):\n            lokasi_row = app_tables.lokasi_inbound.get(location=new_inbound[\"Lokasi\"])\n            if lokasi_row:\n                new_inbound[\"Lokasi\"] = lokasi_row\n\n        # Kirim data inbound ke server function untuk disimpan\n        anvil.server.call(\"add_inbound\", new_inbound)\n\n        # Perbarui isi tabel setelah penambahan\n        self.refresh_hometabel()\n\n\n  def refresh_hometabel(self):\n      # Ambil data terbaru dari server dan tampilkan pada tabel\n      self.homtabel.items = anvil.server.call('get_newinbound')\n      \n  def but_out_click(self, **event_args):\n    # Buat dictionary kosong untuk data outbound baru\n    new_outbound = {}\n\n    # Tampilkan alert modal dengan form `outbound_edit`\n    save_clicked = alert(\n        content=outbound_edit(item=new_outbound),\n        title=\"Menu Outbound\",\n        large=True,\n        buttons=[(\"Tambahkan\", True), (\"Kembali\", False)]\n    )\n\n    if save_clicked:\n        # Kirim data outbound ke server function untuk diupdate\n        anvil.server.call(\"update_outbound\", new_outbound)\n\n        # Opsional: Perbarui isi tabel setelah perubahan\n        self.refresh_hometabel()\n\n\n  def searchhom_pressed_enter(self, **event_args):\n    \"\"\"Mencari data berdasarkan input pencarian dari pengguna.\"\"\"\n    keyword = self.searchhom.text.strip()  # Ambil kata kunci pencarian\n    tanggal = self.piltang.date            # Ambil tanggal yang dipilih\n    lokasi = self.pilloc.selected_value    # Ambil lokasi yang dipilih\n\n    # Panggil server function untuk mencari data yang cocok\n    self.homtabel.items = anvil.server.call('search_data', keyword, tanggal, lokasi)\n\n  def piltang_change(self, **event_args):\n    \"\"\"Update hasil pencarian saat tanggal berubah.\"\"\"\n    self.searchhom_pressed_enter()\n\n  def pilloc_change(self, **event_args):\n    \"\"\"Update hasil pencarian saat lokasi berubah.\"\"\"\n    self.searchhom_pressed_enter()\n\n  def but_klr_click(self, **event_args):\n      \"\"\"Keluar dari akun dan minta login ulang.\"\"\"\n      if confirm(\"Apakah Anda yakin ingin keluar?\"):\n          self.set_blur(True)  # Blur tampilan\n\n          # Logout agar login ulang bisa muncul\n          anvil.users.logout()\n\n          # Munculkan form login\n          user = anvil.users.login_with_form()\n          \n          if user:\n              # Jika login berhasil, hapus blur\n              self.set_blur(False)\n          else:\n              # Jika login ditutup atau gagal, refresh ulang halaman\n              open_form('homepage')\n\n\n  def set_blur(self, is_blur):\n      \"\"\"Menetapkan efek blur pada halaman.\"\"\"\n      if is_blur:\n          self.role = \"white_bg\"  # Latar putih\n          self.role = \"blurred\"   # Efek blur\n      else:\n          self.role = None        # Hapus efek blur\n\n  def but_ddsm_click(self, **event_args):\n    alert(\n      content=ddsm115_edit(),  # Ini akan otomatis jalankan __init__ di dalam ddsm115_edit\n      title=\"Menu DDSM115\",\n      large=True,\n      buttons=[(\"Tutup\", False)]\n    )\n\n  def but_remot_click(self, **event_args):\n    alert(\n      content=ddsm115_kontrol(),  # menjalankan __init__ di dalam ddsm115_edit\n      title=\"Kontrol DDSM115\",\n      large=True,\n      buttons=[(\"Tutup\", False)]\n    )\n\n  def pos_agv_click(self, **event_args):\n    alert(\n      content=agv_posisi(),  # menjalankan __init__ di dalam ddsm115_edit\n      title=\"Kondisi AGV\",\n      large=True,\n      buttons=[(\"Tutup\", False)]\n    )\n\n"
+  components:
+  - layout_properties: {slot: nav-right}
+    name: navbar_links
+    properties: {}
+    type: FlowPanel
+  - layout_properties: {slot: title}
+    name: label_1
+    properties: {background: '', bold: true, foreground: 'theme:On Primary Container', italic: true, role: headline, text: AWG Inventory}
+    type: Label
+  - components:
+    - data_bindings: []
+      event_bindings: {click: but_in_click}
+      layout_properties: {grid_position: 'GCULTK,OYXZLJ'}
+      name: but_in
+      properties: {bold: true, icon: 'fa:inbox', role: null, text: Inbound}
+      type: Button
+    - data_bindings: []
+      event_bindings: {click: but_out_click}
+      layout_properties: {grid_position: 'AMOAJM,IJBPHU'}
+      name: but_out
+      properties: {align: full, bold: true, foreground: 'theme:Primary', icon: 'fa:truck', role: null, text: Outbound}
+      type: Button
+    - event_bindings: {click: but_ddsm_click}
+      layout_properties: {grid_position: 'WZUXHG,WAQEXX'}
+      name: but_ddsm
+      properties: {bold: true, enabled: true, icon: 'fa:car', text: DDSM115}
+      type: Button
+    - event_bindings: {click: pos_agv_click}
+      layout_properties: {grid_position: 'HLIYQO,HOBCJW'}
+      name: pos_agv
+      properties: {bold: true, icon: 'fa:location-arrow', text: Posisi}
+      type: Button
+    - event_bindings: {click: but_remot_click}
+      layout_properties: {grid_position: 'HYZVEY,MJKRCK'}
+      name: but_remot
+      properties: {bold: true, icon: 'fa:gamepad', role: elevated-button, text: Remote}
+      type: Button
+    - event_bindings: {click: but_klr_click}
+      layout_properties: {grid_position: 'ENCDTU,ILPGLV'}
+      name: but_klr
+      properties: {bold: true, foreground: 'theme:Primary', icon: 'fa:sign-out', role: tonal-button, text: Keluar}
+      type: Button
+    layout_properties: {slot: left-nav}
+    name: option_panel
+    properties: {}
+    type: ColumnPanel
+  - components:
+    - components:
+      - event_bindings: {pressed_enter: searchhom_pressed_enter}
+        layout_properties: {grid_position: 'QGKDRH,JLOBEJ'}
+        name: searchhom
+        properties: {placeholder: Cari Barang, text: ''}
+        type: TextBox
+      - event_bindings: {change: piltang_change}
+        layout_properties: {grid_position: 'QGKDRH,WIPARR'}
+        name: piltang
+        properties: {placeholder: Cari Tanggal}
+        type: DatePicker
+      - data_bindings:
+        - {code: 'self.item[''Lokasi'']', property: selected_value, writeback: true}
+        event_bindings: {change: pilloc_change}
+        layout_properties: {grid_position: 'QGKDRH,OECJYG'}
+        name: pilloc
+        properties: {include_placeholder: true, placeholder: Pilih Lokasi}
+        type: DropDown
+      layout_properties: {grid_position: 'BUEIWA,TVVNKA'}
+      name: column_panel_3
+      properties: {col_widths: '{}'}
+      type: ColumnPanel
+    - components:
+      - name: homtabel
+        properties: {item_template: homepage.RowTemplate1}
+        type: RepeatingPanel
+      layout_properties: {grid_position: 'IUFOEC,QLPJHF'}
+      name: data_grid_1
+      properties:
+        columns:
+        - {data_key: ID, id: UVOOZQ, title: ID}
+        - {data_key: Nama_Barang, id: WORPIM, title: Nama Barang}
+        - {data_key: Tanggal_Masuk, id: PHYPQH, title: Tanggal Masuk}
+        - {data_key: Lokasi, id: BABQHD, title: Lokasi}
+        - {data_key: Qty, id: NBLJCK, title: Qty}
+      type: DataGrid
+    layout_properties: {slot: default}
+    name: main_panel
+    properties: {}
+    type: ColumnPanel
+  container:
+    properties: {background: 'theme:Tertiary Container', html: '@theme:standard-page.html', visible: true}
+    type: HtmlTemplate
+  id: '1742540773072877195967912.5015'
+  is_package: true
+- class_name: homepage.RowTemplate1
+  code: |
+    from ._anvil_designer import RowTemplate1Template
+    from anvil import *
+    import anvil.users
+    import anvil.server
+    import anvil.tables as tables
+    import anvil.tables.query as q
+    from anvil.tables import app_tables
+
+
+    class RowTemplate1(RowTemplate1Template):
+      def __init__(self, **properties):
+        # Set Form properties and Data Bindings.
+        self.init_components(**properties)
+
+        # Any code you write here will run before the form opens.
+  components:
+  - data_bindings:
+    - {code: 'self.item[''Lokasi''][''location'']', property: text, writeback: false}
+    layout_properties: {column: BABQHD}
+    name: label_1
+    properties: {}
+    type: Label
+  container: {type: DataRowPanel}
+  id: '1742724068796412156070271.1857'
+  is_package: true
+- class_name: inbound_edit
+  code: |
+    from ._anvil_designer import inbound_editTemplate
+    from anvil import *
+    import anvil.users
+    import anvil.server
+    import anvil.tables as tables
+    import anvil.tables.query as q
+    from anvil.tables import app_tables
+
+    class inbound_edit(inbound_editTemplate):
+      def __init__(self, **properties):
+        # Inisialisasi komponen UI dari template
+        self.init_components(**properties)
+
+        # Ambil properti item dari pemanggil
+        self.item = properties.get('item', {})
+
+        # Isi dropdown lokasi dengan nama lokasi dan row-nya
+        self.in_loc.items = [(row['location'], row) for row in app_tables.lokasi_inbound.search()]
+
+        # Set nilai awal dropdown
+        self.in_loc.selected_value = self.item.get('Lokasi')
+
+        # Tampilkan seluruh data dari tabel `data_barang` di komponen tabel
+        self.show_intabel.items = app_tables.data_barang.search()
+
+        # Pasang event handler untuk menyegarkan data tabel
+        self.show_intabel.set_event_handler("x-refresh_inbound", self.refresh_inbound)
+
+
+      def in_barang_change(self, **event_args):
+        """Fungsi dijalankan saat teks nama barang diubah."""
+        nama_barang = self.in_barang.text.strip().title()  # Merapihkan nama barang
+        self.item['Nama_Barang'] = nama_barang             # Simpan ke item
+
+        # Cek apakah barang dengan nama tersebut sudah ada di database
+        row = app_tables.data_barang.get(Nama_Barang=nama_barang)
+        if row:
+            # Jika barang sudah ada:
+            # - Set lokasi otomatis sesuai data
+            # - Nonaktifkan dropdown lokasi (tidak bisa dipilih manual)
+            self.in_loc.selected_value = row['Lokasi']
+            self.in_loc.enabled = False
+            self.item['Lokasi'] = row['Lokasi']
+        else:
+            # Jika barang baru:
+            # - Aktifkan kembali dropdown lokasi
+            # - Kosongkan nilai lokasi pada item
+            self.in_loc.enabled = True
+            self.in_loc.selected_value = None
+            self.item['Lokasi'] = None
+
+
+      def in_qty_change(self, **event_args):
+        """Fungsi dijalankan saat jumlah barang diubah."""
+        # Jika input hanya berisi angka, simpan ke item sebagai integer
+        self.item['Qty_in'] = int(self.in_jmlh.text) if self.in_jmlh.text.isdigit() else 0
+
+      def in_loc_change(self, **event_args):
+        """Fungsi dijalankan saat dropdown lokasi diubah."""
+        # Simpan lokasi yang dipilih ke item
+        self.item["Lokasi"] = self.in_loc.selected_value
+
+      def refresh_inbound(self, **event_args):
+        """Memuat ulang data dari server dan menampilkannya di tabel."""
+        self.show_intabel.items = anvil.server.call('get_newinbound')
+  components:
+  - layout_properties: {slot: nav-right}
+    name: navbar_links
+    properties: {}
+    type: FlowPanel
+  - layout_properties: {slot: title}
+    name: label_1
+    properties: {bold: true, foreground: 'theme:On Primary Container', italic: true, role: headline, text: AWG Inventory}
+    type: Label
+  - components:
+    - data_bindings:
+      - {code: 'self.item[''Nama_Barang'']', property: text, writeback: true}
+      layout_properties: {grid_position: 'GMQKNX,BKKNSQ AFVKHX,YBUEGE'}
+      name: in_brg
+      properties: {foreground: 'theme:Primary', placeholder: Input Nama Barang}
+      type: TextBox
+    - data_bindings:
+      - {code: 'self.item[''Lokasi'']', property: selected_value, writeback: true}
+      layout_properties: {grid_position: 'GMQKNX,BKKNSQ SGQPPB,HAYJQI'}
+      name: in_loc
+      properties: {foreground: 'theme:Primary', include_placeholder: true, placeholder: Pilih Lokasi}
+      type: DropDown
+    - data_bindings:
+      - {code: 'self.item[''in_jmlh'']', property: tag, writeback: false}
+      - {code: 'self.item[''Qty_in'']', property: text, writeback: true}
+      layout_properties: {grid_position: 'GMQKNX,LKHVGA'}
+      name: in_jmlh
+      properties:
+        align: left
+        foreground: theme:Primary
+        hide_text: false
+        margin: [null, '0', null, null]
+        placeholder: Input Jumlah
+        type: number
+      type: TextBox
+    - components:
+      - name: show_intabel
+        properties: {item_template: inbound_edit.RowTemplate3}
+        type: RepeatingPanel
+      layout_properties: {grid_position: 'JCTLNP,PVSXLK'}
+      name: data_grid_1
+      properties:
+        columns:
+        - {data_key: ID, id: OZMCUU, title: ID}
+        - {data_key: Nama_Barang, id: UIWYHA, title: Nama Barang}
+        - {data_key: Tanggal_Masuk, id: CUWGIE, title: Tanggal Masuk}
+        - {data_key: Lokasi, id: ATPSYJ, title: Lokasi}
+        - {data_key: Qty_in, id: XSQWOE, title: Qty IN}
+        - {data_key: column_1, expand: false, id: GIZOMJ, title: '       Aksi', width: 103.7999267578125}
+      type: DataGrid
+    layout_properties: {slot: default}
+    name: column_panel_2
+    properties: {col_widths: '{"BKKNSQ":25,"LKHVGA":35,"JOLFYX":7,"ADRHHT":10,"VMANOG":15,"ZQILJY":15,"LJUQRT":10}'}
+    type: ColumnPanel
+  - components:
+    - layout_properties: {grid_position: 'TATSNN,ISBYVH'}
+      name: button_1
+      properties: {bold: true, icon: 'fa:inbox', role: null, text: Inbound}
+      type: Button
+    - layout_properties: {grid_position: 'CQBPRD,JNKCKY'}
+      name: button_2
+      properties: {bold: true, icon: 'fa:truck', text: Outbound}
+      type: Button
+    - layout_properties: {grid_position: 'KIBWJF,NTUQOL'}
+      name: button_4
+      properties: {bold: true, icon: 'fa:car', text: DDSM115}
+      type: Button
+    - layout_properties: {grid_position: 'XYNGIJ,STYSDR'}
+      name: button_3
+      properties: {background: '', bold: true, foreground: 'theme:Primary', icon: 'fa:sign-out', role: tonal-button, text: Keluar}
+      type: Button
+    layout_properties: {slot: left-nav}
+    name: column_panel_1
+    properties: {visible: true}
+    type: ColumnPanel
+  container:
+    properties: {background: 'theme:Tertiary Container', html: '@theme:standard-page.html', visible: true}
+    type: HtmlTemplate
+  custom_component: false
+  id: '1742544181738962913416283.1155'
+  is_package: true
+- class_name: inbound_edit.RowTemplate3
+  code: "from ._anvil_designer import RowTemplate3Template\nfrom anvil import *\nimport anvil.users\nimport anvil.server\nimport anvil.tables as tables\nimport anvil.tables.query as q\nfrom anvil.tables import app_tables\n\n\nclass RowTemplate3(RowTemplate3Template):\n  def __init__(self, **properties):\n    self.init_components(**properties)\n\n  def in_del_click(self, **event_args):\n      \"\"\"Fungsi ini dijalankan saat tombol hapus ditekan.\"\"\"\n      # Munculkan kotak konfirmasi ke pengguna\n      if confirm(\"Yakin ingin menghapus data ini?\"):\n          try:\n              # Panggil fungsi server untuk menghapus data \n              anvil.server.call(\"delete_inbound\", self.item)\n              \n              # Refresh tabel utama (form homepage) agar data ter-update\n              get_open_form().refresh_hometabel()\n              \n              # Tampilkan notifikasi berhasil\n              Notification(\"Data berhasil dihapus.\", style=\"success\").show()\n              \n              # Minta parent (tabel) untuk memicu event refresh agar data tampil baru\n              self.parent.raise_event(\"x-refresh_inbound\")\n          \n          except Exception as e:\n              # Tampilkan notifikasi error jika penghapusan gagal\n              Notification(f\"Gagal menghapus: {e}\", style=\"danger\").show()\n"
+  components:
+  - data_bindings:
+    - {code: 'self.item[''Lokasi''][''location'']', property: text, writeback: false}
+    layout_properties: {column: ATPSYJ}
+    name: label_1
+    properties: {}
+    type: Label
+  - event_bindings: {click: in_del_click}
+    layout_properties: {column: GIZOMJ}
+    name: in_del
+    properties: {foreground: '#ff0000', icon: 'fa:trash', role: tonal-button, text: ''}
+    type: Button
+  container:
+    properties: {visible: true}
+    type: DataRowPanel
+  id: '1744284944700710575641067.9088'
+  is_package: true
+- class_name: outbound_edit
+  code: |
+    from ._anvil_designer import outbound_editTemplate
+    from anvil import *
+    import anvil.users
+    import anvil.server
+    import anvil.tables as tables
+    import anvil.tables.query as q
+    from anvil.tables import app_tables
+
+    class outbound_edit(outbound_editTemplate):
+      def __init__(self, **properties):
+        # Inisialisasi komponen dan properti form
+        self.init_components(**properties)
+
+        # Ambil daftar nama barang unik dari tabel dan siapkan untuk dropdown
+        nama_list = list({row['Nama_Barang'] for row in app_tables.data_barang.search()})
+        self.categories = [(nama, nama) for nama in nama_list]  # Format (label, value)
+        self.out_pilbar.items = self.categories  # Isi dropdown dengan nama barang
+
+        # Tampilkan semua data barang berdasarkan urutan nomor ID
+        self.out_tabel.items = app_tables.data_barang.search(tables.order_by('No'))
+
+      def out_pilbar_change(self, **event_args):
+        """Dipanggil saat user memilih nama barang dari dropdown."""
+        selected_name = self.out_pilbar.selected_value  # Ambil nama barang yang dipilih
+        if selected_name:
+          rows = app_tables.data_barang.search(Nama_Barang=selected_name)  # Cari data berdasarkan nama
+          if rows:
+              # Urutkan berdasarkan tanggal masuk (FIFO)
+              sorted_rows = sorted(rows, key=lambda r: r['Tanggal_Masuk'])
+              earliest_row = sorted_rows[0]  # Ambil data masuk paling awal
+
+              # Simpan data yang dipilih ke dictionary item (untuk outbound)
+              self.item["ID"] = earliest_row["ID"]
+              self.item["Nama_Barang"] = earliest_row["Nama_Barang"]
+              self.item["Lokasi"] = earliest_row["Lokasi"]
+
+              # Tampilkan hanya barang yang akan dikeluarkan
+              self.out_tabel.items = [earliest_row]
+
+      def out_qty_enter_pressed(self, **event_args):
+        """Dipanggil saat user menekan Enter di field jumlah barang keluar."""
+        self.item["Qty_out"] = self.out_qty.text  # Simpan jumlah ke dictionary item
+        self.out_qty.set_event_handler('change', self.qty_changed)  # menambahkan event handler perubahan jumlah
+
+      def qty_changed(self, **event_args):
+        """Dipanggil saat nilai jumlah barang berubah."""
+        self.item["Qty_out"] = self.out_qty.text  # Update nilai jumlah ke item
+  components:
+  - components:
+    - components:
+      - event_bindings: {change: out_pilbar_change}
+        layout_properties: {grid_position: 'IWZATT,NVCVUX'}
+        name: out_pilbar
+        properties: {foreground: 'theme:Primary', include_placeholder: true, placeholder: Cari Barang}
+        type: DropDown
+      layout_properties: {grid_position: 'DFQQQG,VNQMDQ'}
+      name: column_panel_2
+      properties: {}
+      type: ColumnPanel
+    - components:
+      - data_bindings:
+        - {code: 'self.item[''Qty_out'']', property: text, writeback: true}
+        layout_properties: {grid_position: 'DZYNEF,KPGPIP'}
+        name: out_jmlh
+        properties: {foreground: 'theme:Primary', placeholder: Input Jumlah, type: number}
+        type: TextBox
+      layout_properties: {grid_position: 'DFQQQG,FNGXII'}
+      name: column_panel_3
+      properties: {}
+      type: ColumnPanel
+    - components:
+      - name: out_tabel
+        properties: {item_template: outbound_edit.RowTemplate2}
+        type: RepeatingPanel
+      layout_properties: {grid_position: 'SGDZTG,LDRVBS'}
+      name: data_grid_1
+      properties:
+        columns:
+        - {data_key: ID, id: XIQIGD, title: ID}
+        - {data_key: Nama_Barang, id: HAPFNF, title: Nama Barang}
+        - {data_key: Tanggal_Keluar, id: USLOSJ, title: Tanggal Keluar}
+        - {data_key: Lokasi, id: GNOHCE, title: Lokasi}
+        - {data_key: Qty_out, id: RTRPTX, title: Qty OUT}
+      type: DataGrid
+    layout_properties: {slot: default}
+    name: content_panel
+    properties: {col_widths: '{}'}
+    type: ColumnPanel
+  - layout_properties: {slot: nav-right}
+    name: navbar_links
+    properties: {}
+    type: FlowPanel
+  - layout_properties: {slot: title}
+    name: label_1
+    properties: {bold: true, foreground: 'theme:On Primary Container', italic: true, role: headline, text: AWG Inventory}
+    type: Label
+  - components:
+    - layout_properties: {grid_position: 'NXBRHI,XMCNHA'}
+      name: but_in
+      properties: {bold: true, icon: 'fa:inbox', role: null, text: Inbound}
+      type: Button
+    - layout_properties: {grid_position: 'WNKQWR,DIFDTM'}
+      name: but_out
+      properties: {bold: true, icon: 'fa:truck', text: Outbound}
+      type: Button
+    - layout_properties: {grid_position: 'PTUYGK,PMZBFI'}
+      name: button_1
+      properties: {bold: true, icon: 'fa:car', text: DDSM115}
+      type: Button
+    - layout_properties: {grid_position: 'JQAMBM,GSGAGU'}
+      name: but_klr
+      properties: {bold: true, foreground: 'theme:Primary', icon: 'fa:sign-out', role: tonal-button, text: Keluar}
+      type: Button
+    layout_properties: {slot: left-nav}
+    name: column_panel_1
+    properties: {}
+    type: ColumnPanel
+  container:
+    properties: {background: 'theme:Tertiary Container', html: '@theme:standard-page.html'}
+    type: HtmlTemplate
+  custom_component: false
+  id: '1742573246982839604337885.5807'
+  is_package: true
+- class_name: outbound_edit.RowTemplate2
+  code: |
+    from ._anvil_designer import RowTemplate2Template
+    from anvil import *
+    import anvil.users
+    import anvil.server
+    import anvil.tables as tables
+    import anvil.tables.query as q
+    from anvil.tables import app_tables
+
+
+    class RowTemplate2(RowTemplate2Template):
+      def __init__(self, **properties):
+        # Set Form properties and Data Bindings.
+        self.init_components(**properties)
+
+        # Any code you write here will run before the form opens.
+  components:
+  - data_bindings:
+    - {code: 'self.item[''Lokasi''][''location'']', property: text, writeback: false}
+    layout_properties: {column: GNOHCE}
+    name: label_1
+    properties: {}
+    type: Label
+  container: {type: DataRowPanel}
+  id: '1744275347095679435079258.3555'
+  is_package: true
+modules: []
+name: PKL WMS AWG
+native_deps: null
+package_name: PKL_WMS_AWG
+renamed: true
+runtime_options:
+  client_version: '3'
+  legacy_features: {__dict__: true, bootstrap3: true, class_names: true, root_container: true}
+  server_spec: {base: python310-standard, requirements: ''}
+  server_version: python3-sandbox
+  version: 3
+scripts: []
+server_modules:
+- code: "import anvil.users\nimport anvil.tables as tables\nimport anvil.tables.query as q\nimport pytz\nfrom anvil.tables import app_tables\nimport anvil.server\nfrom datetime import datetime\nimport string\n\n# ==================================\n# FUNGSI TAMBAH DATA MASUK (INBOUND)\n# ==================================\n@anvil.server.callable\ndef add_inbound(inbound_tab):\n  # Validasi data wajib\n  if not inbound_tab.get(\"Nama_Barang\") or inbound_tab.get(\"Qty_in\", 0) <= 0:\n    raise Exception(\"Data tidak lengkap\")\n\n  nama_barang = inbound_tab[\"Nama_Barang\"].strip().title()\n  tanggal_masuk = datetime.now().date()\n  tanggal_str = tanggal_masuk.strftime(\"%Y%m%d\")  # Format tanggal jadi string: YYYYMMDD\n\n  # Buat ID barang unik\n  prefix = generate_prefix(nama_barang)\n  barang_sama_hari_ini = app_tables.data_barang.search(\n    Nama_Barang=nama_barang,\n    Tanggal_Masuk=tanggal_masuk\n  )\n  urutan = len(barang_sama_hari_ini) + 1\n  id_barang = f\"{prefix}-{tanggal_str}-{urutan:03}\"  # Contoh: BARUO7-20250429-001\n\n  # Ambil lokasi dari barang lama atau input baru\n  existing_row = app_tables.data_barang.get(Nama_Barang=nama_barang)\n  if existing_row:\n    lokasi_input = existing_row[\"Lokasi\"]\n  else:\n    lokasi_input = inbound_tab.get(\"Lokasi\")\n    if isinstance(lokasi_input, str):\n      lokasi_input = app_tables.lokasi_inbound.get(location=lokasi_input.strip())\n      if not lokasi_input:\n        raise Exception(\"Lokasi tidak ditemukan.\")\n    else:\n      lokasi_input[\"location\"] = lokasi_input[\"location\"].strip()\n\n  total_entries = len(app_tables.data_barang.search()) + 1  # Buat nomor urut\n\n  # Tambahkan baris baru\n  app_tables.data_barang.add_row(\n    No=total_entries,\n    ID=id_barang,\n    Nama_Barang=nama_barang,\n    Lokasi=lokasi_input,\n    Tanggal_Masuk=tanggal_masuk,\n    Qty_in=inbound_tab.get(\"Qty_in\", 0),\n    Qty=inbound_tab.get(\"Qty_in\", 0)  # Qty awal sama dengan Qty_in\n  )\n\n# =======================\n# FUNGSI GENERATE PREFIX UNIK DARI NAMA BARANG\n# =======================\ndef generate_prefix(nama_barang):\n  nama_bersih = ''.join(filter(str.isalnum, nama_barang))  # Hapus simbol dan spasi\n  huruf_awal = nama_bersih[:3].upper()  # Tiga huruf pertama\n  vokal = next((c for c in nama_bersih if c.lower() in 'aeiou'), 'X').upper()  # Ambil vokal pertama\n  panjang = len(nama_bersih)  # Panjang nama\n  return f\"{huruf_awal}{vokal}{panjang}\"  # Contoh: BARUO7\n\n# =======================\n# FUNGSI TAMPILKAN DATA MASUK TERBARU\n# =======================\n@anvil.server.callable\ndef get_newinbound():\n  return app_tables.data_barang.search(tables.order_by(\"Tanggal_Masuk\", ascending=False))\n\n# =======================\n# FUNGSI CARI DATA DENGAN FILTER\n# =======================\n@anvil.server.callable\ndef search_data(keyword=None, tanggal=None, lokasi=None):\n  \"\"\"Mencari data berdasarkan nama barang, tanggal masuk, dan lokasi\"\"\"\n  query_conditions = {}\n  if keyword:\n    query_conditions[\"Nama_Barang\"] = q.ilike(f\"%{keyword}%\")\n  if tanggal:\n    query_conditions[\"Tanggal_Masuk\"] = tanggal\n  if lokasi:\n    query_conditions[\"Lokasi\"] = lokasi\n  return app_tables.data_barang.search(**query_conditions)\n\n# =======================\n# FUNGSI HAPUS DATA MASUK\n# =======================\n@anvil.server.callable\ndef delete_inbound(delinbound):\n  if not delinbound:\n    raise Exception(\"Data tidak lengkap\")\n\n  if app_tables.data_barang.has_row(delinbound):\n    delinbound.delete()\n\n    # Susun ulang urutan No setelah penghapusan\n    rows = app_tables.data_barang.search(tables.order_by(\"Tanggal_Masuk\"))\n    for index, row in enumerate(rows, start=1):\n      row[\"No\"] = index\n\n  return rows  # Return data terbaru\n\n# =======================\n# FUNGSI PROSES PENGELUARAN (OUTBOUND)\n# =======================\n@anvil.server.callable\ndef update_outbound(outbound_item):\n  nama_barang = outbound_item.get(\"Nama_Barang\")\n  qty_keluar = int(outbound_item.get(\"Qty_out\"))\n\n  if not nama_barang or qty_keluar <= 0:\n    raise ValueError(\"Data barang atau jumlah keluar tidak valid.\")\n\n    # Ambil stok barang sesuai FIFO\n  stok_rows = app_tables.data_barang.search(\n    tables.order_by(\"Tanggal_Masuk\"),\n    Nama_Barang=nama_barang,\n    Qty=q.greater_than(0)\n  )\n\n  if not stok_rows:\n    raise ValueError(\"Stok tidak ditemukan.\")\n\n  total_tersedia = sum(row['Qty'] for row in stok_rows)\n  if total_tersedia < qty_keluar:\n    raise ValueError(f\"Stok tidak mencukupi. Hanya tersedia {total_tersedia}\")\n\n  sisa_keluar = qty_keluar\n  for row in stok_rows:\n    if sisa_keluar <= 0:\n      break\n\n    stok_saat_ini = row['Qty']\n    if stok_saat_ini >= sisa_keluar:\n      row['Qty'] -= sisa_keluar\n      row['Qty_out'] = sisa_keluar  # Simpan jumlah keluar\n      row['Tanggal_Keluar'] = datetime.now().date()  # Simpan tanggal keluar\n      row.update()\n      sisa_keluar = 0\n    else:\n      row['Qty_out'] = stok_saat_ini\n      row['Tanggal_Keluar'] = datetime.now().date()\n      row['Qty'] = 0\n      row.update()\n      sisa_keluar -= stok_saat_ini\n\n    # Hapus baris yang Qty = 0 jika ingin, atau simpan riwayat\n  kosong_rows = app_tables.data_barang.search(Qty=0)\n  for row in kosong_rows:\n    if app_tables.data_barang.has_row(row):\n      row.delete()\n\n    # Susun ulang Nomer\n  rows = app_tables.data_barang.search(tables.order_by(\"Tanggal_Masuk\"))\n  for index, row in enumerate(rows, start=1):\n    row[\"No\"] = index\n\n@anvil.server.callable\ndef log_ddsm115_data(motor_id: int, set_rpm: int, feedback_rpm: int, feedback_arus: float):\n  \"\"\"\n    Mencatat data DDSM115 ke tabel 'data_ddsm115' di Anvil.\n    Menerima 'motor_id' sebagai argumen tambahan.\n    \"\"\"\n  # Set zona waktu ke Asia/Jakarta (WIB)\n  zona_wib = pytz.timezone(\"Asia/Jakarta\")\n  now = datetime.now(zona_wib)\n\n  app_tables.data_ddsm115.add_row(\n    Waktu=now,\n    Motor_ID=motor_id, # Tambahkan kolom ini jika belum ada di tabel\n    Set_RPM_Motor=set_rpm,\n    Feedback_RPM_Motor=feedback_rpm,\n    Feedback_Arus_Motor=feedback_arus\n  )\n\n@anvil.server.callable\ndef get_ddsm115_data():\n  return app_tables.data_ddsm115.search(tables.order_by(\"Waktu\", ascending=False))\n\n# ===== FUNGSI UNTUK LOG KONDISI AGV ===============\n\n@anvil.server.callable\ndef log_agv_kondisi(mode: str, keadaan: str, rpm_ka: int, rpm_ki: int):\n  \"\"\"\n  Mencatat kondisi AGV (mode, keadaan, dan RPM) ke dalam tabel kondisi_agv.\n  \"\"\"\n  zona_wib = pytz.timezone(\"Asia/Jakarta\")\n  now = datetime.now(zona_wib)\n\n  app_tables.kondisi_agv.add_row(\n    Waktu=now,\n    Mode=mode.title(),\n    Keadaan=keadaan.title(),\n    Rpmka=rpm_ka * -1, # BARU: Simpan RPM roda kanan\n    Rpmki=rpm_ki  # BARU: Simpan RPM roda kiri\n  )\n  # print(f\"Kondisi AGV Tercatat: Mode={mode}, Keadaan={keadaan}, RPM Ka={rpm_ka}, RPM Ki={rpm_ki}\") # Opsional debug\n\n# FUNGSI BARU: Untuk mendapatkan data tunggal terbaru\n@anvil.server.callable\ndef get_agvrpm_status():\n  \"\"\"\n  Mengambil HANYA SATU baris data kondisi AGV yang paling baru.\n  Ini lebih efisien untuk menampilkan status real-time.\n  \"\"\"\n  # Search, urutkan dari yang terbaru, dan ambil baris pertama [0]\n  latest_rows = app_tables.kondisi_agv.search(tables.order_by(\"Waktu\", ascending=False))\n\n  # Ambil baris pertama jika ada\n  latest_row = next(iter(latest_rows), None)\n  \n  if latest_row:\n    print(f\"Data yang ditemukan dan akan dikembalikan: Rpmka={latest_row['Rpmka']}, Rpmki={latest_row['Rpmki']}\") # PRINT 2\n  else:\n    print(\"Tidak ada baris data yang ditemukan oleh search, mengembalikan None.\") # PRINT 3\n\n  return latest_row\n\n@anvil.server.callable\ndef get_kondisi_agv():\n  \"\"\"\n  Mengambil semua data kondisi AGV, diurutkan dari yang terbaru.\n  Fungsi ini dipanggil oleh Form 'agv_posisi'.\n  \"\"\"\n  return app_tables.kondisi_agv.search(\n    tables.order_by(\"Waktu\", ascending=False)\n  )\n\n# =======================\n# FUNGSI UNTUK KONTROL MOTOR DDSM115 VIA ANVIL UPLINK\n# =======================\n\nMOTOR_ID_1 = 1  \nMOTOR_ID_2 = 2  \n\ndef get_motor_is_on_status():\n  \"\"\"Mengambil status 'motor_is_on' dari tabel App_Settings.\"\"\"\n  setting_row = app_tables.app_settings.get(Setting_Name='motor_is_on')\n  if setting_row:\n    return setting_row['Setting_Value']\n  print(\"WARNING: 'motor_is_on' setting not found. Defaulting to False.\")\n  return False\n\ndef set_motor_is_on_status(status: bool):\n  \"\"\"Mengatur status 'motor_is_on' di tabel App_Settings.\"\"\"\n  setting_row = app_tables.app_settings.get(Setting_Name='motor_is_on')\n  if setting_row:\n    setting_row.update(Setting_Value=status)\n  else:\n    app_tables.app_settings.add_row(Setting_Name='motor_is_on', Setting_Value=status)\n  print(f\"Motor status in Anvil Table set to: {status}\")\n\n# --- FUNGSI BARU UNTUK MENGATUR MODE AGV ---\n@anvil.server.callable\ndef set_agv_mode(mode: str):\n  \"\"\"\n  Mengatur mode operasi AGV (manual atau autonomous).\n  Memanggil fungsi di uplink untuk mengubah perilaku loop kontrol.\n  \"\"\"\n  # Periksa apakah motor ON sebelum masuk mode autonomous\n  if mode == \"autonomous\" and not get_motor_is_on_status():\n    raise Exception(\"Motor harus dalam keadaan ON untuk masuk mode Autonomos.\")\n\n  # Perintah yang valid adalah 'manual' atau 'autonomous'\n  if mode not in [\"manual\", \"autonomous\"]:\n    raise ValueError(\"Mode tidak valid. Gunakan 'manual' atau 'autonomous'.\")\n\n  try:\n    # Panggil fungsi di uplink client untuk mengganti mode\n    uplink_response = anvil.server.call(\"switch_mode_via_uplink\", mode)\n    print(f\"Uplink response for mode switch: {uplink_response}\")\n    return f\"AGV sekarang dalam mode: {mode.upper()}\"\n  except Exception as e:\n    print(f\"Error saat memanggil switch_mode_via_uplink: {e}\")\n    raise Exception(f\"Gagal mengubah mode AGV di uplink: {e}\")\n\n@anvil.server.callable\ndef kontrol_motor_on_off(perintah: str, motor_id: int = None):\n  try:\n    if perintah == \"off\":\n      anvil.server.call(\"set_agv_mode\", \"manual\")\n\n    if motor_id is None:\n      target_rpm_motor1 = -5 if perintah == \"on\" else 0\n      target_rpm_motor2 = 5 if perintah == \"on\" else 0\n      anvil.server.call(\"set_both_motor_rpms_via_uplink\", MOTOR_ID_1, target_rpm_motor1, MOTOR_ID_2, target_rpm_motor2)\n      set_motor_is_on_status(perintah == \"on\")\n      return f\"Semua motor diperintah {perintah.upper()}. Status: {'ON' if (perintah == 'on') else 'OFF'}.\"\n    else:\n      target_rpm = 5 if perintah == \"on\" else 0\n      if motor_id == MOTOR_ID_2:\n        target_rpm = target_rpm\n      anvil.server.call(\"set_motor_rpm_via_uplink\", motor_id, target_rpm)\n      return f\"Motor {motor_id} diperintah {perintah.upper()}.\"\n  except Exception as e:\n    print(f\"Error di kontrol_motor_on_off: {e}\")\n    if perintah == \"on\" and motor_id is None:\n      set_motor_is_on_status(False)\n    raise Exception(f\"Gagal mengontrol motor: {e}\")\n\n@anvil.server.callable\ndef kontrol_motor_arah(arah: str, rpm_maju_mundur: int = 15,\n                       rpm_belok_mka1: int = 5, rpm_belok_mki1: int = 10,\n                       rpm_belok_mka2: int = 10, rpm_belok_mki2: int = 5):\n\n  current_motor_status = get_motor_is_on_status()\n  if not current_motor_status and arah != \"stop\":\n    return \"Motor masih dalam keadaan OFF. Tekan tombol ON terlebih dahulu.\"\n  try:\n    rpm_motor1 = 0\n    rpm_motor2 = 0\n    perintah_str = \"\"\n    if arah == \"maju\":\n      rpm_motor1 = -rpm_maju_mundur\n      rpm_motor2 = rpm_maju_mundur\n      perintah_str = \"MAJU\"\n    elif arah == \"mundur\":\n      rpm_motor1 = rpm_maju_mundur\n      rpm_motor2 = -rpm_maju_mundur\n      perintah_str = \"MUNDUR\"\n    elif arah == \"kiri\":\n      rpm_motor1 = -rpm_belok_mki1\n      rpm_motor2 = -rpm_belok_mka1\n      perintah_str = \"BELOK KIRI\"\n    elif arah == \"kanan\":\n      rpm_motor1 = rpm_belok_mki2\n      rpm_motor2 = rpm_belok_mka2\n      perintah_str = \"BELOK KANAN\"\n    elif arah == \"stop\":\n      rpm_motor1 = 0\n      rpm_motor2 = 0\n      perintah_str = \"STOP\"\n      # Saat STOP, status motor tidak diubah menjadi OFF lagi\n      set_motor_is_on_status(False)\n    else:\n      raise ValueError(\"Arah tidak dikenali: \" + arah)\n    anvil.server.call(\"set_both_motor_rpms_via_uplink\", MOTOR_ID_1, rpm_motor1, MOTOR_ID_2, rpm_motor2)\n    return f\"Perintah: {perintah_str}\"\n  except Exception as e:\n    print(f\"Error di kontrol_motor_arah: {e}\")\n    raise Exception(f\"Gagal mengontrol arah motor: {e}\")\n"
+  id: '1742578574892425801399002.6559'
+  name: ServerModule1
+services:
+- client_config: {}
+  server_config: {}
+  source: /runtime/services/tables.yml
+- client_config: {allow_remember_me: false, allow_signup: false, confirm_email: false, enable_automatically: false, remember_me_days: 30, require_secure_passwords: false, use_email: true, use_token: false}
+  server_config: {user_table: users}
+  source: /runtime/services/anvil/users.yml
+startup: {module: homepage, type: form}
+startup_form: null
+theme:
+  assets:
+  - {content: PGxpbmsgaHJlZj0iaHR0cHM6Ly9mb250cy5nb29nbGVhcGlzLmNvbS9jc3M/ZmFtaWx5PVJvYm90bzozMDAsNDAwLDUwMCIgcmVsPSJzdHlsZXNoZWV0IiByZWw9InByZWxvYWQiIGFzPSJmb250IiBjcm9zc29yaWdpbj0iYW5vbnltb3VzIj4KCjxkaXYgY2xhc3M9InN0cnVjdHVyZSI+CiAgPGRpdiBjbGFzcz0iYXBwLWJhciIgYW52aWwtZHJvcC1jb250YWluZXI9Ii5hbnZpbC1jb250YWluZXIiIGFudmlsLWRyb3AtcmVkaXJlY3Q9Ii5wbGFjZWhvbGRlciI+CiAgICA8YSBjbGFzcz0ic2lkZWJhci10b2dnbGUiIGFudmlsLWlmLXNsb3QtZW1wdHk9InRvcC1sZWZ0LWJ0biIgYW52aWwtaGlkZS1pZi1zbG90LWVtcHR5PSJsZWZ0LW5hdiIgYW52aWwtZHJvcC1zbG90PSJ0b3AtbGVmdC1idG4iIGhyZWY9ImphdmFzY3JpcHQ6dm9pZCgwKSI+PGkgY2xhc3M9ImZhIGZhLWJhcnMiPjwvaT48L2E+CiAgICA8YSBjbGFzcz0ic2lkZWJhci10b2dnbGUgYW52aWwtZGVzaWduZXItb25seSIgYW52aWwtaWYtc2xvdC1lbXB0eT0idG9wLWxlZnQtYnRuIiBhbnZpbC1pZi1zbG90LWVtcHR5PSJsZWZ0LW5hdiIgYW52aWwtZHJvcC1zbG90PSJ0b3AtbGVmdC1idG4iPjxpIGNsYXNzPSJmYSBmYS1ibGFuayI+PC9pPjwvYT4KICAgIDxkaXYgY2xhc3M9InRvcC1sZWZ0LWJ0biIgYW52aWwtc2xvdD0idG9wLWxlZnQtYnRuIj48L2Rpdj4KICAgIDxkaXYgY2xhc3M9InRpdGxlIiBhbnZpbC1zbG90PSJ0aXRsZSI+CiAgICAgIDxkaXYgY2xhc3M9InBsYWNlaG9sZGVyIGFudmlsLWRlc2lnbmVyLW9ubHkiIGFudmlsLWlmLXNsb3QtZW1wdHk9InRpdGxlIiBhbnZpbC1kcm9wLWhlcmU+RHJvcCB0aXRsZSBoZXJlPC9kaXY+CiAgICA8L2Rpdj4KICAgIDxkaXYgY2xhc3M9ImFwcC1iYXItbmF2IiBhbnZpbC1zbG90PSJuYXYtcmlnaHQiPgogICAgICA8ZGl2IGNsYXNzPSJwbGFjZWhvbGRlciBhbnZpbC1kZXNpZ25lci1vbmx5IiBhbnZpbC1pZi1zbG90LWVtcHR5PSJuYXYtcmlnaHQiIGFudmlsLWRyb3AtaGVyZT5Ecm9wIGEgRmxvd1BhbmVsIGhlcmU8L2Rpdj4KICAgIDwvZGl2PgogICAgPGRpdiBzdHlsZT0iY2xlYXI6Ym90aCI+PC9kaXY+CiAgPC9kaXY+CgogIDxkaXYgY2xhc3M9Im5hdi1ob2xkZXIiPgogICAgPGRpdiBjbGFzcz0ibGVmdC1uYXYgYW52aWwtbWVhc3VyZS10aGlzIiBhbnZpbC1zbG90LXJlcGVhdD0ibGVmdC1uYXYiIGFudmlsLWRyb3AtY29udGFpbmVyPSI+LmFudmlsLWNvbnRhaW5lciI+CiAgICA8L2Rpdj4KICAgIDxkaXYgY2xhc3M9ImxlZnQtbmF2LXBsYWNlaG9sZGVyIGFudmlsLWRlc2lnbmVyLW9ubHkiIGFudmlsLWlmLXNsb3QtZW1wdHk9ImxlZnQtbmF2IiBhbnZpbC1kcm9wLXNsb3Q9ImxlZnQtbmF2Ij4KICAgICAgPGRpdiBjbGFzcz0icHJvbXB0Ij5UbyBhZGQgYSBzaWRlYmFyLCBkcm9wIGEgQ29sdW1uUGFuZWwgaGVyZS48L2Rpdj4KICAgIDwvZGl2PgogICAgCiAgICA8ZGl2IGNsYXNzPSJjb250ZW50Ij4KICAgICAgPGRpdiBhbnZpbC1zbG90LXJlcGVhdD0iZGVmYXVsdCIgY2xhc3M9ImFudmlsLW1lYXN1cmUtdGhpcyI+PC9kaXY+CiAgICAgIDxkaXYgY2xhc3M9InBsYWNlaG9sZGVyIGRyb3AtaGVyZSIgYW52aWwtaWYtc2xvdC1lbXB0eT0iZGVmYXVsdCIgYW52aWwtZHJvcC1zbG90PSJkZWZhdWx0Ij5Ecm9wIGEgQ29sdW1uUGFuZWwgaGVyZS48L2Rpdj4KICAgIDwvZGl2PgogIDwvZGl2PgoKICA8ZGl2IGNsYXNzPSJuYXYtc2hpZWxkIj48L2Rpdj4KPC9kaXY+CjxkaXYgYW52aWwtZHJvcC1kZWZhdWx0IGFudmlsLWRyb3AtcmVkaXJlY3Q9Ii5wbGFjZWhvbGRlciIgYW52aWwtZHJvcC1jb250YWluZXI9Ii5hbnZpbC1jb250YWluZXIiPjwvZGl2PgogCjxzY3JpcHQ+CiAgdmFyIGxuID0gJCgnLnN0cnVjdHVyZSA+IC5uYXYtaG9sZGVyID4gLmxlZnQtbmF2Jyk7CiAgdmFyIGxucCA9ICQoJy5zdHJ1Y3R1cmUgPiAubmF2LWhvbGRlciA+IC5sZWZ0LW5hdi1wbGFjZWhvbGRlcicpOwogIHZhciBhcHBCYXIgPSAkKCcuYXBwLWJhcicpWzBdOwogIAogIGZ1bmN0aW9uIGhpZGVTaWRlYmFyKCkgewogICAgbG4uYW5pbWF0ZSh7bGVmdDogLWxuLm91dGVyV2lkdGgoKX0sIGZ1bmN0aW9uKCkgewogICAgICBsbi5yZW1vdmVDbGFzcygiaW4tdHJhbnNpdGlvbiBzaG93biIpLmFkZENsYXNzKCJoaWRkZW4iKTsKICAgICAgJCgnLm5hdi1zaGllbGQnKS5yZW1vdmVDbGFzcygic2hvd24iKTsKICAgICAgJCh3aW5kb3cpLnRyaWdnZXIoJ3Jlc2l6ZScpOwogICAgfSk7CiAgICBpZiAod2luZG93LmlubmVyV2lkdGggPiA5OTgpIHsgCiAgICAgICQoJy5jb250ZW50JykuYW5pbWF0ZSh7J21hcmdpbi1sZWZ0JzowfSwgZnVuY3Rpb24oKXt9KQogICAgfQogIH0KICAKICBmdW5jdGlvbiBzaG93U2lkZWJhcigpIHsKICAgICQoJy5uYXYtc2hpZWxkJykuYWRkQ2xhc3MoInNob3duIik7CiAgICBsbi5hZGRDbGFzcygic2hvd24iKS5yZW1vdmVDbGFzcygiaGlkZGVuIikuY3NzKHtsZWZ0OiAiLTEwMCUifSkuY3NzKHtsZWZ0OiAtbG4ub3V0ZXJXaWR0aCgpfSkuYW5pbWF0ZSh7bGVmdDogMH0sIGZ1bmN0aW9uKCkgewogICAgICBsbi5yZW1vdmVDbGFzcygiaW4tdHJhbnNpdGlvbiIpOwogICAgfSk7CiAgICAkKHdpbmRvdykudHJpZ2dlcigncmVzaXplJyk7CiAgICBpZiAod2luZG93LmlubmVyV2lkdGggPiA5OTgpIHsKICAgICAgJCgnLmNvbnRlbnQnKS5hbmltYXRlKHsnbWFyZ2luLWxlZnQnOiBsbi5vdXRlcldpZHRoKCkudG9TdHJpbmcoKSArICdweCd9LCBmdW5jdGlvbigpe30pCiAgICB9IAogIH0KICAKICAkKCcuc2lkZWJhci10b2dnbGUsIC5uYXYtc2hpZWxkJykub2ZmKCdjbGljaycpLm9uKCdjbGljaycsIGZ1bmN0aW9uKCkgeyAKICAgIGlmIChsbi5pcygiOnZpc2libGUiKSB8fCAkKCcubmF2LXNoaWVsZCcpLmlzKCIuc2hvd24iKSkgewogICAgICBoaWRlU2lkZWJhcigpOwogICAgfSBlbHNlIGlmKCFsbi5pcygiOmVtcHR5IikpIHsKICAgICAgc2hvd1NpZGViYXIoKTsKICAgIH0KICB9KTsKICAkKCcubGVmdC1uYXYnKS5vZmYoJ2NsaWNrJykub24oJ2NsaWNrJywgJ2EsIGJ1dHRvbicsIGZ1bmN0aW9uKCkgewogICAgaWYgKCQoJy5uYXYtc2hpZWxkJykuaXMoIjp2aXNpYmxlIikpIHsKICAgICAgJCgnLm5hdi1zaGllbGQnKS50cmlnZ2VyKCdjbGljaycpOwogICAgfQogIH0pOwogIAogIGRvY3VtZW50LmFkZEV2ZW50TGlzdGVuZXIoJ3Njcm9sbCcsIGZ1bmN0aW9uKCkgewogICAgaWYgKGFwcEJhci5jbGFzc0xpc3QuY29udGFpbnMoJ3Njcm9sbGVkJykpIHsKICAgICAgaWYgKHdpbmRvdy5zY3JvbGxZID09PSAwKSB7CiAgICAgICAgYXBwQmFyLmNsYXNzTGlzdC5yZW1vdmUoJ3Njcm9sbGVkJykKICAgICAgfQogICAgfQogICAgZWxzZSB7CiAgICAgIGFwcEJhci5jbGFzc0xpc3QuYWRkKCdzY3JvbGxlZCcpCiAgICB9CiAgfSk7CgogIGZ1bmN0aW9uIGFkZE1hcmdpblRvQ29udGVudCgpIHsKICAgIC8vY2hlY2sgaWYgdGhlcmUgaXMgYSBmcmVlIGJhbm5lciBhbmQgc2V0IHRoZSB0b3AgbWFyZ2luIGFjY29yZGluaW5nbHkKICAgIGxldCB0b3BNYXJnaW47CiAgICBpZiAoJCgnI2FudmlsLWhlYWRlcicpLmNzcygnZGlzcGxheScpID09ICdibG9jaycpIHsKICAgICAgdG9wTWFyZ2luID0gYXBwQmFyLmNsaWVudEhlaWdodCArIDUwCiAgICB9IGVsc2UgewogICAgICB0b3BNYXJnaW4gPSBhcHBCYXIuY2xpZW50SGVpZ2h0CiAgICB9CiAgICAvL3RoZSBsZWZ0LW5hdi1wbGFjZWhvbGRlciBpbiB0aGUgZGVzaWduZXIgbmVlZHMgdG8gc2hpZnQgZG93biBmb3IgdGhlIGFwcCBiYXIKICAgIGxucC5jc3Moeyd0b3AnOiBhcHBCYXIuY2xpZW50SGVpZ2h0LnRvU3RyaW5nKCkgKyAncHgnfSkKCiAgICAvL2lmIHRoZSB3aW5kb3cgaXMgc21hbGwKICAgIGlmICh3aW5kb3cuaW5uZXJXaWR0aCA8IDk5OSkgewogICAgICAvL2lmIGluIEFudmlsIGRlc2lnbmVyCiAgICAgIGlmICh3aW5kb3cuYW52aWxJbkRlc2lnbmVyKSB7CiAgICAgICAgLy9hZGQgbGVmdCBtYXJnaW4gdG8gY29udGVudCB0byBtYWtlIHJvb20gZm9yIGxlZnQtbmF2IG9yIGxlZnQtbmF2LXBsYWNlaG9sZGVyCiAgICAgICAgJCgnLmNvbnRlbnQnKS5jc3MoeydtYXJnaW4tbGVmdCc6IE1hdGgubWF4KGxuLm91dGVyV2lkdGgoKSwgbG5wLm91dGVyV2lkdGgoKSkudG9TdHJpbmcoKSArICdweCd9KTsKICAgICAgICAkKCcuY29udGVudCcpLmNzcyh7J21hcmdpbi10b3AnOiBhcHBCYXIuY2xpZW50SGVpZ2h0LnRvU3RyaW5nKCkgKyAncHgnfSkKICAgICAgICBsbi5jc3Moeyd0b3AnOiB0b3BNYXJnaW4udG9TdHJpbmcoKSArICdweCd9KQogICAgICB9IGVsc2UgewogICAgICAgIC8vaWYgbm90IGluIEFudmlsIGRlc2lnbmVyLCBjb250ZW50IGdldHMgbm8gbGVmdCBtYXJnaW4gYmVjYXVzZSBsZWZ0LW5hdiB3aWxsIGJlIGEgbW9kYWwgb3ZlcmxheQogICAgICAgICQoJy5jb250ZW50JykuY3NzKHsnbWFyZ2luLWxlZnQnOiAnMHB4J30pOwogICAgICAgIGxuLmNzcyh7J3RvcCc6ICcwcHgnfSkKICAgICAgICAvL2FkZCB0b3AgbWFyZ2luIHRvIGNvbnRlbnQKICAgICAgICAkKCcuY29udGVudCcpLmNzcyh7J21hcmdpbi10b3AnOiB0b3BNYXJnaW4udG9TdHJpbmcoKSArICdweCd9KTsKICAgICAgfQogICAgfSBlbHNlIHsKICAgICAgLy9pZiB0aGUgd2luZG93IGlzIGJpZywgYWRkIG1hcmdpbiB0byBjb250ZW50IGFuZCBsZWZ0LW5hdiBmb3IgYXBwIGJhcgogICAgICAkKCcuY29udGVudCcpLmNzcyh7J21hcmdpbi10b3AnOiBhcHBCYXIuY2xpZW50SGVpZ2h0LnRvU3RyaW5nKCkgKyAncHgnfSk7CiAgICAgIGxuLmNzcyh7J3RvcCc6IHRvcE1hcmdpbi50b1N0cmluZygpICsgJ3B4J30pCiAgICAgIGlmICh3aW5kb3cuYW52aWxJbkRlc2lnbmVyKSB7CiAgICAgICAgLy9pZiBpbiB0aGUgZGVzaWduZXIsIGFkZCBsZWZ0IG1hcmdpbiBmb3IgZWl0aGVyIHRoZSBsZWZ0LW5hdiBvciB0aGUgcGxhY2Vob2xkZXIKICAgICAgICAkKCcuY29udGVudCcpLmNzcyh7J21hcmdpbi1sZWZ0JzogTWF0aC5tYXgobG4ub3V0ZXJXaWR0aCgpLCBsbnAub3V0ZXJXaWR0aCgpKS50b1N0cmluZygpICsgJ3B4J30pOwogICAgICB9IGVsc2UgewogICAgICAgIC8vaWYgbm90IGluIHRoZSBkZXNpZ25lciwgb25seSBhZGQgbWFyZ2luIGZvciB0aGUgbGVmdC1uYXYgYmVjYXVzZSBwbGFjZWhvbGRlciBzdGlsbCBoYXMgYSB3aWR0aCBvdXRzaWRlIG9mIGRlc2lnbmVyCiAgICAgICAgJCgnLmNvbnRlbnQnKS5jc3MoeydtYXJnaW4tbGVmdCc6IGxuLm91dGVyV2lkdGgoKSArICdweCd9KTsKICAgICAgfQogICAgfQogIH0KICAKICBhZGRNYXJnaW5Ub0NvbnRlbnQoKQogIHdpbmRvdy5hZGRFdmVudExpc3RlbmVyKCdyZXNpemUnLCBhZGRNYXJnaW5Ub0NvbnRlbnQpOwogCjwvc2NyaXB0Pg==, id: YJKQCZIOGJWRNZ5MZRABIXIEZCTNHFAD, name: standard-page.html}
+  - {content: LyoqCiBUaGlzIENTUyBpbXBsZW1lbnRzIHRoZSBNYXRlcmlhbCBEZXNpZ24gMyBsb29rIGFuZCBmZWVsIGZvciBBbnZpbCBhcHBzLgogKiovCgovKiBTdG9wIHBhbmVsLWNvbHMgY3V0dGluZyBvZmYgZHJvcCBzaGFkb3dzICovCi5hbnZpbC1wYW5lbC1jb2wgewogIHBhZGRpbmctYm90dG9tOiAxMHB4OwogIG1hcmdpbi1ib3R0b206IC0xMHB4Owp9CgoKLmFudmlsLXJvbGUtYmx1cnJlZCB7CiAgZmlsdGVyOiBibHVyKDRweCk7CiAgcG9pbnRlci1ldmVudHM6IG5vbmU7CiAgdHJhbnNpdGlvbjogZmlsdGVyIDAuM3MgZWFzZTsKfQoKLmFudmlsLXJvbGUtd2hpdGVfYmcgewogIGJhY2tncm91bmQtY29sb3I6ICNmZmZmZmYgIWltcG9ydGFudDsKICB0cmFuc2l0aW9uOiBiYWNrZ3JvdW5kLWNvbG9yIDAuNXMgZWFzZS1pbi1vdXQ7CiAgYmFja2Ryb3AtZmlsdGVyOiBub25lICFpbXBvcnRhbnQ7CiAgY29sb3I6ICMwMDAwMDAgIWltcG9ydGFudDsKfQoKCgouY29udGVudCA+IC5wbGFjZWhvbGRlciB7CiAgbWFyZ2luOiAxNnB4OwogIGNvbG9yOiAjODg4OwogIGZvbnQtc2l6ZTogMThweDsKICBvdXRsaW5lOiAxcHggZG90dGVkOwogIHBhZGRpbmc6IDE2cHg7CiAgdGV4dC1hbGlnbjogY2VudGVyOwp9CgovKiBQdXQgdGhpbmdzIG9uIGEgNHB4IGdyaWQgKG5vbmUgb2YgdGhpcyA3cHggbm9uc2Vuc2UpICovCi5oYXMtdGV4dCAuYW52aWwtY29tcG9uZW50LWljb24ubGVmdC1pY29uIHsgbWFyZ2luLXJpZ2h0OiA4cHg7IH0KLmhhcy10ZXh0IC5hbnZpbC1jb21wb25lbnQtaWNvbi5yaWdodC1pY29uIHsgbWFyZ2luLWxlZnQ6IDhweDsgfQoKYT4uYW52aWwtY29tcG9uZW50LWljb24ubGVmdF9lZGdlLWljb24sCmE+LmFudmlsLWNvbXBvbmVudC1pY29uLnJpZ2h0X2VkZ2UtaWNvbiwKLmFudmlsLWxhYmVsPi5hbnZpbC1jb21wb25lbnQtaWNvbi5sZWZ0X2VkZ2UtaWNvbiwKLmFudmlsLWxhYmVsPi5hbnZpbC1jb21wb25lbnQtaWNvbi5yaWdodF9lZGdlLWljb24gewogIHBhZGRpbmctdG9wOiA4cHg7CiAgcGFkZGluZy1ib3R0b206IDhweDsKfQouYW52aWwtbGFiZWw+LmxhYmVsLXRleHQsIGE+LmxpbmstdGV4dCB7CiAgcGFkZGluZy10b3A6IDhweDsKICBwYWRkaW5nLWJvdHRvbTogOHB4Owp9Ci5maWxlLWxvYWRlcj5sYWJlbCB7CiAgICBwYWRkaW5nOiA4cHg7Cn0KLmNoZWNrYm94IGxhYmVsLCAucmFkaW8gbGFiZWwgewogICAgcGFkZGluZy10b3A6IDhweDsgcGFkZGluZy1yaWdodDogOHB4OyBwYWRkaW5nLWJvdHRvbTogOHB4Owp9CgovKlRPRE86IHNlZSBpZiB0aGlzIHNwYWNpbmcgc3R1ZmYgbmVlZHMgdG8gYmUgY2hhbmdlZCovCi5hbnZpbC1zcGFjaW5nLWFib3ZlLW5vbmUgeyBtYXJnaW4tdG9wOiAwcHg7IH0KLmFudmlsLXNwYWNpbmctYWJvdmUtc21hbGwgeyBtYXJnaW4tdG9wOiA0cHg7IH0KLmFudmlsLXNwYWNpbmctYWJvdmUtbWVkaXVtIHsgbWFyZ2luLXRvcDogOHB4OyB9Ci5hbnZpbC1zcGFjaW5nLWFib3ZlLWxhcmdlIHsgbWFyZ2luLXRvcDogMTZweDsgfQouYW52aWwtc3BhY2luZy1iZWxvdy1ub25lIHsgbWFyZ2luLWJvdHRvbTogMHB4OyB9Ci5hbnZpbC1zcGFjaW5nLWJlbG93LXNtYWxsIHsgbWFyZ2luLWJvdHRvbTogNHB4OyB9Ci5hbnZpbC1zcGFjaW5nLWJlbG93LW1lZGl1bSB7IG1hcmdpbi1ib3R0b206IDhweDsgfQouYW52aWwtc3BhY2luZy1iZWxvdy1sYXJnZSB7IG1hcmdpbi1ib3R0b206IDE2cHg7IH0KCgouY29sLXBhZGRpbmcuY29sLXBhZGRpbmctdGlueSB7IHBhZGRpbmc6IDAgMnB4OyB9Ci5jb2x1bW4tcGFuZWwuY29sLXBhZGRpbmctdGlueSA+IC5hbnZpbC1wYW5lbC1zZWN0aW9uID4gLmFudmlsLXBhbmVsLXNlY3Rpb24tY29udGFpbmVyID4gLmFudmlsLXBhbmVsLXNlY3Rpb24tZ3V0dGVyIHsgbWFyZ2luOiAwIC0ycHg7IH0KCi5jb2wtcGFkZGluZy5jb2wtcGFkZGluZy1zbWFsbCB7IHBhZGRpbmc6IDAgNHB4OyB9Ci5jb2x1bW4tcGFuZWwuY29sLXBhZGRpbmctc21hbGwgPiAuYW52aWwtcGFuZWwtc2VjdGlvbiA+IC5hbnZpbC1wYW5lbC1zZWN0aW9uLWNvbnRhaW5lciA+IC5hbnZpbC1wYW5lbC1zZWN0aW9uLWd1dHRlciB7IG1hcmdpbjogMCAtNHB4OyB9CgouY29sLXBhZGRpbmcuY29sLXBhZGRpbmctbWVkaXVtIHsgcGFkZGluZzogMCA4cHg7IH0KLmNvbHVtbi1wYW5lbC5jb2wtcGFkZGluZy1tZWRpdW0gPiAuYW52aWwtcGFuZWwtc2VjdGlvbiA+IC5hbnZpbC1wYW5lbC1zZWN0aW9uLWNvbnRhaW5lciA+IC5hbnZpbC1wYW5lbC1zZWN0aW9uLWd1dHRlciB7IG1hcmdpbjogMCAtOHB4OyB9CgouY29sLXBhZGRpbmcuY29sLXBhZGRpbmctbGFyZ2UgeyBwYWRkaW5nOiAwIDEycHg7IH0KLmNvbHVtbi1wYW5lbC5jb2wtcGFkZGluZy1sYXJnZSA+IC5hbnZpbC1wYW5lbC1zZWN0aW9uID4gLmFudmlsLXBhbmVsLXNlY3Rpb24tY29udGFpbmVyID4gLmFudmlsLXBhbmVsLXNlY3Rpb24tZ3V0dGVyIHsgbWFyZ2luOiAwIC0xMnB4OyB9CgouY29sLXBhZGRpbmcuY29sLXBhZGRpbmctaHVnZSB7IHBhZGRpbmc6IDAgMjBweDsgfQouY29sdW1uLXBhbmVsLmNvbC1wYWRkaW5nLWh1Z2UgPiAuYW52aWwtcGFuZWwtc2VjdGlvbiA+IC5hbnZpbC1wYW5lbC1zZWN0aW9uLWNvbnRhaW5lciA+IC5hbnZpbC1wYW5lbC1zZWN0aW9uLWd1dHRlciB7IG1hcmdpbjogMCAtMjBweDsgfQoKLmZsb3ctcGFuZWwuZmxvdy1zcGFjaW5nLXRpbnkgPiAuZmxvdy1wYW5lbC1ndXR0ZXIgeyBtYXJnaW46IDAgLTJweDsgfQouZmxvdy1wYW5lbC5mbG93LXNwYWNpbmctdGlueSA+IC5mbG93LXBhbmVsLWd1dHRlciA+IC5mbG93LXBhbmVsLWl0ZW0geyAKICBtYXJnaW4tbGVmdDogMnB4OwogIG1hcmdpbi1yaWdodDogMnB4Owp9CgouZmxvdy1wYW5lbC5mbG93LXNwYWNpbmctc21hbGwgPiAuZmxvdy1wYW5lbC1ndXR0ZXIgeyBtYXJnaW46IDAgLTRweDsgfQouZmxvdy1wYW5lbC5mbG93LXNwYWNpbmctc21hbGwgPiAuZmxvdy1wYW5lbC1ndXR0ZXIgPiAuZmxvdy1wYW5lbC1pdGVtIHsgCiAgbWFyZ2luLWxlZnQ6IDRweDsKICBtYXJnaW4tcmlnaHQ6IDRweDsKfQoKLmZsb3ctcGFuZWwuZmxvdy1zcGFjaW5nLW1lZGl1bSA+IC5mbG93LXBhbmVsLWd1dHRlciB7IG1hcmdpbjogMCAtOHB4OyB9Ci5mbG93LXBhbmVsLmZsb3ctc3BhY2luZy1tZWRpdW0gPiAuZmxvdy1wYW5lbC1ndXR0ZXIgPiAuZmxvdy1wYW5lbC1pdGVtIHsgCiAgbWFyZ2luLWxlZnQ6IDhweDsKICBtYXJnaW4tcmlnaHQ6IDhweDsKfQoKLmZsb3ctcGFuZWwuZmxvdy1zcGFjaW5nLWxhcmdlID4gLmZsb3ctcGFuZWwtZ3V0dGVyIHsgbWFyZ2luOiAwIC0xMnB4OyB9Ci5mbG93LXBhbmVsLmZsb3ctc3BhY2luZy1sYXJnZSA+IC5mbG93LXBhbmVsLWd1dHRlciA+IC5mbG93LXBhbmVsLWl0ZW0geyAKICBtYXJnaW4tbGVmdDogMTJweDsKICBtYXJnaW4tcmlnaHQ6IDEycHg7Cn0KCi5mbG93LXBhbmVsLmZsb3ctc3BhY2luZy1odWdlID4gLmZsb3ctcGFuZWwtZ3V0dGVyIHsgbWFyZ2luOiAwIC0yMHB4OyB9Ci5mbG93LXBhbmVsLmZsb3ctc3BhY2luZy1odWdlID4gLmZsb3ctcGFuZWwtZ3V0dGVyID4gLmZsb3ctcGFuZWwtaXRlbXsgCiAgbWFyZ2luLWxlZnQ6IDIwcHg7CiAgbWFyZ2luLXJpZ2h0OiAyMHB4Owp9CgoKLyogVHlwb2dyYXBoeSAqLwpib2R5IHsKICBmb250LWZhbWlseTogUm9ib3RvLCBOb3RvLCBBcmlhbCwgc2Fucy1zZXJpZjsKICBmb250LXNpemU6IDE0cHg7CiAgbGluZS1oZWlnaHQ6IDEuNDI4NjsKICBjb2xvcjogJWNvbG9yOk9uIFN1cmZhY2UlOwogIGJhY2tncm91bmQtY29sb3I6ICVjb2xvcjpCYWNrZ3JvdW5kJTsKICBtaW4taGVpZ2h0OiBjYWxjKDEwMHZoIC0gNTZweCkKfQoKQG1lZGlhIHByaW50IHsKICBib2R5IHsKICAgIGJhY2tncm91bmQtY29sb3I6IHdoaXRlOwogIH0KfQoKYSwgYTpmb2N1cyB7CiAgdGV4dC1kZWNvcmF0aW9uOiBub25lOwogIGNvbG9yOiAlY29sb3I6UHJpbWFyeSU7Cn0KCmE6aG92ZXIsIGE6YWN0aXZlIHsKY29sb3I6ICVjb2xvcjpPbiBQcmltYXJ5IENvbnRhaW5lciU7Cn0KCi5hbnZpbC1yb2xlLWRpc3BsYXkgewogIGZvbnQtc2l6ZTogNTdweDsKICBsaW5lLWhlaWdodDogNjRweDsKICBmb250LXdlaWdodDogNDAwOwp9CgouYW52aWwtcm9sZS1oZWFkbGluZSB7CiAgZm9udC1zaXplOiAzMnB4OwogIGxpbmUtaGVpZ2h0OiA0MHB4OwogIGZvbnQtd2VpZ2h0OiA0MDA7Cn0KCi5hbnZpbC1yb2xlLXRpdGxlIHsKICBmb250LXNpemU6IDIycHg7CiAgbGluZS1oZWlnaHQ6IDI4cHg7CiAgZm9udC13ZWlnaHQ6IDUwMDsKfQoKLmFudmlsLXJvbGUtYm9keSB7CiAgZm9udC1zaXplOiAxNHB4OwogIGxpbmUtaGVpZ2h0OiAyMHB4OwogIGZvbnQtd2VpZ2h0OiA0MDA7Cn0KCi5hbnZpbC1yb2xlLWlucHV0LXByb21wdCB7CiAgZm9udC1zaXplOiAxNnB4OwogIGxpbmUtaGVpZ2h0OiAxLjU7Cn0KCi5hbnZpbC1yb2xlLWJvZHkgPiAubGFiZWwtdGV4dCwgLmFudmlsLXJvbGUtYm9keSAubGluay10ZXh0IHsKICBwYWRkaW5nLXRvcDogMDsKICBwYWRkaW5nLWJvdHRvbTogMDsKfQoKLyogUGFnZSBzdHJ1Y3R1cmU6IEFwcCBiYXIgd2l0aCBvcHRpb25hbCBsZWZ0IG5hdiAqLwouc3RydWN0dXJlIHsKLyogICBkaXNwbGF5OiBmbGV4OwogIGZsZXgtZGlyZWN0aW9uOiBjb2x1bW47ICovCiAgbWluLWhlaWdodDogMTAwdmg7CiAgbWluLWhlaWdodDogY2FsYygxMDB2aCAtICVhbnZpbC1iYW5uZXItaGVpZ2h0JSk7Ci8qICAgaGVpZ2h0OiAwOyAvKiBUbyBtYWtlIGZsZXgtZ3JvdyB3b3JrIGluIElFICovCn0KCi8qIEhvd2V2ZXIsIHRoaXMgYnJlYWtzIHRoZSBkZXNpZ25lcidzIGhlaWdodCBtZWFzdXJlbWVudC4gSUUgaXNuJ3Qgc3VwcG9ydGVkIGZvciB0aGUgZGVzaWduZXIsIHNvIHNldCBpdCBiYWNrLiAqLwouZGVzaWduZXIgLnN0cnVjdHVyZSB7CiAgaGVpZ2h0OiBpbml0aWFsOwp9CgouYXBwLWJhciB7CiAgei1pbmRleDogMTAwMDsKICBwb3NpdGlvbjogZml4ZWQ7CiAgdG9wOiAwOwogIHRvcDogJWFudmlsLWJhbm5lci1oZWlnaHQlOwogIHJpZ2h0OiAwOwogIGxlZnQ6IDA7Ci8qICAgZmxleDogMCAwOwogIGZsZXgtYmFzaXM6IGF1dG87CiAgZmxleC1iYXNpczogY29udGVudDsgKi8KfQoKLm5hdi1ob2xkZXIgewogIGRpc3BsYXk6IGZsZXg7Ci8qICAgZmxleC1ncm93OiAxOwogIG92ZXJmbG93LXk6IGluaXRpYWw7ICovCn0KCkBtZWRpYSBwcmludCB7CiAgLm5hdi1ob2xkZXIgewogICAgb3ZlcmZsb3cteTogaW5pdGlhbDsKICB9Cn0KCgovKiBNb2JpbGUgYW5kIGRlc2t0b3AgbWFyZ2lucyBmb3IgY29udGVudCAqLwouY29udGVudCA+ICogPiAuYW52aWwtY29udGFpbmVyIHsKICBwYWRkaW5nOiA4cHg7Cn0KCkBtZWRpYShtaW4td2lkdGg6OTkxcHgpIHsKICAuY29udGVudCA+ICogPiAuYW52aWwtY29udGFpbmVyIHsKICAgIHBhZGRpbmc6IDE2cHggMjRweDsKICB9Cn0KCi5jb250ZW50IC5hbnZpbC1tZWFzdXJlLXRoaXMgewogIHBhZGRpbmctYm90dG9tOiAxcHg7IC8qIFByZXZlbnQgbWFyZ2luIGNvbGxhcHNlIG1lc3NpbmcgdXAgZW1iZWRkaW5nICovCn0KCi8qIEFsbG93IG92ZXJmbG93cyB0byBzaG93IGRyb3Agc2hhZG93cyBpbiBDb2x1bW5QYW5lbHMKICAgVGhpcyBjYW4gY3JlYXRlIHVud2FudGVkIHNjcm9sbGJhcnM7IHdlIGNvbXBlbnNhdGUgZm9yIHRoaXMgYXQgdGhlIHRvcCBsZXZlbCB3aXRoIC5uYXYtaG9sZGVyIC5jb250ZW50IHtvdmVyZmxvdy14OiBoaWRkZW47fQoqLwouYW52aWwtY29udGFpbmVyLW92ZXJmbG93IHsKICBvdmVyZmxvdy14OiB2aXNpYmxlOwogIG92ZXJmbG93LXk6IHZpc2libGU7Cn0KCi8qIERlc2t0b3A6IE5hdiBiYXIgcGlubmVkICovCgoubmF2LWhvbGRlciB7CiAgZGlzcGxheTogZmxleDsKICBmbGV4LWRpcmVjdGlvbjogcm93Owp9CgoubmF2LWhvbGRlciAubGVmdC1uYXYgewogIHBvc2l0aW9uOiBmaXhlZDsKLyogICB0b3A6IDA7ICovCiAgbGVmdDogMDsKICBmbGV4LXNocmluazogMDsKICBtaW4td2lkdGg6IDI0MHB4OwogIG1heC13aWR0aDogNDAwcHg7Cn0KCi5uYXYtc2hpZWxkIHsKICBkaXNwbGF5OiBub25lOwp9CgovKiBNb2JpbGU6IE5hdiBiYXIgaXMgYSBtb2RhbCBvdmVybGF5ICovCgpAbWVkaWEobWF4LXdpZHRoOjk5OHB4KSB7CiAgaHRtbDpub3QoLmRlc2lnbmVyKSAubmF2LWhvbGRlciB7CiAgICBkaXNwbGF5OiBibG9jazsKICB9CiAgaHRtbDpub3QoLmRlc2lnbmVyKSAubmF2LWhvbGRlciAubGVmdC1uYXYgewogICAgdG9wOiAwOwogICAgYm90dG9tOiAwOwogICAgd2lkdGg6IGNhbGMoMTAwJSAtIDU2cHgpOwogICAgbWF4LXdpZHRoOiAzNjBweDsKICAgIHotaW5kZXg6IDM7CiAgICBib3JkZXItcmlnaHQ6IG5vbmU7CiAgICBib3JkZXItcmFkaXVzOiAwIDIwcHggMjBweCAwOwogIC8qIDE2ZHAgKi8gYm94LXNoYWRvdzogMCAxNnB4IDI0cHggMnB4IHJnYmEoMCwgMCwgMCwgMC4xNCksIDAgNnB4IDMwcHggNXB4IHJnYmEoMCwgMCwgMCwgMC4xMiksIDAgOHB4IDEwcHggLTVweCByZ2JhKDAsIDAsIDAsIDAuMik7CgogICAgZGlzcGxheTogbm9uZTsKICAgIHRyYW5zaXRpb246IHJpZ2h0IDAuNXM7CiAgICBoZWlnaHQ6IDEwMCU7CiAgfQogIAogIGh0bWw6bm90KC5kZXNpZ25lcikgLm5hdi1ob2xkZXIgLmxlZnQtbmF2LnNob3duIHsKICAgIGRpc3BsYXk6IGJsb2NrOwogIH0KICAubmF2LXNoaWVsZC5zaG93biB7CiAgICBkaXNwbGF5OiBibG9jazsKICAgIHBvc2l0aW9uOiBmaXhlZDsKICAgIHRvcDogMDsKICAgIGJvdHRvbTogMDsKICAgIGxlZnQ6IDA7CiAgICByaWdodDogMDsKICAgIHotaW5kZXg6IDI7CiAgICBiYWNrZ3JvdW5kLWNvbG9yOiByZ2JhKDAsMCwwLDAuMik7CiAgfQogfQoKLm5hdi1ob2xkZXIgLmxlZnQtbmF2LCAubGVmdC1uYXYtcGxhY2Vob2xkZXIgewogIGRpc3BsYXk6IGZsZXg7CiAgZmxleC1kaXJlY3Rpb246IGNvbHVtbjsKICBiYWNrZ3JvdW5kOiBsaW5lYXItZ3JhZGllbnQoMGRlZywgJWNvbG9yOlByaW1hcnkgT3ZlcmxheSAxJSwgJWNvbG9yOlByaW1hcnkgT3ZlcmxheSAxJSksICVjb2xvcjpCYWNrZ3JvdW5kJTsKLyogICBib3JkZXItcmlnaHQ6IDFweCBzb2xpZCAjZTBlMGUwOyAqLwogIGZvbnQtc2l6ZTogMTRweDsKICBmb250LXdlaWdodDogNTAwOwogIGNvbG9yOiAlY29sb3I6T24gU3VyZmFjZSBWYXJpYW50JTsKICBvdmVyZmxvdy14OiBoaWRkZW47CiAgb3ZlcmZsb3cteTogYXV0bzsKICBwb3NpdGlvbjogZml4ZWQ7Ci8qICAgdG9wOiA1NHB4OyAqLwogIGhlaWdodDogY2FsYygxMDAlIC0gNTRweCk7IC8qdG9kbzogZml4IG9uIG1vYmlsZSovCn0KCgoubGVmdC1uYXYtcGxhY2Vob2xkZXIgewogIGRpc3BsYXk6IGJsb2NrOwogIHBhZGRpbmc6IDhweDsKICBsaW5lLWhlaWdodDogMTsKICB3aWR0aDogNThweDsKfQoubGVmdC1uYXYtcGxhY2Vob2xkZXIgLnByb21wdCB7CiAgZGlzcGxheTogaW5saW5lLWJsb2NrOwogIHdoaXRlLXNwYWNlOiBub3dyYXA7CiAgdHJhbnNmb3JtOiB0cmFuc2xhdGUoLTUwJSwwKSByb3RhdGUoLTkwZGVnKSB0cmFuc2xhdGUoLTUwJSwwKSB0cmFuc2xhdGUoMTVweCwxNnB4KTsKICBwYWRkaW5nOiAxNnB4IDE2cHg7CiAgY29sb3I6ICM4ODg7CiAgb3V0bGluZTogMXB4IGRvdHRlZCAjODg4OwogIHZpc2liaWxpdHk6IGhpZGRlbjsKfQouYW52aWwtaGlnaGxpZ2h0IC5sZWZ0LW5hdi1wbGFjZWhvbGRlciAucHJvbXB0IHsKICB2aXNpYmlsaXR5OiB2aXNpYmxlOwp9CgoubGVmdC1uYXYgPiAuY29sdW1uLXBhbmVsIHsKICBwYWRkaW5nOiAyNHB4IDA7Cn0KLmxlZnQtbmF2ID4gLmNvbHVtbi1wYW5lbCA+IC5hbnZpbC1wYW5lbC1zZWN0aW9uID4gLmFudmlsLXBhbmVsLXNlY3Rpb24tY29udGFpbmVyOm5vdCguZnVsbC13aWR0aC1yb3cpIHsKICBtYXJnaW46IDAgMTZweDsKICB3aWR0aDogaW5pdGlhbDsKICBtYXgtd2lkdGg6IGluaXRpYWw7CiAgb3ZlcmZsb3cteDogdmlzaWJsZTsKfQoubGVmdC1uYXYgPiAuY29sdW1uLXBhbmVsID4gLmFudmlsLXBhbmVsLXNlY3Rpb246Zmlyc3QtY2hpbGQgPiAuYW52aWwtcGFuZWwtc2VjdGlvbi1jb250YWluZXIuZnVsbC13aWR0aC1yb3cgewogIG1hcmdpbi10b3A6IC0yNHB4Owp9Ci5sZWZ0LW5hdiA+IC5jb2x1bW4tcGFuZWwgPiAuYW52aWwtcGFuZWwtc2VjdGlvbiA+IC5hbnZpbC1wYW5lbC1zZWN0aW9uLWNvbnRhaW5lciA+IC5hbnZpbC1wYW5lbC1zZWN0aW9uLWd1dHRlciA+IC5hbnZpbC1wYW5lbC1yb3cgPiAuYW52aWwtcGFuZWwtY29sIHsKICBvdmVyZmxvdy14OiB2aXNpYmxlOwp9CgovKiBNYWtlIGFsbCB0aGUgc2lkZWJhciBpY29ucyBsb29rIG5pY2UgKi8KCi5sZWZ0LW5hdiAuYW52aWwtY29tcG9uZW50LWljb24ubGVmdC1pY29uIHsKICB3aWR0aDogMDsKICBtYXJnaW4tcmlnaHQ6IDI0cHg7CiAgcG9zaXRpb246IHJlbGF0aXZlOwp9CgoubGVmdC1uYXYgLmFudmlsLWNvbXBvbmVudC1pY29uLmxlZnRfZWRnZS1pY29uLCAubGVmdC1uYXYgLmFudmlsLWNvbXBvbmVudC1pY29uLnJpZ2h0X2VkZ2UtaWNvbiB7CiAgbGVmdDogMTZweDsKICBwYWRkaW5nLXRvcDogMnB4OwogIHdpZHRoOiAwOwp9CgoubGVmdC1uYXYgLmFudmlsLWNvbXBvbmVudC1pY29uLnJpZ2h0X2VkZ2UtaWNvbiB7CiAgbGVmdDogaW5pdGlhbDsKICByaWdodDogMTZweDsKICB0b3A6IDA7CiAgcGFkZGluZy10b3A6IDJweDsKfQoKLyogU2lkZWJhciBsaW5rcyAoYW5kIGxhYmVscyB3aXRoIGVkZ2UgaWNvbnMpIGdvICsxNnB4IHdpZGVyCiAgIChUb3AtbGV2ZWwgY29sdW1ucyBpbiBDb2x1bW5QYW5lbHMgZ2V0IG92ZXJmbG93LXggdmlzaWJsZSBbc2VlIGFib3ZlXXRvIGVuYWJsZSB0aGlzKQoqLwoKLmxlZnQtbmF2IGEsIC5sZWZ0LW5hdiAuYW52aWwtbGFiZWwsIC5sZWZ0LW5hdiAuYW52aWwtbGFiZWwubGVmdF9lZGdlLWljb24sIC5sZWZ0LW5hdiAuYW52aWwtbGFiZWwucmlnaHRfZWRnZS1pY29uIHsKICBjb2xvcjogJWNvbG9yOk9uIFN1cmZhY2UgVmFyaWFudCU7CiAgbWFyZ2luOiAwIC04cHg7CiAgcGFkZGluZzogNHB4IDE2cHg7CiAgYm9yZGVyLXJhZGl1czogMTAwcHg7Cn0KCi5sZWZ0LW5hdiAuYW52aWwtY29tcG9uZW50LmxlZnRfZWRnZS1pY29uIHsKICBwYWRkaW5nLWxlZnQ6IDcycHg7Cn0KCi5sZWZ0LW5hdiBhOmhvdmVyLCAuYXBwLWJhciBhOmhvdmVyLCAuYXBwLWJhciBhOmFjdGl2ZSB7CiAgYmFja2dyb3VuZDogbGluZWFyLWdyYWRpZW50KDBkZWcsICVjb2xvcjpEYXJrIE92ZXJsYXkgMSUsICVjb2xvcjpEYXJrIE92ZXJsYXkgMSUpLCBsaW5lYXItZ3JhZGllbnQoMGRlZywgJWNvbG9yOlByaW1hcnkgT3ZlcmxheSAxJSwgJWNvbG9yOlByaW1hcnkgT3ZlcmxheSAxJSksICVjb2xvcjpCYWNrZ3JvdW5kJTsKICBvcGFjaXR5OiAxMDAlOwp9CgoubGVmdC1uYXYgYS5hbnZpbC1yb2xlLXNlbGVjdGVkLCAuYXBwLWJhciBhLmFudmlsLXJvbGUtc2VsZWN0ZWQgIHsKICBiYWNrZ3JvdW5kLWNvbG9yOiAlY29sb3I6U2Vjb25kYXJ5IENvbnRhaW5lciU7CiAgY29sb3I6ICVjb2xvcjpPbiBTZWNvbmRhcnkgQ29udGFpbmVyJTsKfQoKLmxlZnQtbmF2IGEuYW52aWwtcm9sZS1zZWxlY3RlZDpob3ZlciwgLmFwcC1iYXIgYS5hbnZpbC1yb2xlLXNlbGVjdGVkOmhvdmVyIHsKICBiYWNrZ3JvdW5kOiBsaW5lYXItZ3JhZGllbnQoMGRlZywgJWNvbG9yOkRhcmsgT3ZlcmxheSAxJSwgJWNvbG9yOkRhcmsgT3ZlcmxheSAxJSksICVjb2xvcjpTZWNvbmRhcnkgQ29udGFpbmVyJTsKfQoKLmRlc2lnbmVyIC5uYXYtaG9sZGVyIC5sZWZ0LW5hdiB7CiAgbWluLXdpZHRoOiA1NnB4Owp9CgouZGVzaWduZXIgLm5hdi1ob2xkZXIgLmxlZnQtbmF2ID4gLmFudmlsLWNvbXBvbmVudCB7CiAgbWluLXdpZHRoOiAxNjBweDsKfQoKLm5hdi1ob2xkZXIgLmxlZnQtbmF2ID4gLmFudmlsLWNvbXBvbmVudCB7CiAgbWFyZ2luLXRvcDogMDsKICBtYXJnaW4tYm90dG9tOiAwOwp9CgoubmF2LWhvbGRlciB7CiAgZmxleDogMTsKfQoKLmNvbnRlbnQgewogIGZsZXg6IDE7CiAgb3ZlcmZsb3cteDogaGlkZGVuOwp9CgovKiBDb21wb25lbnRzOiBBcHAgQmFyICovCi5hcHAtYmFyIHsKICBtaW4taGVpZ2h0OiA1NnB4OwogIHBhZGRpbmc6IDAgMTZweCAwIDcycHg7CiAgcG9zaXRpb246IGZpeGVkOwogIHdpZHRoOiAxMDAlOwogIAogIGxpbmUtaGVpZ2h0OiA0MHB4OwogIGZvbnQtc2l6ZTogMjBweDsKCiAgYmFja2dyb3VuZC1jb2xvcjogJWNvbG9yOlN1cmZhY2UlOwogIHRyYW5zaXRpb246IGJhY2tncm91bmQtY29sb3IgMjUwbXM7CiAgLXdlYmtpdC10cmFuc2l0aW9uOiBiYWNrZ3JvdW5kLWNvbG9yIDI1MG1zOwogIC1tb3otdHJhbnNpdGlvbjogYmFja2dyb3VuZC1jb2xvciAyNTBtczsKICAtby10cmFuc2l0aW9uOiBiYWNrZ3JvdW5kLWNvbG9yIDI1MG1zOwogIAogIHotaW5kZXg6IDE7Cn0KCi5hcHAtYmFyLnNjcm9sbGVkIHsKICBiYWNrZ3JvdW5kOiBsaW5lYXItZ3JhZGllbnQoMGRlZywgJWNvbG9yOlByaW1hcnkgT3ZlcmxheSAyJSwgJWNvbG9yOlByaW1hcnkgT3ZlcmxheSAyJSksICVjb2xvcjpCYWNrZ3JvdW5kJTsKICB0cmFuc2l0aW9uOiBiYWNrZ3JvdW5kIDI1MG1zOwogIC13ZWJraXQtdHJhbnNpdGlvbjogYmFja2dyb3VuZCAyNTBtczsKICAtbW96LXRyYW5zaXRpb246IGJhY2tncm91bmQgMjUwbXM7CiAgLW8tdHJhbnNpdGlvbjogYmFja2dyb3VuZCAyNTBtczsKfQoKLmFwcC1iYXIgLmFudmlsLWNvbXBvbmVudCB7CiAgbWFyZ2luLXRvcDogMDsKICBtYXJnaW4tYm90dG9tOiAwOwp9CgouYXBwLWJhciA+IC5zaWRlYmFyLXRvZ2dsZSB7IGRpc3BsYXk6YmxvY2s7IGZsb2F0OmxlZnQ7ICBtYXJnaW4tbGVmdDogLTYxcHg7IH0KLmFwcC1iYXIgPiAudG9wLWxlZnQtYnRuIHsgZmxvYXQ6IGxlZnQ7IG1hcmdpbi1sZWZ0OiAtNjBweDsgbWFyZ2luLXJpZ2h0OiAtNDBweDsgfQouYXBwLWJhciA+IC50aXRsZSB7IGZsb2F0OiBsZWZ0OyB9Ci5hcHAtYmFyID4gLnRpdGxlID4gLnBsYWNlaG9sZGVyIHsgb3V0bGluZTogMXB4IGRvdHRlZDsgcGFkZGluZy1sZWZ0OiAxNnB4OyBwYWRkaW5nLXJpZ2h0OiAxNnB4OyBtYXJnaW46IDhweCA4cHggMDsgZGlzcGxheTpub25lOyB9Ci5hcHAtYmFyID4gLmFwcC1iYXItbmF2IHsgZmxvYXQ6IHJpZ2h0OyBmb250LXdlaWdodDogbm9ybWFsOyB9Ci5hcHAtYmFyID4gLmFwcC1iYXItbmF2IC5wbGFjZWhvbGRlciB7IG1hcmdpbi10b3A6IDhweDsgcGFkZGluZzogMCA4cHg7IH0KLmFudmlsLWhpZ2hsaWdodCAuYXBwLWJhciA+IC5hcHAtYmFyLW5hdiAucGxhY2Vob2xkZXIgeyBvdXRsaW5lOiAxcHggZG90dGVkICNjY2M7IH0KLmFudmlsLWhpZ2hsaWdodCAuYXBwLWJhciA+IC50aXRsZSA+IC5wbGFjZWhvbGRlciB7IGRpc3BsYXk6YmxvY2s7IH0KCi5hcHAtYmFyIGEsIC5hcHAtYmFyIC5hbnZpbC1jb21wb25lbnQgewogIGRpc3BsYXk6IGJsb2NrOwogIGNvbG9yOiAlY29sb3I6T24gU3VyZmFjZSU7CiAgbGluZS1oZWlnaHQ6IDMwcHg7CiAgbWluLXdpZHRoOiAzMHB4OwogIG1pbi1oZWlnaHQ6IDMwcHg7CiAgbWFyZ2luOiA1cHggNHB4IDA7Cn0KCi5hcHAtYmFyIC50aXRsZSAuYW52aWwtY29tcG9uZW50IHsKICBtYXJnaW4tbGVmdDogMDsKfQoKLmFwcC1iYXIgaW5wdXQuYW52aWwtY29tcG9uZW50LCAuYXBwLWJhciAuYW52aWwtY29tcG9uZW50IGlucHV0IHsKICBsaW5lLWhlaWdodDogMzBweDsKICBjb2xvcjogd2hpdGU7Cn0KCi5hcHAtYmFyIHNlbGVjdC5mb3JtLWNvbnRyb2wgewogIGhlaWdodDogNDNweDsgLyogMzBweCBsaW5lIGhlaWdodCArIDEycHggcGFkZGluZyArIDFweCBib3JkZXIgKi8KfQoKLmFwcC1iYXIgLmFudmlsLWNvbXBvbmVudC1pY29uLXByZXNlbnQgLmFudmlsLWNvbXBvbmVudC1pY29uLCAuYXBwLWJhciAuc2lkZWJhci10b2dnbGUgLmZhIHsKICB3aWR0aDogMzBweDsKICB0ZXh0LWFsaWduOiBjZW50ZXI7Cn0KCi8qIERvbid0IHB1dCBzcGFjaW5nIG9uIHRoZSB0b3AtbGV2ZWwgY29udGFpbmVyIChlZyBGbG93UGFuZWwpICovCi5hcHAtYmFyLW5hdiA+IC5hbnZpbC1jb250YWluZXIgewogIG1hcmdpbjogMDsKICBwYWRkaW5nOiAwOwogIG1pbi1oZWlnaHQ6IDU2cHg7Cn0KCi5hbnZpbC1oaWdobGlnaHQgLmFwcC1iYXItbmF2ID4gLmFudmlsLWNvbnRhaW5lcjpub3QoLmhhcy1jb21wb25lbnRzKTpub3QoYSkgewogIG91dGxpbmU6IDFweCBkb3R0ZWQgI2ZmZjsKICBtYXJnaW4tdG9wOiA4cHg7CiAgbWluLWhlaWdodDogNDBweDsKICBwYWRkaW5nOiA1cHggOHB4Owp9CgouYW52aWwtaGlnaGxpZ2h0IC5hcHAtYmFyLW5hdiA+IC5hbnZpbC1jb250YWluZXI6bm90KC5oYXMtY29tcG9uZW50cyk6bm90KGEpOjphZnRlciB7ICAKICBjb250ZW50OiAiRHJvcCBMaW5rcyBoZXJlIgp9CgovKiBSZWppZyBtYXJnaW4gdnMgcGFkZGluZyB0byBnaXZlIGxpbmtzIHRoZSBoYWxvICovCi5hcHAtYmFyIGEsIC5hcHAtYmFyIGEuYW52aWwtY29tcG9uZW50IHsKICBwYWRkaW5nOiA1cHg7CiAgbWFyZ2luOiA4cHggMCAwOwogIGJvcmRlci1yYWRpdXM6IDIwcHg7Cn0KCi5hcHAtYmFyIGEgLmxpbmstdGV4dCB7CiAgcGFkZGluZzogMCA0cHg7Cn0KLmFwcC1iYXIgYS5oYXMtdGV4dCAuYW52aWwtY29tcG9uZW50LWljb24ubGVmdCB7CiAgbWFyZ2luLXJpZ2h0OiA0cHg7Cn0KLmFwcC1iYXIgYS5oYXMtdGV4dCAuYW52aWwtY29tcG9uZW50LWljb24ucmlnaHQgewogIG1hcmdpbi1sZWZ0OiA0cHg7Cn0KCgovKiBDb21wb25lbnQ6IERpYWxvZyAoYWxlcnQpLCBOb3RpZmljYXRpb24gKi8KLm1vZGFsLWNvbnRlbnQsIGJvZHk+ZGl2W2RhdGEtbm90aWZ5PSJjb250YWluZXIiXSB7CiAgYm9yZGVyLXJhZGl1czogMjhweDsKICBiYWNrZ3JvdW5kOiBsaW5lYXItZ3JhZGllbnQoMGRlZywgJWNvbG9yOlByaW1hcnkgT3ZlcmxheSAzJSwgJWNvbG9yOlByaW1hcnkgT3ZlcmxheSAzJSksICVjb2xvcjpCYWNrZ3JvdW5kJTsKICBib3gtc2hhZG93OiBub25lOwogIGJvcmRlcjogbm9uZTsKfQoKLm1vZGFsLWhlYWRlciB7CiAgcGFkZGluZzogMjRweCAyNHB4IDBweDsKICBmb250LXNpemU6IDI0cHg7CiAgbGluZS1oZWlnaHQ6IDMycHg7CiAgYm9yZGVyOiAwOwogIGNvbG9yOiAlY29sb3I6T24gU3VyZmFjZSU7Cn0KCi5tb2RhbC1ib2R5IHsKICBwYWRkaW5nOiAyNHB4OwogIGZvbnQtc2l6ZTogMTZweDsKICBjb2xvcjogJWNvbG9yOk9uIFN1cmZhY2UgVmFyaWFudCU7Cn0KCi5tb2RhbC1mb290ZXIgewogIHBhZGRpbmc6IDBweCA4cHggMTRweCAyNHB4OwogIGJvcmRlcjogMDsKfQoKLm1vZGFsLWZvb3RlciAuYnRuLCAubW9kYWwtZm9vdGVyIC5idG46Zm9jdXMsIC5tb2RhbC1mb290ZXIgLmJ0bjphY3RpdmUgewogIGJveC1zaGFkb3c6IG5vbmU7CiAgdG9wOiAwOwp9CgovKiBOb3RpZmljYXRpb25zICovCmJvZHk+ZGl2W2RhdGEtbm90aWZ5PSJjb250YWluZXIiXSB7CiAgYmFja2dyb3VuZDogbGluZWFyLWdyYWRpZW50KDBkZWcsICVjb2xvcjpQcmltYXJ5IE92ZXJsYXkgMyUsICVjb2xvcjpQcmltYXJ5IE92ZXJsYXkgMyUpLCAlY29sb3I6QmFja2dyb3VuZCU7CiAgYm9yZGVyOiBub25lOwogIHBhZGRpbmc6IDI0cHg7CiAgLyogMjRkcCAqLyBib3gtc2hhZG93OiAwIDlweCA0NnB4IDhweCByZ2JhKDAsIDAsIDAsIDAuMTQpLCAwIDExcHggMTVweCAtN3B4IHJnYmEoMCwgMCwgMCwgMC4xMiksIDAgMjRweCAzOHB4IDNweCByZ2JhKDAsIDAsIDAsIDAuMik7Cn0KCmJvZHk+ZGl2W2RhdGEtbm90aWZ5PSJjb250YWluZXIiXT5zcGFuW2RhdGEtbm90aWZ5PSJ0aXRsZSJdIHsKICBkaXNwbGF5OiBibG9jazsKICBmb250LXNpemU6IDE4cHg7CiAgZm9udC13ZWlnaHQ6IDUwMDsKICBjb2xvcjogJWNvbG9yOk9uIFN1cmZhY2UlOwp9Cgpib2R5PmRpdltkYXRhLW5vdGlmeT0iY29udGFpbmVyIl0+c3BhbltkYXRhLW5vdGlmeT0ibWVzc2FnZSJdIHsKICBkaXNwbGF5OiBibG9jazsKICBwYWRkaW5nOiAyMHB4IDAgMDsKICBmb250LXNpemU6IDE2cHg7CiAgY29sb3I6ICVjb2xvcjpPbiBTdXJmYWNlIFZhcmlhbnQlOyAgCn0KCmJvZHk+ZGl2W2RhdGEtbm90aWZ5PSJjb250YWluZXIiXS5hbGVydC1zdWNjZXNzewogIGJhY2tncm91bmQtY29sb3I6ICNkNGVkZGE7Cn0KCmJvZHk+ZGl2W2RhdGEtbm90aWZ5PSJjb250YWluZXIiXS5hbGVydC1zdWNjZXNzPnNwYW5bZGF0YS1ub3RpZnk9InRpdGxlIl17CiAgY29sb3I6ICMxNTU3MjQ7Cn0KCmJvZHk+ZGl2W2RhdGEtbm90aWZ5PSJjb250YWluZXIiXS5hbGVydC1kYW5nZXJ7CiAgYmFja2dyb3VuZC1jb2xvcjogI2Y4ZDdkYTsKfQoKYm9keT5kaXZbZGF0YS1ub3RpZnk9ImNvbnRhaW5lciJdLmFsZXJ0LWRhbmdlcj5zcGFuW2RhdGEtbm90aWZ5PSJ0aXRsZSJdewogIGNvbG9yOiAjNzIxYzI0Owp9Cgpib2R5PmRpdltkYXRhLW5vdGlmeT0iY29udGFpbmVyIl0uYWxlcnQtd2FybmluZ3sKICBiYWNrZ3JvdW5kLWNvbG9yOiAjZmZmM2NkOwp9Cgpib2R5PmRpdltkYXRhLW5vdGlmeT0iY29udGFpbmVyIl0uYWxlcnQtd2FybmluZz5zcGFuW2RhdGEtbm90aWZ5PSJ0aXRsZSJdewogIGNvbG9yOiAjODU2NDA0Owp9CgpidXR0b24uY2xvc2UgPiBzcGFuLCBidXR0b24uY2xvc2UgewogIGNvbG9yOiVjb2xvcjpPbiBCYWNrZ3JvdW5kJTsKICB0ZXh0LXNoYWRvdzogMCAxcHggMCAlY29sb3I6QmFja2dyb3VuZCU7Cn0KCi8qIENvbXBvbmVudDogQnV0dG9uICovCgouYnRuLCAuYnRuLWRlZmF1bHQsIC5maWxlLWxvYWRlcj5sYWJlbCB7CiAgYm9yZGVyLXJhZGl1czogMTAwcHg7CiAgZm9udC1zaXplOiAxNHB4OwogIGZvbnQtd2VpZ2h0OiA1MDA7CiAgcGFkZGluZzogMTBweCAyNHB4OwogIG1pbi1oZWlnaHQ6IDQwcHg7CiAgbGV0dGVyLXNwYWNpbmc6IDAuMXB4OwoKICBib3JkZXI6IDA7CiAgYmFja2dyb3VuZC1pbWFnZTogbm9uZTsKICBiYWNrZ3JvdW5kLWNvbG9yOiB0cmFuc3BhcmVudDsKICBjb2xvcjogJWNvbG9yOlByaW1hcnklOwogIHRleHQtc2hhZG93OiBub25lOwogIGJveC1zaGFkb3c6IG5vbmU7CiAgLXdlYmtpdC1ib3gtc2hhZG93OiBub25lOwogIAogIHBvc2l0aW9uOiByZWxhdGl2ZTsKfQoKLmJ0bjpob3ZlciwuZmlsZS1sb2FkZXI+bGFiZWw6aG92ZXIgewogIGJhY2tncm91bmQtY29sb3I6ICVjb2xvcjpMaWdodCBPdmVybGF5IDElOwogIGJhY2tncm91bmQtaW1hZ2U6IG5vbmU7CiAgb3V0bGluZTogbm9uZTsKICBjb2xvcjogJWNvbG9yOlByaW1hcnklOwp9CgouYnRuOmFjdGl2ZSwgLmJ0bjpmb2N1cywgLmJ0bjphY3RpdmU6Zm9jdXMsIC5maWxlLWxvYWRlcj5sYWJlbDphY3RpdmUsIC5maWxlLWxvYWRlcj5sYWJlbDpmb2N1cywgLmZpbGUtbG9hZGVyPmxhYmVsOmFjdGl2ZTpmb2N1cyB7CiAgYmFja2dyb3VuZC1jb2xvcjogJWNvbG9yOkxpZ2h0IE92ZXJsYXkgMiU7CiAgYmFja2dyb3VuZC1pbWFnZTogbm9uZTsKICBvdXRsaW5lOiBub25lOwogIGJveC1zaGFkb3c6IG5vbmU7CiAgY29sb3I6ICVjb2xvcjpQcmltYXJ5JTsKfQoKCi5hbnZpbC1yb2xlLW91dGxpbmVkLWJ1dHRvbiA+IC5idG4sIC5hbnZpbC1yb2xlLW91dGxpbmVkLWJ1dHRvbi5maWxlLWxvYWRlcj5sYWJlbCB7CiAgY29sb3I6ICVjb2xvcjpQcmltYXJ5JTsKICBib3JkZXI6IHNvbGlkIDFweCAlY29sb3I6T3V0bGluZSU7Cn0KCi5hbnZpbC1yb2xlLW91dGxpbmVkLWJ1dHRvbiA+IC5idG46aG92ZXIsIC5hbnZpbC1yb2xlLW91dGxpbmVkLWJ1dHRvbi5maWxlLWxvYWRlcj5sYWJlbDpob3ZlciB7CiAgYmFja2dyb3VuZC1jb2xvcjogJWNvbG9yOkxpZ2h0IE92ZXJsYXkgMSU7Cn0KCi5hbnZpbC1yb2xlLW91dGxpbmVkLWJ1dHRvbiA+IC5idG46Zm9jdXMsIC5hbnZpbC1yb2xlLW91dGxpbmVkLWJ1dHRvbiA+IC5idG46YWN0aXZlLCAKLmFudmlsLXJvbGUtb3V0bGluZWQtYnV0dG9uLmZpbGUtbG9hZGVyPmxhYmVsOmZvY3VzLCAuYW52aWwtcm9sZS1vdXRsaW5lZC1idXR0b24uZmlsZS1sb2FkZXI+bGFiZWw6YWN0aXZlewogIGJhY2tncm91bmQtY29sb3I6ICVjb2xvcjpMaWdodCBPdmVybGF5IDIlOwogIGNvbG9yOiAlY29sb3I6UHJpbWFyeSU7Cn0KCi5hbnZpbC1yb2xlLWZpbGxlZC1idXR0b24gPiAuYnRuLCAuYnRuLXByaW1hcnksIC5hbnZpbC1yb2xlLWZpbGxlZC1idXR0b24uZmlsZS1sb2FkZXI+bGFiZWwgewogIGJhY2tncm91bmQtY29sb3I6ICVjb2xvcjpQcmltYXJ5JTsKICBjb2xvcjogJWNvbG9yOk9uIFByaW1hcnklOyAKfQoKLmFudmlsLXJvbGUtZmlsbGVkLWJ1dHRvbiA+IC5idG46aG92ZXIsIC5idG4tcHJpbWFyeTpob3ZlciwgLmFudmlsLXJvbGUtZmlsbGVkLWJ1dHRvbi5maWxlLWxvYWRlcj5sYWJlbDpob3ZlciB7CiAgYm94LXNoYWRvdzogMCAxcHggMnB4IHJnYmEoMCwgMCwgMCwgMC4zKSwgMCAxcHggM3B4IDFweCByZ2JhKDAsIDAsIDAsIDAuMTUpOwogIGJhY2tncm91bmQ6IGxpbmVhci1ncmFkaWVudCgwZGVnLCAlY29sb3I6TGlnaHQgT3ZlcmxheSAxJSwgJWNvbG9yOkxpZ2h0IE92ZXJsYXkgMSUpLCAlY29sb3I6UHJpbWFyeSU7CiAgY29sb3I6ICVjb2xvcjpPbiBQcmltYXJ5JTsgCn0KCi5hbnZpbC1yb2xlLWZpbGxlZC1idXR0b24gPiAuYnRuOmZvY3VzLCAuYnRuLXByaW1hcnk6Zm9jdXMsIC5hbnZpbC1yb2xlLWZpbGxlZC1idXR0b24gPiAuYnRuOmFjdGl2ZSwgCi5idG4tcHJpbWFyeTphY3RpdmUsIC5hbnZpbC1yb2xlLWZpbGxlZC1idXR0b24gPiAuYnRuOmFjdGl2ZTpob3ZlciwgLmJ0bi1wcmltYXJ5OmFjdGl2ZTpob3ZlciwKLmFudmlsLXJvbGUtZmlsbGVkLWJ1dHRvbi5maWxlLWxvYWRlcj5sYWJlbDpmb2N1cywgLmFudmlsLXJvbGUtZmlsbGVkLWJ1dHRvbi5maWxlLWxvYWRlcj5sYWJlbDphY3RpdmUsIAouYW52aWwtcm9sZS1maWxsZWQtYnV0dG9uLmZpbGUtbG9hZGVyPmxhYmVsOmFjdGl2ZTpmb2N1cwp7CiAgYmFja2dyb3VuZDogbGluZWFyLWdyYWRpZW50KDBkZWcsICVjb2xvcjpMaWdodCBPdmVybGF5IDIlLCAlY29sb3I6TGlnaHQgT3ZlcmxheSAyJSksICVjb2xvcjpQcmltYXJ5JTsKICBjb2xvcjogJWNvbG9yOk9uIFByaW1hcnklOyAKfQoKLmFudmlsLXJvbGUtZWxldmF0ZWQtYnV0dG9uID4gLmJ0biwgLmFudmlsLXJvbGUtZWxldmF0ZWQtYnV0dG9uLmZpbGUtbG9hZGVyPmxhYmVsIHsKICBjb2xvcjogJWNvbG9yOlByaW1hcnklOwogIGJhY2tncm91bmQtY29sb3I6ICVjb2xvcjpTdXJmYWNlJTsKICBib3gtc2hhZG93OiAwIDFweCAycHggcmdiYSgwLCAwLCAwLCAwLjMpLCAwIDFweCAzcHggMXB4IHJnYmEoMCwgMCwgMCwgMC4xNSk7Cn0KCi5hbnZpbC1yb2xlLWVsZXZhdGVkLWJ1dHRvbiA+IC5idG46Zm9jdXMsIC5hbnZpbC1yb2xlLWVsZXZhdGVkLWJ1dHRvbiA+IC5idG46YWN0aXZlLCAKLmFudmlsLXJvbGUtZWxldmF0ZWQtYnV0dG9uID4gLmJ0bjphY3RpdmU6Zm9jdXMsIC5hbnZpbC1yb2xlLWVsZXZhdGVkLWJ1dHRvbi5maWxlLWxvYWRlcj5sYWJlbDpmb2N1cywgCi5hbnZpbC1yb2xlLWVsZXZhdGVkLWJ1dHRvbi5maWxlLWxvYWRlcj5sYWJlbDphY3RpdmUsIC5hbnZpbC1yb2xlLWVsZXZhdGVkLWJ1dHRvbi5maWxlLWxvYWRlcj5sYWJlbDphY3RpdmU6Zm9jdXMgewogIGJhY2tncm91bmQ6IGxpbmVhci1ncmFkaWVudCgwZGVnLCAlY29sb3I6TGlnaHQgT3ZlcmxheSAyJSwgJWNvbG9yOkxpZ2h0IE92ZXJsYXkgMiUpLCAlY29sb3I6U3VyZmFjZSU7CiAgY29sb3I6ICVjb2xvcjpQcmltYXJ5JTsKICBib3gtc2hhZG93OiAwIDFweCAycHggcmdiYSgwLCAwLCAwLCAwLjMpLCAwIDFweCAzcHggMXB4IHJnYmEoMCwgMCwgMCwgMC4xNSk7Cn0KCi5hbnZpbC1yb2xlLWVsZXZhdGVkLWJ1dHRvbiA+IC5idG46aG92ZXIsIC5hbnZpbC1yb2xlLWVsZXZhdGVkLWJ1dHRvbi5maWxlLWxvYWRlcj5sYWJlbDpob3ZlciB7CiAgYmFja2dyb3VuZDogbGluZWFyLWdyYWRpZW50KDBkZWcsICVjb2xvcjpMaWdodCBPdmVybGF5IDElLCAlY29sb3I6TGlnaHQgT3ZlcmxheSAxJSksICVjb2xvcjpTdXJmYWNlJTsKICBib3gtc2hhZG93OiAwIDFweCAycHggcmdiYSgwLCAwLCAwLCAwLjMpLCAwIDJweCA2cHggMnB4IHJnYmEoMCwgMCwgMCwgMC4xNSk7Cn0KCi5hbnZpbC1yb2xlLXRvbmFsLWJ1dHRvbiA+IC5idG4sIC5hbnZpbC1yb2xlLXRvbmFsLWJ1dHRvbi5maWxlLWxvYWRlcj5sYWJlbCB7CiAgY29sb3I6ICVjb2xvcjpPbiBTZWNvbmRhcnkgQ29udGFpbmVyJTsKICBiYWNrZ3JvdW5kLWNvbG9yOiAlY29sb3I6U2Vjb25kYXJ5IENvbnRhaW5lciU7Cn0KCi5hbnZpbC1yb2xlLXRvbmFsLWJ1dHRvbiA+IC5idG46Zm9jdXMsIC5hbnZpbC1yb2xlLXRvbmFsLWJ1dHRvbiA+IC5idG46YWN0aXZlLCAuYW52aWwtcm9sZS10b25hbC1idXR0b24gPiAuYnRuOmFjdGl2ZTpmb2N1cywgCi5hbnZpbC1yb2xlLXRvbmFsLWJ1dHRvbi5maWxlLWxvYWRlcj5sYWJlbDpmb2N1cywgLmFudmlsLXJvbGUtdG9uYWwtYnV0dG9uLmZpbGUtbG9hZGVyPmxhYmVsOmFjdGl2ZSwgLmFudmlsLXJvbGUtdG9uYWwtYnV0dG9uLmZpbGUtbG9hZGVyPmxhYmVsOmZvY3VzOmFjdGl2ZSB7CiAgYmFja2dyb3VuZDogbGluZWFyLWdyYWRpZW50KDBkZWcsICVjb2xvcjpEYXJrIE92ZXJsYXkgMiUsICVjb2xvcjpEYXJrIE92ZXJsYXkgMiUpLCAlY29sb3I6U2Vjb25kYXJ5IENvbnRhaW5lciU7CiAgY29sb3I6ICVjb2xvcjpPbiBTZWNvbmRhcnkgQ29udGFpbmVyJTsKfQoKLmFudmlsLXJvbGUtdG9uYWwtYnV0dG9uID4gLmJ0bjpob3ZlciwgLmFudmlsLXJvbGUtdG9uYWwtYnV0dG9uLmZpbGUtbG9hZGVyPmxhYmVsOmhvdmVyewogIGJhY2tncm91bmQ6IGxpbmVhci1ncmFkaWVudCgwZGVnLCAlY29sb3I6RGFyayBPdmVybGF5IDElLCAlY29sb3I6RGFyayBPdmVybGF5IDElKSwgJWNvbG9yOlNlY29uZGFyeSBDb250YWluZXIlOwogIGJveC1zaGFkb3c6IDAgMXB4IDJweCByZ2JhKDAsIDAsIDAsIDAuMyksIDAgMXB4IDNweCAxcHggcmdiYSgwLCAwLCAwLCAwLjE1KTsKICBjb2xvcjogJWNvbG9yOk9uIFNlY29uZGFyeSBDb250YWluZXIlOwp9CgouYnRuLWRlZmF1bHRbZGlzYWJsZWRdLCAuYnRuLWRlZmF1bHRbZGlzYWJsZWRdOmhvdmVyLCAuZmlsZS1sb2FkZXIuYW52aWwtZGlzYWJsZWQ+bGFiZWwsIC5maWxlLWxvYWRlci5hbnZpbC1kaXNhYmxlZD5sYWJlbDpob3ZlciB7CiAgYmFja2dyb3VuZDogdHJhbnNwYXJlbnQ7CiAgY29sb3I6ICVjb2xvcjpPbiBEaXNhYmxlZCU7Cn0KCi5hbnZpbC1yb2xlLXRvbmFsLWJ1dHRvbiA+IC5idG5bZGlzYWJsZWRdLCAuYW52aWwtcm9sZS10b25hbC1idXR0b24+IC5idG5bZGlzYWJsZWRdOmhvdmVyLCAKLmFudmlsLXJvbGUtdG9uYWwtYnV0dG9uLmZpbGUtbG9hZGVyLmFudmlsLWRpc2FibGVkPmxhYmVsLCAuYW52aWwtcm9sZS10b25hbC1idXR0b24uZmlsZS1sb2FkZXIuYW52aWwtZGlzYWJsZWQ+bGFiZWw6aG92ZXIsIAouYW52aWwtcm9sZS1maWxsZWQtYnV0dG9uID4gLmJ0bltkaXNhYmxlZF0sIC5hbnZpbC1yb2xlLWZpbGxlZC1idXR0b24gPiAuYnRuW2Rpc2FibGVkXTpob3ZlciwgCi5hbnZpbC1yb2xlLWZpbGxlZC1idXR0b24uZmlsZS1sb2FkZXIuYW52aWwtZGlzYWJsZWQ+bGFiZWwsIC5hbnZpbC1yb2xlLWZpbGxlZC1idXR0b24uZmlsZS1sb2FkZXIuYW52aWwtZGlzYWJsZWQ+bGFiZWw6aG92ZXIsIAouYW52aWwtcm9sZS1lbGV2YXRlZC1idXR0b24gPiAuYnRuW2Rpc2FibGVkXSwgLmFudmlsLXJvbGUtZWxldmF0ZWQtYnV0dG9uID4gLmJ0bltkaXNhYmxlZF06aG92ZXIsIAouYW52aWwtcm9sZS1lbGV2YXRlZC1idXR0b24uZmlsZS1sb2FkZXIuYW52aWwtZGlzYWJsZWQ+bGFiZWwsIC5hbnZpbC1yb2xlLWVsZXZhdGVkLWJ1dHRvbi5maWxlLWxvYWRlci5hbnZpbC1kaXNhYmxlZD5sYWJlbDpob3ZlciB7IAogIGJhY2tncm91bmQ6ICVjb2xvcjpEaXNhYmxlZCBDb250YWluZXIlOwogIGNvbG9yOiAlY29sb3I6T24gRGlzYWJsZWQlOwogIGJveC1zaGFkb3c6IG5vbmU7Cn0KCi5hbnZpbC1yb2xlLW91dGxpbmVkLWJ1dHRvbiA+IC5idG5bZGlzYWJsZWRdLCAuYW52aWwtcm9sZS1vdXRsaW5lZC1idXR0b24uZmlsZS1sb2FkZXIuYW52aWwtZGlzYWJsZWQ+bGFiZWwgewogIGJvcmRlci1jb2xvcjogJWNvbG9yOk9uIERpc2FibGVkJTsKICBiYWNrZ3JvdW5kLWNvbG9yOiB0cmFuc3BhcmVudDsKfQoKCi8qIENvbXBvbmVudDogQ2FyZCAqLwoKLmFudmlsLXJvbGUtb3V0bGluZWQtY2FyZCB7CiAgb3ZlcmZsb3c6IGhpZGRlbjsKICBib3JkZXItcmFkaXVzOiAxMnB4OwogIGJhY2tncm91bmQtY29sb3I6ICVjb2xvcjpTdXJmYWNlJTsKICBib3JkZXI6IHNvbGlkIDFweCAlY29sb3I6T3V0bGluZSU7CiAgcGFkZGluZzogMTVweDsKfQoKLmFudmlsLXJvbGUtZWxldmF0ZWQtY2FyZCB7CiAgb3ZlcmZsb3c6IGhpZGRlbjsKICBib3JkZXItcmFkaXVzOiAxMnB4OwogIGJhY2tncm91bmQtY29sb3I6ICVjb2xvcjpTdXJmYWNlJTsKICAvKiAyZHAgKi8gIGJveC1zaGFkb3c6IDAgMXB4IDJweCByZ2JhKDAsIDAsIDAsIDAuMyksIDAgMnB4IDZweCAycHggcmdiYSgwLCAwLCAwLCAwLjE1KTsKICBwYWRkaW5nOiAxNXB4Owp9CgouYW52aWwtcm9sZS10b25hbC1jYXJkIHsKICBvdmVyZmxvdzogaGlkZGVuOwogIGJvcmRlci1yYWRpdXM6IDEycHg7CiAgYmFja2dyb3VuZC1jb2xvcjogJWNvbG9yOlN1cmZhY2UgVmFyaWFudCU7CiAgcGFkZGluZzogMTVweDsKfQoKCi8qIGZ1bGxfd2lkdGhfcm93IHNlY3Rpb25zIGdvIGZ1bGwgYmxlZWQgKi8KLmNvbHVtbi1wYW5lbC5hbnZpbC1yb2xlLWNhcmQgPiAuYW52aWwtcGFuZWwtc2VjdGlvbiA+IC5hbnZpbC1wYW5lbC1zZWN0aW9uLWNvbnRhaW5lci5mdWxsLXdpZHRoLXJvdyB7CiAgbWFyZ2luLWxlZnQ6IC0xMnB4OwogIG1hcmdpbi1yaWdodDogLTEycHg7CiAgd2lkdGg6IGluaXRpYWw7CiAgbWF4LXdpZHRoOiBpbml0aWFsOwp9CgovKiBJZiB0aGUgZmlyc3Qgcm93IG9mIGEgY2FyZCBpcyBhIGZ1bGxfd2lkdGhfcm93LCBpdCBnb2VzIHRvIHRoZSB0b3AgKi8KLmNvbHVtbi1wYW5lbC5hbnZpbC1yb2xlLWNhcmQgPiAuYW52aWwtcGFuZWwtc2VjdGlvbjpmaXJzdC1jaGlsZCA+IC5hbnZpbC1wYW5lbC1zZWN0aW9uLWNvbnRhaW5lci5mdWxsLXdpZHRoLXJvdyB7CiAgbWFyZ2luLXRvcDogLThweDsKfQouY29sdW1uLXBhbmVsLmFudmlsLXJvbGUtY2FyZCA+IC5hbnZpbC1wYW5lbC1zZWN0aW9uOmxhc3QtY2hpbGQgPiAuYW52aWwtcGFuZWwtc2VjdGlvbi1jb250YWluZXIuZnVsbC13aWR0aC1yb3cgewogIG1hcmdpbi1ib3R0b206IC04cHg7Cn0KCgoKLyogQ29tcG9uZW50OiBUZXh0Qm94ICsgVGV4dEFyZWEgKi8KCi8qdGhpcyBhZmZlY3RzIGRyb3Bkb3ducywgdGV4dCBib3hlcyBhbmQgdGV4dCBhcmVhczoqLwppbnB1dC5hbnZpbC1jb21wb25lbnQsIHRleHRhcmVhLmFudmlsLWNvbXBvbmVudCwgLmFudmlsLWNvbXBvbmVudCBzZWxlY3QsIC5hbnZpbC1kYXRlcGlja2VyIGlucHV0IHsKICBmb250LXNpemU6IDE2cHg7CiAgbGluZS1oZWlnaHQ6IDEuNTsKICBib3JkZXItcmFkaXVzOiA0cHggNHB4IDAgMDsKICBiYWNrZ3JvdW5kLWNvbG9yOiAlY29sb3I6U3VyZmFjZSBWYXJpYW50JTsKICBjb2xvcjogJWNvbG9yOk9uIFN1cmZhY2UgVmFyaWFudCU7CiAgYm94LXNoYWRvdzogbm9uZTsKfQoKLmFudmlsLWRyb3Bkb3duIHsKICBmb250LXNpemU6IDE2cHg7Cn0KCi5hbnZpbC1jb21wb25lbnQgc2VsZWN0IHsKICBmb250LXNpemU6IGluaGVyaXQ7Cn0KCmlucHV0LmFudmlsLWNvbXBvbmVudCwgLmFudmlsLWNvbXBvbmVudCBzZWxlY3QsIC5hbnZpbC1kYXRlcGlja2VyIGlucHV0LCB0ZXh0YXJlYS5hbnZpbC1jb21wb25lbnQgewogIHBhZGRpbmc6IDhweCAxNnB4OwogIGJvcmRlcjogMDsKICBib3JkZXItYm90dG9tOiAxcHggc29saWQgJWNvbG9yOk91dGxpbmUlOwp9CgouYW52aWwtZHJvcGRvd24gc2VsZWN0LmZvcm0tY29udHJvbCB7CiAgCiAgLXdlYmtpdC1hcHBlYXJhbmNlOiBub25lOwogIC1tb3otYXBwZWFyYW5jZTogbm9uZTsKLyogICBwYWRkaW5nOiA4cHggMmVtIDRweCAwOyAqLwogIAogIC8qIGV3IGV3IGV3IC0gc2VsZWN0IGVsZW1lbnRzIGFyZSB3ZWlyZCBhbmQgZG9uJ3Qgb2JleSBsaW5lLWhlaWdodCwgc28gd2UganVzdAogICAgIHNldCB0aGUgaGVpZ2h0IGV4cGxpY2l0bHkuIFVnaC4gKi8KICBoZWlnaHQ6IGNhbGMoMS41ZW0gKyAxM3B4KTsgLyogOHB4ICsgNHB4IHBhZGRpbmcgKyAxcHggYm9yZGVyID0gMTNweCAqLwp9CgouYW52aWwtZHJvcGRvd24gewogIHBvc2l0aW9uOiByZWxhdGl2ZTsKfQovKiBTZWxlY3QgYXJyb3cgc3R5bGluZyAqLwouYW52aWwtZHJvcGRvd24gZm9ybTpiZWZvcmUgewogICAgY29udGVudDogIlwyNUJDIjsKICAgIHBvc2l0aW9uOiBhYnNvbHV0ZTsKICAgIHJpZ2h0OiAwOwogICAgZm9udC1zaXplOiA4MCU7CiAgICBsaW5lLWhlaWdodDogY2FsYygxLjhlbSArIDhweCk7CiAgICBjb2xvcjogJWNvbG9yOk91dGxpbmUlOwogICAgcG9pbnRlci1ldmVudHM6bm9uZTsKICAgIHBhZGRpbmc6IDRweCA0cHg7Cn0KCi5hbnZpbC1jb21wb25lbnQgc2VsZWN0LCAuYW52aWwtZGF0ZXBpY2tlciBpbnB1dCB7IG1hcmdpbi1ib3R0b206IDRweDsgfQppbnB1dC5hbnZpbC1jb21wb25lbnQuYW52aWwtc3BhY2luZy1iZWxvdy1ub25lIHsgbWFyZ2luLWJvdHRvbTogNHB4OyB9CmlucHV0LmFudmlsLWNvbXBvbmVudC5hbnZpbC1zcGFjaW5nLWJlbG93LXNtYWxsIHsgbWFyZ2luLWJvdHRvbTogOHB4OyB9CmlucHV0LmFudmlsLWNvbXBvbmVudC5hbnZpbC1zcGFjaW5nLWJlbG93LW1lZGl1bSB7IG1hcmdpbi1ib3R0b206IDEycHg7IH0KaW5wdXQuYW52aWwtY29tcG9uZW50LmFudmlsLXNwYWNpbmctYmVsb3ctbGFyZ2UgeyBtYXJnaW4tYm90dG9tOiAyMHB4OyB9CgppbnB1dC5hbnZpbC1jb21wb25lbnQ6Oi13ZWJraXQtaW5wdXQtcGxhY2Vob2xkZXIsIHRleHRhcmVhLmFudmlsLWNvbXBvbmVudDo6LXdlYmtpdC1pbnB1dC1wbGFjZWhvbGRlciB7CiAgY29sb3I6ICVjb2xvcjpPbiBTdXJmYWNlJTsKfQppbnB1dC5hbnZpbC1jb21wb25lbnQ6Oi1tb3otcGxhY2Vob2xkZXIsIHRleHRhcmVhLmFudmlsLWNvbXBvbmVudDo6LW1vei1wbGFjZWhvbGRlciB7CiAgY29sb3I6ICVjb2xvcjpPbiBTdXJmYWNlJTsKfQppbnB1dC5hbnZpbC1jb21wb25lbnQ6OnBsYWNlaG9sZGVyLCB0ZXh0YXJlYS5hbnZpbC1jb21wb25lbnQ6OnBsYWNlaG9sZGVyICB7CiAgY29sb3I6ICVjb2xvcjpPbiBTdXJmYWNlJTsKfQoKLmFwcC1iYXIgaW5wdXQuYW52aWwtY29tcG9uZW50Ojotd2Via2l0LWlucHV0LXBsYWNlaG9sZGVyLCAuYXBwLWJhciB0ZXh0YXJlYS5hbnZpbC1jb21wb25lbnQ6Oi13ZWJraXQtaW5wdXQtcGxhY2Vob2xkZXIgewogIGNvbG9yOiAlY29sb3I6T24gU3VyZmFjZSU7Cn0KLmFwcC1iYXIgaW5wdXQuYW52aWwtY29tcG9uZW50OjotbW96LXBsYWNlaG9sZGVyLCAuYXBwLWJhciB0ZXh0YXJlYS5hbnZpbC1jb21wb25lbnQ6Oi1tb3otcGxhY2Vob2xkZXIgewogIGNvbG9yOiAlY29sb3I6T24gU3VyZmFjZSU7Cn0KLmFwcC1iYXIgaW5wdXQuYW52aWwtY29tcG9uZW50OjpwbGFjZWhvbGRlciwgLmFwcC1iYXIgdGV4dGFyZWEuYW52aWwtY29tcG9uZW50OjpwbGFjZWhvbGRlciAgewogIGNvbG9yOiAlY29sb3I6T24gU3VyZmFjZSU7Cn0KCmlucHV0LmFudmlsLWNvbXBvbmVudDpob3ZlciwgaW5wdXQuYW52aWwtY29tcG9uZW50OmZvY3VzLCB0ZXh0YXJlYS5hbnZpbC1jb21wb25lbnQ6aG92ZXIsIHRleHRhcmVhLmFudmlsLWNvbXBvbmVudDpmb2N1cywgCi5hbnZpbC1jb21wb25lbnQgc2VsZWN0OmhvdmVyLCAuYW52aWwtY29tcG9uZW50IHNlbGVjdDpmb2N1cywgLmFudmlsLWRhdGVwaWNrZXIgaW5wdXQ6aG92ZXIsIC5hbnZpbC1kYXRlcGlja2VyIGlucHV0OmZvY3VzIHsKICBib3JkZXItYm90dG9tOiAycHggc29saWQgJWNvbG9yOlByaW1hcnklOwogIHBhZGRpbmctYm90dG9tOiA3cHg7CiAgYm94LXNoYWRvdzogbm9uZTsKfQoKCmlucHV0LmFudmlsLWNvbXBvbmVudFtkaXNhYmxlZF0sIC5hbnZpbC1jb21wb25lbnQgc2VsZWN0W2Rpc2FibGVkXSwgLmFudmlsLWRhdGVwaWNrZXIgaW5wdXRbZGlzYWJsZWRdLCB0ZXh0YXJlYS5hbnZpbC1jb21wb25lbnRbZGlzYWJsZWRdLCAKdGV4dGFyZWEuYW52aWwtY29tcG9uZW50LmFudmlsLXJvbGUtaW5wdXQtZXJyb3JbZGlzYWJsZWRdLCBpbnB1dC5hbnZpbC1jb21wb25lbnQuYW52aWwtcm9sZS1pbnB1dC1lcnJvcltkaXNhYmxlZF0sIAouYW52aWwtY29tcG9uZW50LmFudmlsLXJvbGUtaW5wdXQtZXJyb3Igc2VsZWN0W2Rpc2FibGVkXSwgLmFudmlsLWRhdGVwaWNrZXIuYW52aWwtcm9sZS1pbnB1dC1lcnJvciBpbnB1dFtkaXNhYmxlZF0gewogIGJhY2tncm91bmQtY29sb3I6ICVjb2xvcjpEYXJrIE92ZXJsYXkgMSU7CiAgY29sb3I6ICVjb2xvcjpPbiBEaXNhYmxlZCU7CiAgYm9yZGVyLWJvdHRvbTogMXB4IHNvbGlkICVjb2xvcjpPbiBEaXNhYmxlZCU7CiAgcGFkZGluZy1ib3R0b206IDhweDsKfQoKLmFudmlsLWNvbXBvbmVudCBzZWxlY3Q6aG92ZXIsIC5hbnZpbC1jb21wb25lbnQgc2VsZWN0OmZvY3VzIHsKICBwYWRkaW5nLWJvdHRvbTogM3B4Owp9CgovKiBPdXRsaW5lZCByb2xlIGZvciB0ZXh0IGFyZWFzLCB0ZXh0IGJveGVzLCBkcm9wIGRvd25zIGFuZCBkYXRlIHBpY2tlcnMgKi8KdGV4dGFyZWEuYW52aWwtY29tcG9uZW50LmFudmlsLXJvbGUtb3V0bGluZWQsIGlucHV0LmFudmlsLWNvbXBvbmVudC5hbnZpbC1yb2xlLW91dGxpbmVkLCAKLmFudmlsLWNvbXBvbmVudC5hbnZpbC1yb2xlLW91dGxpbmVkIHNlbGVjdCwgLmFudmlsLWRhdGVwaWNrZXIuYW52aWwtcm9sZS1vdXRsaW5lZCBpbnB1dCB7CiAgYmFja2dyb3VuZC1jb2xvcjogdHJhbnNwYXJlbnQ7CiAgYm9yZGVyOiAxcHggc29saWQgJWNvbG9yOk91dGxpbmUlOwogIGJvcmRlci1yYWRpdXM6IDRweDsKICBjb2xvcjogJWNvbG9yOk9uIFN1cmZhY2UlOwp9Cgp0ZXh0YXJlYS5hbnZpbC1jb21wb25lbnQuYW52aWwtcm9sZS1vdXRsaW5lZDpob3ZlciwgdGV4dGFyZWEuYW52aWwtY29tcG9uZW50LmFudmlsLXJvbGUtb3V0bGluZWQ6Zm9jdXMsIAppbnB1dC5hbnZpbC1jb21wb25lbnQuYW52aWwtcm9sZS1vdXRsaW5lZDpob3ZlciwgaW5wdXQuYW52aWwtY29tcG9uZW50LmFudmlsLXJvbGUtb3V0bGluZWQ6Zm9jdXMsCi5hbnZpbC1jb21wb25lbnQuYW52aWwtcm9sZS1vdXRsaW5lZCBzZWxlY3Q6aG92ZXIsIC5hbnZpbC1jb21wb25lbnQuYW52aWwtcm9sZS1vdXRsaW5lZCBzZWxlY3Q6Zm9jdXMsCi5hbnZpbC1kYXRlcGlja2VyLmFudmlsLXJvbGUtb3V0bGluZWQgaW5wdXQ6aG92ZXIsIC5hbnZpbC1kYXRlcGlja2VyLmFudmlsLXJvbGUtb3V0bGluZWQgaW5wdXQ6Zm9jdXN7CiAgYm9yZGVyOiAycHggc29saWQgJWNvbG9yOlByaW1hcnklOwogIHBhZGRpbmc6IDdweCAxNXB4Owp9Cgp0ZXh0YXJlYS5hbnZpbC1jb21wb25lbnQuYW52aWwtcm9sZS1vdXRsaW5lZC1lcnJvcjpob3ZlciwgdGV4dGFyZWEuYW52aWwtY29tcG9uZW50LmFudmlsLXJvbGUtb3V0bGluZWQtZXJyb3I6Zm9jdXMsIAppbnB1dC5hbnZpbC1jb21wb25lbnQuYW52aWwtcm9sZS1vdXRsaW5lZC1lcnJvcjpob3ZlciwgaW5wdXQuYW52aWwtY29tcG9uZW50LmFudmlsLXJvbGUtb3V0bGluZWQtZXJyb3I6Zm9jdXMsCi5hbnZpbC1jb21wb25lbnQuYW52aWwtcm9sZS1vdXRsaW5lZC1lcnJvciBzZWxlY3Q6aG92ZXIsIC5hbnZpbC1jb21wb25lbnQuYW52aWwtcm9sZS1vdXRsaW5lZC1lcnJvciBzZWxlY3Q6Zm9jdXMsCi5hbnZpbC1kYXRlcGlja2VyLmFudmlsLXJvbGUtb3V0bGluZWQtZXJyb3IgaW5wdXQ6aG92ZXIsIC5hbnZpbC1kYXRlcGlja2VyLmFudmlsLXJvbGUtb3V0bGluZWQtZXJyb3IgaW5wdXQ6Zm9jdXN7CiAgYm9yZGVyOiAycHggc29saWQgJWNvbG9yOkVycm9yJTsKICBwYWRkaW5nLWJvdHRvbTogNnB4Owp9Cgp0ZXh0YXJlYS5hbnZpbC1jb21wb25lbnQuYW52aWwtcm9sZS1vdXRsaW5lZFtkaXNhYmxlZF0sIGlucHV0LmFudmlsLWNvbXBvbmVudC5hbnZpbC1yb2xlLW91dGxpbmVkW2Rpc2FibGVkXSwgCi5hbnZpbC1jb21wb25lbnQuYW52aWwtcm9sZS1vdXRsaW5lZCBzZWxlY3RbZGlzYWJsZWRdLCAuYW52aWwtZGF0ZXBpY2tlci5hbnZpbC1yb2xlLW91dGxpbmVkIGlucHV0W2Rpc2FibGVkXSwgCnRleHRhcmVhLmFudmlsLWNvbXBvbmVudC5hbnZpbC1yb2xlLW91dGxpbmVkLWVycm9yW2Rpc2FibGVkXSwgaW5wdXQuYW52aWwtY29tcG9uZW50LmFudmlsLXJvbGUtb3V0bGluZWQtZXJyb3JbZGlzYWJsZWRdLCAKLmFudmlsLWNvbXBvbmVudC5hbnZpbC1yb2xlLW91dGxpbmVkLWVycm9yIHNlbGVjdFtkaXNhYmxlZF0sIC5hbnZpbC1kYXRlcGlja2VyLmFudmlsLXJvbGUtb3V0bGluZWQtZXJyb3IgaW5wdXRbZGlzYWJsZWRdIHsKICBib3JkZXI6IDFweCBzb2xpZCAlY29sb3I6T24gRGlzYWJsZWQlOwogIGNvbG9yOiAlY29sb3I6T24gRGlzYWJsZWQlOwogIHBhZGRpbmctYm90dG9tOiA4cHg7Cn0KCi5kYXRlcmFuZ2VwaWNrZXIgdGQuYWN0aXZlIHsKICBiYWNrZ3JvdW5kOiAlY29sb3I6UHJpbWFyeSU7Cn0KCi5kYXRlcmFuZ2VwaWNrZXIgdGQuYXZhaWxhYmxlOmhvdmVyIHsKICBiYWNrZ3JvdW5kOiAlY29sb3I6RGFyayBPdmVybGF5IDIlOwp9CgouZGF0ZXJhbmdlcGlja2VyIHRkLmFjdGl2ZTpob3ZlciB7CiAgYmFja2dyb3VuZDogbGluZWFyLWdyYWRpZW50KDBkZWcsICVjb2xvcjpMaWdodCBPdmVybGF5IDElLCAlY29sb3I6TGlnaHQgT3ZlcmxheSAxJSksICVjb2xvcjpQcmltYXJ5JTsKfQoKLmRhdGVyYW5nZXBpY2tlciB0ZC5vZmYgewogIGNvbG9yOiAlY29sb3I6T24gRGlzYWJsZWQlOwp9Cgp0ZXh0YXJlYS5hbnZpbC1jb21wb25lbnQuYW52aWwtcm9sZS1vdXRsaW5lZC1lcnJvciwgaW5wdXQuYW52aWwtY29tcG9uZW50LmFudmlsLXJvbGUtb3V0bGluZWQtZXJyb3IsIAouYW52aWwtY29tcG9uZW50LmFudmlsLXJvbGUtb3V0bGluZWQtZXJyb3Igc2VsZWN0LCAuYW52aWwtZGF0ZXBpY2tlci5hbnZpbC1yb2xlLW91dGxpbmVkLWVycm9yIGlucHV0IHsKICBjb2xvcjogJWNvbG9yOkVycm9yJTsKICBiYWNrZ3JvdW5kLWNvbG9yOiB0cmFuc3BhcmVudDsKICBib3JkZXI6IDFweCBzb2xpZCAlY29sb3I6RXJyb3IlOzsKICBib3JkZXItcmFkaXVzOiA0cHg7Cn0KCnRleHRhcmVhLmFudmlsLWNvbXBvbmVudC5hbnZpbC1yb2xlLWlucHV0LWVycm9yLCBpbnB1dC5hbnZpbC1jb21wb25lbnQuYW52aWwtcm9sZS1pbnB1dC1lcnJvciwgCi5hbnZpbC1jb21wb25lbnQuYW52aWwtcm9sZS1pbnB1dC1lcnJvciBzZWxlY3QsIC5hbnZpbC1kYXRlcGlja2VyLmFudmlsLXJvbGUtaW5wdXQtZXJyb3IgaW5wdXQgewogIGNvbG9yOiAlY29sb3I6RXJyb3IlOwogIGJvcmRlci1jb2xvcjogJWNvbG9yOkVycm9yJTsgCn0KCi8qVE9ETzogZmlndXJlIG91dCB3aGF0IHRoaXMgaXMgdXNlZCBmb3IqLwovKiAuZGF0ZXJhbmdlcGlja2VyIC5idG4tc3VjY2VzcyB7CiAgY29sb3I6ICVjb2xvcjpQcmltYXJ5IDUwMCU7Cn0gKi8KCi8qIENvbXBvbmVudDogQ2hlY2tCb3gsIFJhZGlvQnV0dG9uICovCi5jaGVja2JveCBpbnB1dCwgLnJhZGlvIGlucHV0IHsKICAtd2Via2l0LWFwcGVhcmFuY2U6IG5vbmU7CiAgYXBwZWFyYW5jZTogbm9uZTsKICB3aWR0aDogMTVweDsKICBoZWlnaHQ6IDE1cHg7CiAgYm9yZGVyLXJhZGl1czogMXB4OwogIGJhY2tncm91bmQtY29sb3I6ICVjb2xvcjpTdXJmYWNlIFZhcmlhbnQlOyAKLyogICBjb2xvcjogJWNvbG9yOk9uIFN1cmZhY2UgVmFyaWFudCU7ICovCn0KCi5yYWRpbyBpbnB1dCB7CiAgYm9yZGVyLXJhZGl1cyA6IDUwJTsKfQoKLmNoZWNrYm94IGlucHV0OmhvdmVyLCAucmFkaW8gaW5wdXQ6aG92ZXIgewogIGJhY2tncm91bmQ6IGxpbmVhci1ncmFkaWVudCgwZGVnLCAlY29sb3I6TGlnaHQgT3ZlcmxheSAxJSwgJWNvbG9yOkxpZ2h0IE92ZXJsYXkgMSUpLCAlY29sb3I6U3VyZmFjZSBWYXJpYW50JTsKfQoKLmNoZWNrYm94IGlucHV0OmZvY3VzLCAucmFkaW8gaW5wdXQ6Zm9jdXMgewogIG91dGxpbmU6IDA7Cn0KCi5yYWRpbyBpbnB1dDpmb2N1cyB7CiAgYm9yZGVyLXJhZGl1czogMTBweDsKfQoKLmNoZWNrYm94IGlucHV0W3R5cGU9ImNoZWNrYm94Il1bZGlzYWJsZWRdOmhvdmVyLCAucmFkaW8gaW5wdXRbdHlwZT0icmFkaW8iXVtkaXNhYmxlZF06aG92ZXIsIAouY2hlY2tib3ggaW5wdXRbdHlwZT0iY2hlY2tib3giXVtkaXNhYmxlZF0sIC5yYWRpbyBpbnB1dFt0eXBlPSJyYWRpbyJdW2Rpc2FibGVkXSB7CiAgYmFja2dyb3VuZDogJWNvbG9yOkRpc2FibGVkIENvbnRhaW5lciU7IAp9CgppbnB1dFtkaXNhYmxlZF0gfiBzcGFuIHsKICBjdXJzb3I6IG5vdC1hbGxvd2VkOwogIGNvbG9yOiAlY29sb3I6T24gRGlzYWJsZWQlOwp9CgouY2hlY2tib3ggaW5wdXQsIC5yYWRpbyBpbnB1dCB7CiAgZGlzcGxheTogZmxleDsKICBhbGlnbi1pdGVtczogY2VudGVyOwogIGp1c3RpZnktY29udGVudDogY2VudGVyOwp9CgouY2hlY2tib3ggaW5wdXQ6Y2hlY2tlZCwgLnJhZGlvIGlucHV0OmNoZWNrZWQgewogIGJhY2tncm91bmQtY29sb3I6ICVjb2xvcjpQcmltYXJ5IENvbnRhaW5lciU7CiAgY29sb3I6ICVjb2xvcjpPbiBQcmltYXJ5IENvbnRhaW5lciU7Cn0KCi5jaGVja2JveCBpbnB1dDpjaGVja2VkOmJlZm9yZSB7CiAgZm9udC1mYW1pbHk6ICJGb250QXdlc29tZSI7CiAgY29udGVudDogIlxmMDBjIjsKICBmb250LXNpemU6IDEwcHg7Cn0KCi5jaGVja2JveCBpbnB1dDppbmRldGVybWluYXRlOmJlZm9yZSB7CiAgZm9udC1mYW1pbHk6ICJGb250QXdlc29tZSI7CiAgY29udGVudDogIlxmMDY4IjsKICBmb250LXNpemU6IDEwcHg7Cn0gIAoKLnJhZGlvIGlucHV0OmNoZWNrZWQ6YmVmb3JlIHsKICBmb250LWZhbWlseTogIkZvbnRBd2Vzb21lIjsKICBjb250ZW50OiAiXGYxMTEiOwogIGZvbnQtc2l6ZTogOHB4Owp9CgouY2hlY2tib3gsIC5yYWRpbyB7CiAgZm9udC1zaXplOiAxNnB4Owp9CgovKiBEYXRhIEdyaWRzICovCi5hbnZpbC1yb2xlLXRvbmFsLWRhdGEtZ3JpZC5hbnZpbC1kYXRhLWdyaWQgPiAuZGF0YS1ncmlkLWNoaWxkLXBhbmVsPmRpdi5hdXRvLWdyaWQtaGVhZGVyIHsKICBiYWNrZ3JvdW5kOiBsaW5lYXItZ3JhZGllbnQoMGRlZywgJWNvbG9yOlByaW1hcnkgT3ZlcmxheSAyJSwgJWNvbG9yOlByaW1hcnkgT3ZlcmxheSAyJSksICVjb2xvcjpCYWNrZ3JvdW5kJTsKICBib3JkZXItYm90dG9tOiAxcHggc29saWQgJWNvbG9yOlN1cmZhY2UgVmFyaWFudCU7CiAgYm9yZGVyLXJhZGl1czogMjRweCAyNHB4IDAgMDsKfQoKLmFudmlsLXJvbGUtdG9uYWwtZGF0YS1ncmlkLmFudmlsLWRhdGEtZ3JpZCA+IC5kYXRhLWdyaWQtY2hpbGQtcGFuZWw+ZGl2LmF1dG8tZ3JpZC1oZWFkZXIgZGl2LmRhdGEtcm93LWNvbCA+IGRpdiB7CiAgcGFkZGluZzogMTJweDsKICB0ZXh0LWFsaWduOiBjZW50ZXIgIWltcG9ydGFudDsKfQoKLmFudmlsLXJvbGUtdG9uYWwtZGF0YS1ncmlkLmFudmlsLWRhdGEtZ3JpZCB7CiAgYm9yZGVyLXJhZGl1czogMjRweDsKICBib3JkZXI6IDFweCBzb2xpZCAlY29sb3I6U3VyZmFjZSBWYXJpYW50JTsKfQoKLmFudmlsLXJvbGUtdG9uYWwtZGF0YS1ncmlkLmFudmlsLWRhdGEtZ3JpZCAuZGF0YS1ncmlkLWNoaWxkLXBhbmVsIGRpdi5kYXRhLXJvdy1jb2wgewogIGJvcmRlci1sZWZ0OiAxcHggc29saWQgJWNvbG9yOlN1cmZhY2UgVmFyaWFudCU7CiAgYm9yZGVyLWJvdHRvbTogMXB4IHNvbGlkICVjb2xvcjpTdXJmYWNlIFZhcmlhbnQlOwp9CgouYW52aWwtcm9sZS10b25hbC1kYXRhLWdyaWQuYW52aWwtZGF0YS1ncmlkIC5kYXRhLWdyaWQtY2hpbGQtcGFuZWwgZGl2LmRhdGEtcm93LWNvbDpmaXJzdC1jaGlsZCB7CiAgYm9yZGVyLWxlZnQ6IDA7Cn0KCi5hbnZpbC1yb2xlLXRvbmFsLWRhdGEtZ3JpZC5hbnZpbC1kYXRhLWdyaWQgPiAuZGF0YS1ncmlkLWNoaWxkLXBhbmVsPmRpdi5hdXRvLWdyaWQtaGVhZGVyIGRpdi5kYXRhLXJvdy1jb2wgewogIGJvcmRlci10b3A6IDA7CiAgYm9yZGVyLWJvdHRvbTogMDsKICBib3JkZXItcmlnaHQ6IDA7Cn0KCgovKlBsb3RzKi8KCmRpdi5wbG90LWNvbnRhaW5lci5wbG90bHkgc3ZnLm1haW4tc3ZnIHsKICBib3JkZXI6IDFweCBzb2xpZCAlY29sb3I6U3VyZmFjZSBWYXJpYW50JTsKICBib3JkZXItcmFkaXVzOiAxMnB4Owp9CgoucGxvdC1jb250YWluZXIucGxvdGx5IC5tYWluLXN2ZyAucGFyY29vcmRzIC55LWF4aXMgLmF4aXMgLnRpY2sgPiB0ZXh0IHsKICB0ZXh0LXNoYWRvdzogbm9uZSAhaW1wb3J0YW50Owp9CgoucGxvdC1jb250YWluZXIucGxvdGx5IC5tYWluLXN2ZyAucGFyY29vcmRzIC55LWF4aXMgLmF4aXMgPiBwYXRoLmRvbWFpbiB7CiAgc3Ryb2tlOiAlY29sb3I6T3V0bGluZSU7Cn0KCi5hbnZpbC1zcGlubmVyIHsKICAgIC0tYW52aWwtc3Bpbm5lci1iZzogJWNvbG9yOlN1cmZhY2UgVmFyaWFudCU7Cn0K, id: G7XF7QAQLVUXLQD6ORPH3BZL7NJGIOMZ, name: theme.css}
+  parameters:
+    color_scheme:
+      colors:
+      - {color: '#6750A4', name: Primary}
+      - {color: '#EADDFF', name: Primary Container}
+      - {color: '#FFFFFF', name: On Primary}
+      - {color: '#21005E', name: On Primary Container}
+      - {color: '#625B71', name: Secondary}
+      - {color: '#E8DEF8', name: Secondary Container}
+      - {color: '#FFFFFF', name: On Secondary}
+      - {color: '#1E192B', name: On Secondary Container}
+      - {color: '#7D5260', name: Tertiary}
+      - {color: '#FFD8E4', name: Tertiary Container}
+      - {color: '#FFFFFF', name: On Tertiary}
+      - {color: '#370B1E', name: On Tertiary Container}
+      - {color: '#B3261E', name: Error}
+      - {color: '#FFFBFE', name: Background}
+      - {color: '#FFFBFE', name: Surface}
+      - {color: '#1C1B1F', name: On Background}
+      - {color: '#1C1B1F', name: On Surface}
+      - {color: '#E7E0EC', name: Surface Variant}
+      - {color: '#49454E', name: On Surface Variant}
+      - {color: '#79747E', name: Outline}
+      - {color: 'rgba(28, 27, 31, 0.38)', name: On Disabled}
+      - {color: 'rgba(28, 27, 31, 0.12)', name: Disabled Container}
+      - {color: 'rgba(255, 255, 255, 0.08)', name: Light Overlay 1}
+      - {color: 'rgba(255, 255, 255, 0.12)', name: Light Overlay 2}
+      - {color: 'rgba(30, 25, 43, 0.08)', name: Dark Overlay 1}
+      - {color: 'rgba(30, 25, 43, 0.12)', name: Dark Overlay 2}
+      - {color: 'rgba(103, 80, 164, 0.05)', name: Primary Overlay 1}
+      - {color: 'rgba(103, 80, 164, 0.08)', name: Primary Overlay 2}
+      - {color: 'rgba(103, 80, 164, 0.11)', name: Primary Overlay 3}
+      preset_groups:
+      - name: Colour Scheme
+        options:
+        - colors:
+          - {color: '#6750A4', name: Primary}
+          - {color: '#EADDFF', name: Primary Container}
+          - {color: '#FFFFFF', name: On Primary}
+          - {color: '#21005E', name: On Primary Container}
+          - {color: '#625B71', name: Secondary}
+          - {color: '#E8DEF8', name: Secondary Container}
+          - {color: '#FFFFFF', name: On Secondary}
+          - {color: '#1E192B', name: On Secondary Container}
+          - {color: '#7D5260', name: Tertiary}
+          - {color: '#FFD8E4', name: Tertiary Container}
+          - {color: '#FFFFFF', name: On Tertiary}
+          - {color: '#370B1E', name: On Tertiary Container}
+          - {color: '#B3261E', name: Error}
+          - {color: '#FFFBFE', name: Background}
+          - {color: '#FFFBFE', name: Surface}
+          - {color: '#1C1B1F', name: On Background}
+          - {color: '#1C1B1F', name: On Surface}
+          - {color: '#E7E0EC', name: Surface Variant}
+          - {color: '#49454E', name: On Surface Variant}
+          - {color: '#79747E', name: Outline}
+          - {color: 'rgba(28, 27, 31, 0.38)', name: On Disabled}
+          - {color: 'rgba(28, 27, 31, 0.12)', name: Disabled Container}
+          - {color: 'rgba(255, 255, 255, 0.08)', name: Light Overlay 1}
+          - {color: 'rgba(255, 255, 255, 0.12)', name: Light Overlay 2}
+          - {color: 'rgba(30, 25, 43, 0.08)', name: Dark Overlay 1}
+          - {color: 'rgba(30, 25, 43, 0.12)', name: Dark Overlay 2}
+          - {color: 'rgba(103, 80, 164, 0.05)', name: Primary Overlay 1}
+          - {color: 'rgba(103, 80, 164, 0.08)', name: Primary Overlay 2}
+          - {color: 'rgba(103, 80, 164, 0.11)', name: Primary Overlay 3}
+          name: Material Light
+        - colors:
+          - {color: '#D0BCFF', name: Primary}
+          - {color: '#4F378B', name: Primary Container}
+          - {color: '#371E73', name: On Primary}
+          - {color: '#EADDFF', name: On Primary Container}
+          - {color: '#CCC2DC', name: Secondary}
+          - {color: '#4A4458', name: Secondary Container}
+          - {color: '#332D41', name: On Secondary}
+          - {color: '#E8DEF8', name: On Secondary Container}
+          - {color: '#EFB8C8', name: Tertiary}
+          - {color: '#633B48', name: Tertiary Container}
+          - {color: '#492532', name: On Tertiary}
+          - {color: '#FFD8E4', name: On Tertiary Container}
+          - {color: '#F2B8B5', name: Error}
+          - {color: '#1C1B1F', name: Background}
+          - {color: '#1C1B1F', name: Surface}
+          - {color: '#E6E1E5', name: On Background}
+          - {color: '#E6E1E5', name: On Surface}
+          - {color: '#49454F', name: Surface Variant}
+          - {color: '#CAC4D0', name: On Surface Variant}
+          - {color: '#938F99', name: Outline}
+          - {color: 'rgba(230, 225, 229, 0.38)', name: On Disabled}
+          - {color: 'rgba(230, 225, 229, 0.12)', name: Disabled Container}
+          - {color: 'rgba(232, 222, 248, 0.08)', name: Light Overlay 1}
+          - {color: 'rgba(232, 222, 248, 0.12)', name: Light Overlay 2}
+          - {color: 'rgba(232, 222, 248, 0.08)', name: Dark Overlay 1}
+          - {color: 'rgba(232, 222, 248, 0.12)', name: Dark Overlay 2}
+          - {color: 'rgba(208, 188, 255, 0.05)', name: Primary Overlay 1}
+          - {color: 'rgba(208, 188, 255, 0.08)', name: Primary Overlay 2}
+          - {color: 'rgba(208, 188, 255, 0.11)', name: Primary Overlay 3}
+          name: Material Dark
+        - colors:
+          - {color: '#1EB980', name: Primary}
+          - {color: '#005235', name: Primary Container}
+          - {color: '#003824', name: On Primary}
+          - {color: '#73FBBC', name: On Primary Container}
+          - {color: '#B4CCBC', name: Secondary}
+          - {color: '#364B3F', name: Secondary Container}
+          - {color: '#20352A', name: On Secondary}
+          - {color: '#D0E8D8', name: On Secondary Container}
+          - {color: '#A4CDDD', name: Tertiary}
+          - {color: '#234C5A', name: Tertiary Container}
+          - {color: '#063542', name: On Tertiary}
+          - {color: '#C0E9FA', name: On Tertiary Container}
+          - {color: '#D64D47', name: Error}
+          - {color: '#191C1A', name: Background}
+          - {color: '#191C1A', name: Surface}
+          - {color: '#E1E3DF', name: On Background}
+          - {color: '#E1E3DF', name: On Surface}
+          - {color: '#404943', name: Surface Variant}
+          - {color: '#C0C9C1', name: On Surface Variant}
+          - {color: '#8A938C', name: Outline}
+          - {color: 'rgba(208, 232, 216, 0.2)', name: Dark Overlay 1}
+          - {color: 'rgba(208, 232, 216, 0.5)', name: Dark Overlay 2}
+          - {color: 'rgba(208, 232, 216, 0.2)', name: Light Overlay 1}
+          - {color: 'rgba(208, 232, 216, 0.5)', name: Light Overlay 2}
+          - {color: 'rgba(133, 133, 139, 0.12)', name: Disabled Container}
+          - {color: '#85858B', name: On Disabled}
+          - {color: 'rgba(30, 185, 128, 0.05)', name: Primary Overlay 1}
+          - {color: 'rgba(30, 185, 128, 0.08)', name: Primary Overlay 2}
+          - {color: 'rgba(30, 185, 128, 0.11)', name: Primary Overlay 3}
+          name: Rally Dark
+        - colors:
+          - {color: '#006C48', name: Primary}
+          - {color: '#00A36C', name: Primary Container}
+          - {color: '#FFFFFF', name: On Primary}
+          - {color: '#002113', name: On Primary Container}
+          - {color: '#496455', name: Secondary}
+          - {color: '#CBEAD6', name: Secondary Container}
+          - {color: '#FFFFFF', name: On Secondary}
+          - {color: '#052014', name: On Secondary Container}
+          - {color: '#326576', name: Tertiary}
+          - {color: '#B8EAFF', name: Tertiary Container}
+          - {color: '#FFFFFF', name: On Tertiary}
+          - {color: '#001F28', name: On Tertiary Container}
+          - {color: '#D64D47', name: Error}
+          - {color: '#FBFDF8', name: Background}
+          - {color: '#FBFDF8', name: Surface}
+          - {color: '#191C1A', name: On Background}
+          - {color: '#191C1A', name: On Surface}
+          - {color: '#DCE5DD', name: Surface Variant}
+          - {color: '#404943', name: On Surface Variant}
+          - {color: '#707973', name: Outline}
+          - {color: 'rgba(5, 32, 20, 0.8)', name: Dark Overlay 1}
+          - {color: 'rgba(51, 51, 61, 0.12)', name: Dark Overlay 2}
+          - {color: 'rgba(255, 255, 255, 0.8)', name: Light Overlay 1}
+          - {color: 'rgba(255, 255, 255, 0.12)', name: Light Overlay 2}
+          - {color: 'rgba(25, 28, 26, 0.12)', name: Disabled Container}
+          - {color: 'rgba(25, 28, 26, 0.38)', name: On Disabled}
+          - {color: 'rgba(0, 108, 72, 0.05)', name: Primary Overlay 1}
+          - {color: 'rgba(0, 108, 72, 0.08)', name: Primary Overlay 2}
+          - {color: 'rgba(0, 108, 72, 0.11)', name: Primary Overlay 3}
+          name: Rally Light
+        - colors:
+          - {color: '#006874', name: Primary}
+          - {color: '#96F0FF', name: Primary Container}
+          - {color: '#FFFFFF', name: On Primary}
+          - {color: '#001F24', name: On Primary Container}
+          - {color: '#486367', name: Secondary}
+          - {color: '#CBE8ED', name: Secondary Container}
+          - {color: '#FFFFFF', name: On Secondary}
+          - {color: '#031F23', name: On Secondary Container}
+          - {color: '#515E80', name: Tertiary}
+          - {color: '#DAE2FF', name: Tertiary Container}
+          - {color: '#FFFFFF', name: On Tertiary}
+          - {color: '#0C1A39', name: On Tertiary Container}
+          - {color: '#BA1A1A', name: Error}
+          - {color: '#FAFDFD', name: Background}
+          - {color: '#FAFDFD', name: Surface}
+          - {color: '#191C1D', name: On Background}
+          - {color: '#191C1D', name: On Surface}
+          - {color: '#DBE4E6', name: Surface Variant}
+          - {color: '#3F484A', name: On Surface Variant}
+          - {color: '#6F797A', name: Outline}
+          - {color: 'rgba(25, 28, 29, 0.38)', name: On Disabled}
+          - {color: 'rgba(25, 28, 29, 0.12)', name: Disabled Container}
+          - {color: 'rgba(255, 255, 255, 0.08)', name: Light Overlay 1}
+          - {color: 'rgba(255, 255, 255, 0.12)', name: Light Overlay 2}
+          - {color: 'rgba(3, 31, 35, 0.08)', name: Dark Overlay 1}
+          - {color: 'rgba(3, 31, 35, 0.12)', name: Dark Overlay 2}
+          - {color: 'rgba(0, 104, 116, 0.05)', name: Primary Overlay 1}
+          - {color: 'rgba(0, 104, 116, 0.08)', name: Primary Overlay 2}
+          - {color: 'rgba(0, 104, 116, 0.11)', name: Primary Overlay 3}
+          name: Mykonos Light
+        - colors:
+          - {color: '#3CD9ED', name: Primary}
+          - {color: '#004F57', name: Primary Container}
+          - {color: '#00363D', name: On Primary}
+          - {color: '#96F0FF', name: On Primary Container}
+          - {color: '#AFCBD0', name: Secondary}
+          - {color: '#314B4F', name: Secondary Container}
+          - {color: '#1A3438', name: On Secondary}
+          - {color: '#CBE8ED', name: On Secondary Container}
+          - {color: '#B9C6ED', name: Tertiary}
+          - {color: '#394667', name: Tertiary Container}
+          - {color: '#23304F', name: On Tertiary}
+          - {color: '##DAE2FF', name: On Tertiary Container}
+          - {color: '#FFB4AB', name: Error}
+          - {color: '#191C1D', name: Background}
+          - {color: '#191C1D', name: Surface}
+          - {color: '#E1E3E3', name: On Background}
+          - {color: '#E1E3E3', name: On Surface}
+          - {color: '#3F484A', name: Surface Variant}
+          - {color: '#BFC8CA', name: On Surface Variant}
+          - {color: '#899294', name: Outline}
+          - {color: 'rgba(225, 227, 227, 0.38)', name: On Disabled}
+          - {color: 'rgba(225, 227, 227, 0.12)', name: Disabled Container}
+          - {color: 'rgba(203, 232, 237, 0.08)', name: Light Overlay 1}
+          - {color: 'rgba(203, 232, 237, 0.12)', name: Light Overlay 2}
+          - {color: 'rgba(203, 232, 237, 0.08)', name: Dark Overlay 1}
+          - {color: 'rgba(203, 232, 237, 0.12)', name: Dark Overlay 2}
+          - {color: 'rgba(60, 217, 237, 0.05)', name: Primary Overlay 1}
+          - {color: 'rgba(60, 217, 237, 0.08)', name: Primary Overlay 2}
+          - {color: 'rgba(60, 217, 237, 0.11)', name: Primary Overlay 3}
+          name: Mykonos Dark
+        - colors:
+          - {color: '#9A4523', name: Primary}
+          - {color: '#FFDBCF', name: Primary Container}
+          - {color: '#FFFFFF', name: On Primary}
+          - {color: '#380D00', name: On Primary Container}
+          - {color: '#77574C', name: Secondary}
+          - {color: '#FFDBCF', name: Secondary Container}
+          - {color: '#FFFFFF', name: On Secondary}
+          - {color: '#2C160D', name: On Secondary Container}
+          - {color: '#695E2F', name: Tertiary}
+          - {color: '#F2E2A7', name: Tertiary Container}
+          - {color: '#FFFFFF', name: On Tertiary}
+          - {color: '#221B00', name: On Tertiary Container}
+          - {color: '#BA1A1A', name: Error}
+          - {color: '#FFFBFF', name: Background}
+          - {color: '#FFFBFF', name: Surface}
+          - {color: '#201A18', name: On Background}
+          - {color: '#201A18', name: On Surface}
+          - {color: '#F5DED6', name: Surface Variant}
+          - {color: '#53433E', name: On Surface Variant}
+          - {color: '#85736D', name: Outline}
+          - {color: 'rgba(32, 26, 24, 0.38)', name: On Disabled}
+          - {color: 'rgba(32, 26, 24, 0.12)', name: Disabled Container}
+          - {color: 'rgba(255, 255, 255, 0.08)', name: Light Overlay 1}
+          - {color: 'rgba(255, 255, 255, 0.12)', name: Light Overlay 2}
+          - {color: 'rgba(44, 22, 13, 0.08)', name: Dark Overlay 1}
+          - {color: 'rgba(44, 22, 13, 0.12)', name: Dark Overlay 2}
+          - {color: 'rgba(154, 69, 35, 0.05)', name: Primary Overlay 1}
+          - {color: 'rgba(154, 69, 35, 0.08)', name: Primary Overlay 2}
+          - {color: 'rgba(154, 69, 35, 0.11)', name: Primary Overlay 3}
+          name: Manarola Light
+        - colors:
+          - {color: '#FFB59B', name: Primary}
+          - {color: '#7B2E0E', name: Primary Container}
+          - {color: '#5B1A00', name: On Primary}
+          - {color: '#FFDBCF', name: On Primary Container}
+          - {color: '#E7BDB0', name: Secondary}
+          - {color: '#5D4036', name: Secondary Container}
+          - {color: '#442A21', name: On Secondary}
+          - {color: '#FFDBCF', name: On Secondary Container}
+          - {color: '#D5C68E', name: Tertiary}
+          - {color: '#50461A', name: Tertiary Container}
+          - {color: '#393005', name: On Tertiary}
+          - {color: '#F2E2A7', name: On Tertiary Container}
+          - {color: '#FFB4AB', name: Error}
+          - {color: '#201A18', name: Background}
+          - {color: '#201A18', name: Surface}
+          - {color: '#EDE0DC', name: On Background}
+          - {color: '#EDE0DC', name: On Surface}
+          - {color: '#53433E', name: Surface Variant}
+          - {color: '#D8C2BB', name: On Surface Variant}
+          - {color: '#A08D86', name: Outline}
+          - {color: 'rgba(237, 224, 220, 0.38)', name: On Disabled}
+          - {color: 'rgba(237, 224, 220, 0.12)', name: Disabled Container}
+          - {color: 'rgba(255, 219, 207, 0.08)', name: Light Overlay 1}
+          - {color: 'rgba(255, 219, 207, 0.12)', name: Light Overlay 2}
+          - {color: 'rgba(255, 219, 207, 0.08)', name: Dark Overlay 1}
+          - {color: 'rgba(255, 219, 207, 0.12)', name: Dark Overlay 2}
+          - {color: 'rgba(255, 181, 155, 0.05)', name: Primary Overlay 1}
+          - {color: 'rgba(255, 181, 155, 0.08)', name: Primary Overlay 2}
+          - {color: 'rgba(255, 181, 155, 0.11)', name: Primary Overlay 3}
+          name: Manarola Dark
+    roles:
+    - components: [Label]
+      name: input-prompt
+    - components: [Link]
+      name: selected
+    - components: [ColumnPanel, LinearPanel, XYPanel, RepeatingPanel]
+      display_in_toolbox: true
+      name: outlined-card
+      title: Outlined Card
+    - components: [ColumnPanel, LinearPanel, XYPanel, RepeatingPanel]
+      display_in_toolbox: false
+      name: elevated-card
+      title: Elevated Card
+    - components: [ColumnPanel, LinearPanel, XYPanel, RepeatingPanel]
+      display_in_toolbox: false
+      name: tonal-card
+      title: Tonal Card
+    - components: [Button, FileLoader]
+      display_in_toolbox: true
+      name: outlined-button
+      title: Outlined Button
+    - components: [Button, FileLoader]
+      display_in_toolbox: false
+      name: filled-button
+      title: Filled Button
+    - components: [Button, FileLoader]
+      display_in_toolbox: false
+      name: elevated-button
+      title: Elevated Button
+    - components: [Button, FileLoader]
+      display_in_toolbox: false
+      name: tonal-button
+      title: Tonal Button
+    - components: [TextBox, TextArea, DatePicker, DropDown]
+      display_in_toolbox: true
+      name: outlined
+      title: Outlined TextBox
+    - components: [Label, Link]
+      name: display
+    - components: [Label, Link]
+      name: headline
+    - components: [Label, Link]
+      name: title
+    - components: [Label, Link]
+      name: body
+    - components: [DataGrid]
+      name: tonal-data-grid
+    - components: [TextBox, TextArea, DatePicker, DropDown]
+      name: outlined-error
+  templates:
+  - description: A page with an app bar and an optional sidebar.
+    form:
+      class_name: Form
+      code: "from ._anvil_designer import $NAME$Template\nfrom anvil import *\n\nclass $NAME$($NAME$Template):\n\n  def __init__(self, **properties):\n    # Set Form properties and Data Bindings.\n    self.init_components(**properties)\n\n    # Any code you write here will run before the form opens.\n    \n"
+      components:
+      - layout_properties: {slot: default}
+        name: content_panel
+        properties: {}
+        type: ColumnPanel
+      - layout_properties: {slot: nav-right}
+        name: navbar_links
+        properties: {}
+        type: FlowPanel
+      container:
+        properties: {html: '@theme:standard-page.html'}
+        type: HtmlTemplate
+      is_package: true
+    img: img/form-templates/material-design-3.png
+    name: Standard Page
+uplink_visible: true
